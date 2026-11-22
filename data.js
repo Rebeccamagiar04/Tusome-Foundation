@@ -12,11 +12,11 @@ window.TUSOME_DATA = {
     "note.maths": "Core Mathematics practice with generated questions, worked steps, and feedback."
   },
   subjects: [
-    { id: "english", name: "English", icon: "📖", pathway: "core", track: "core", link: "lesson.html?subject=english", availability: "Grade 10 learning topics and practice" },
-    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "mathematics.html", availability: "Generated practice across selected Grade 10 topics" },
-    { id: "biology", name: "Biology", icon: "🧬", pathway: "stem", track: "pure", link: "lesson.html?subject=biology", availability: "Grade 10 learning topics and practice" },
-    { id: "chemistry", name: "Chemistry", icon: "⚗️", pathway: "stem", track: "pure", link: "lesson.html?subject=chemistry", availability: "Grade 10 learning topics and practice" },
-    { id: "physics", name: "Physics", icon: "⚡", pathway: "stem", track: "pure", link: "lesson.html?subject=physics", availability: "Grade 10 learning topics and practice" }
+    { id: "english", name: "English", icon: "📖", pathway: "core", track: "core", link: "english.html", availability: "Grade 10 learning topics and practice" },
+    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "curriculum.html?subject=maths", availability: "Generated practice across selected Grade 10 topics" },
+    { id: "biology", name: "Biology", icon: "🧬", pathway: "stem", track: "pure", link: "curriculum.html?subject=biology", availability: "Grade 10 learning topics and practice" },
+    { id: "chemistry", name: "Chemistry", icon: "⚗️", pathway: "stem", track: "pure", link: "curriculum.html?subject=chemistry", availability: "Grade 10 learning topics and practice" },
+    { id: "physics", name: "Physics", icon: "⚡", pathway: "stem", track: "pure", link: "curriculum.html?subject=physics", availability: "Grade 10 learning topics and practice" }
   ],
   curriculum: {
     english: {
@@ -35,7 +35,7 @@ window.TUSOME_DATA = {
       source: "KICD Grade 10 Core Mathematics Curriculum Design (2025)",
       strands: [
         { name: "Numbers and Algebra", topics: ["Real Numbers", "Indices and Logarithms", "Quadratic Expressions and Equations"] },
-        { name: "Measurements and Geometry", topics: ["Similarity and Enlargement", "Reflection and Congruence", "Rotation", "Trigonometry"] },
+        { name: "Measurements and Geometry", topics: ["Similarity and Enlargement", "Reflection and Congruence", "Rotation", "Angle Properties of a Circle", "Trigonometry 1", "Area of Polygons", "Area of a Part of a Circle", "Surface Area and Volume of Solids", "Linear Motion"] },
         { name: "Statistics and Probability", topics: ["Statistics", "Probability"] }
       ]
     },
