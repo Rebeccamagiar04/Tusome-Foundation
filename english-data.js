@@ -56,7 +56,7 @@ window.ENGLISH = {
     { no: 5, title: "Careers", topic: "Public sector", items: [
       { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: "listening-for-meaning" },
       { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: "speaking-etiquette" },
-      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: null },
+      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: "writing-process" }
     ]},
@@ -70,7 +70,7 @@ window.ENGLISH = {
     { no: 7, title: "Sports and Games", topic: "Popular sports", items: [
       { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: "listening-for-meaning" },
       { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: "speaking-etiquette" },
-      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: null },
+      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: "functional-writing" }
     ]},
