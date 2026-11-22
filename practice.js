@@ -217,16 +217,14 @@
         var correct = singular[idx] ? "is" : "are";
         return generated("English", "Grammar in Use: Subject-Verb Agreement", subjects[idx] + " ___ ready for the activity.", correct,
           [correct === "is" ? "are" : "is", "be", "were"],
-          "The subject "" + subjects[idx] + "" takes "" + correct + "" in this present-tense sentence.");
+          "The subject " + subjects[idx] + " takes " + correct + " in this present-tense sentence.");
       },
       function () {
-        var nouns = [
-          ["team", "collective noun"], ["honesty", "abstract noun"], ["Nairobi", "proper noun"], ["teacher", "common noun"]
-        ];
+        var nouns = [["team", "collective noun"], ["honesty", "abstract noun"], ["Nairobi", "proper noun"], ["teacher", "common noun"]];
         var item = nouns[randInt(0, nouns.length - 1)];
-        return generated("English", "Grammar in Use: Nouns", "In the sentence "The " + item[0] + " matters", what type of noun is "" + item[0] + ""?", item[1],
+        return generated("English", "Grammar in Use: Nouns", "Identify the noun type of the word " + item[0] + ".", item[1],
           ["proper noun", "common noun", "abstract noun", "collective noun"].filter(function (x) { return x !== item[1]; }).slice(0, 3),
-          """ + item[0] + "" is a " + item[1] + ".");
+          item[0] + " is a " + item[1] + ".");
       },
       function () {
         var pairs = [
@@ -237,12 +235,12 @@
         ];
         var p = pairs[randInt(0, pairs.length - 1)];
         return generated("English", "Grammar in Use: Simple Prepositions", p[0], p[1], p[2],
-          "The correct preposition is "" + p[1] + "" in this context.");
+          "The correct preposition is " + p[1] + " in this context.");
       },
       function () {
         var items = [
-          ["Which linking word best shows contrast?", "However", ["Furthermore", "Therefore", "For example"], ""However" introduces a contrasting idea."],
-          ["Which sentence uses the correct past tense?", "They went to the library yesterday.", ["They go to the library yesterday.", "They gone to the library yesterday.", "They going to the library yesterday."], ""Went" is the simple past tense of "go"."],
+          ["Which linking word best shows contrast?", "However", ["Furthermore", "Therefore", "For example"], "However introduces a contrasting idea."],
+          ["Which sentence uses the correct past tense?", "They went to the library yesterday.", ["They go to the library yesterday.", "They gone to the library yesterday.", "They going to the library yesterday."], "Went is the simple past tense of go."],
           ["Which feature helps connect ideas across a paragraph?", "Cohesive linking words", ["Random topic changes", "Repeated unrelated details", "Missing punctuation"], "Cohesive devices make relationships between ideas clear."]
         ];
         var p = items[randInt(0, items.length - 1)];
