@@ -8,6 +8,7 @@
   const LESSONS = [
     {
       key: "maths-indices-logarithms",
+      curriculumTopic: "Numbers and Algebra → Indices and Logarithms",
       subjectId: "maths",
       subjectName: "Core Mathematics",
       title: "Indices and Logarithms",
@@ -54,6 +55,7 @@
     },
     {
       key: "biology-cells",
+      curriculumTopic: "Cell Biology and Biodiversity → Cell Structure and Specialisation",
       subjectId: "biology",
       subjectName: "Biology",
       title: "Cell Structure and Organelle Functions",
@@ -97,6 +99,7 @@
     },
     {
       key: "chemistry-acids-bases",
+      curriculumTopic: "Physical Chemistry → Acids and Bases",
       subjectId: "chemistry",
       subjectName: "Chemistry",
       title: "Acids, Bases, and Indicators",
@@ -140,6 +143,7 @@
     },
     {
       key: "english-paragraph-structure",
+      curriculumTopic: "Writing → Paragraphing, cohesion and linking words",
       subjectId: "english",
       subjectName: "English",
       title: "Structuring Clear, Focused Paragraphs",
@@ -183,6 +187,7 @@
     },
     {
       key: "physics-pressure",
+      curriculumTopic: "Mechanics and Thermal Physics → Pressure",
       subjectId: "physics",
       subjectName: "Physics",
       title: "Pressure",
@@ -265,6 +270,8 @@
     const subjLabel = subjObj ? subjObj.name : lesson.subjectName;
     const curriculumInfo = D && D.curriculum ? D.curriculum[lesson.subjectId] : null;
     if (curriculumSourceEl) curriculumSourceEl.textContent = curriculumInfo && curriculumInfo.source ? curriculumInfo.source : "Grade 10 subject design";
+    const curriculumTopicEl = document.getElementById("lesson-curriculum-topic");
+    if (curriculumTopicEl) curriculumTopicEl.textContent = lesson.curriculumTopic || "Selected Grade 10 topic";
 
     subjectTag.textContent = "GRADE 10 • " + subjLabel.toUpperCase();
     titleEl.textContent = lesson.title;
