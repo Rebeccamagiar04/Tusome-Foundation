@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Check JavaScript syntax
         run: |
           set -e
@@ -37,4 +37,39 @@ jobs:
             process.exit(1);
           }
           console.log(`Verified ${files.length} service-worker cache entries.`);
+          NODE
+
+      - name: Check subject lesson coverage
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const vm = require('vm');
+          const subjects = [
+            ['biology.js', 'TUSOME_BIOLOGY', 10],
+            ['chemistry.js', 'TUSOME_CHEMISTRY', 8],
+            ['physics.js', 'TUSOME_PHYSICS', 13],
+            ['mathematics-learning.js', 'TUSOME_MATHEMATICS', 14]
+          ];
+          for (const [file, key, expected] of subjects) {
+            const sandbox = { window: { TusomeSubjectEngine: { init() {} } } };
+            vm.runInNewContext(fs.readFileSync(file, 'utf8'), sandbox, { filename: file });
+            const data = sandbox.window[key];
+            if (!data) throw new Error(file + ' did not expose its subject data');
+            const topics = data.strands.flatMap(strand => strand.topics);
+            if (topics.length !== expected) throw new Error(file + ': expected ' + expected + ' topics, found ' + topics.length);
+            for (const topic of topics) {
+              if (!topic.title || !topic.intro || !topic.outcomes?.length || !topic.sections?.length || !topic.example?.steps?.length || !topic.check?.options?.length) {
+                throw new Error(file + ': incomplete teaching structure for ' + (topic.title || 'untitled topic'));
+              }
+            }
+            console.log(file + ': ' + topics.length + ' structured lessons checked.');
+          }
+          const englishSandbox = { window: {} };
+          vm.runInNewContext(fs.readFileSync('english-data.js', 'utf8'), englishSandbox, { filename: 'english-data.js' });
+          const english = englishSandbox.window.ENGLISH;
+          const lessonIds = new Set(english.lessons.map(lesson => lesson.id));
+          const englishItems = english.themes.flatMap(theme => theme.items);
+          const unmapped = englishItems.filter(item => !item.lesson || !lessonIds.has(item.lesson));
+          if (unmapped.length) throw new Error('English course map has ' + unmapped.length + ' unmapped sub-strands.');
+          console.log('English: ' + englishItems.length + ' course-map items connect to ' + english.lessons.length + ' guided lessons.');
           NODE
