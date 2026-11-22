@@ -54,7 +54,7 @@ window.TUSOME_DATA = {
       strands: [
         { name: "Inorganic Chemistry", topics: ["Introduction to Chemistry", "The Atom", "The Periodic Table", "Chemical Bonding", "Periodicity"] },
         { name: "Physical Chemistry", topics: ["Acids and Bases", "Introduction to Salts"] },
-        { name: "Organic Chemistry", topics: ["Organic Chemistry (strand overview; detailed sub-strands to be verified before adding lessons)"] }
+        { name: "Organic Chemistry", topics: ["Organic Chemistry"] }
       ]
     },
     physics: {
