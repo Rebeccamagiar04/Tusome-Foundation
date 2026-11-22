@@ -27,7 +27,7 @@ window.ENGLISH = {
   themes: [
     { no: 1, title: "Etiquette", topic: "Social", items: [
       { strand: "Listening and Speaking", name: "Extensive listening", lessons: 3, focus: "Picking out key information, characters, places and events from recordings.", lesson: "listening-for-meaning" },
-      { strand: "Listening and Speaking", name: "Speaking: etiquette", lessons: 4, focus: "Using polite language in different settings; the sounds /ɒ/ and /ɔ:/.", lesson: null },
+      { strand: "Listening and Speaking", name: "Speaking: etiquette", lessons: 4, focus: "Using polite language in different settings; the sounds /ɒ/ and /ɔ:/.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Previewing, skimming and scanning; collocations and binomials.", lesson: "reading-fluency" },
       { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Nouns, pronouns and determiners.", lesson: "word-classes" },
       { strand: "Writing", name: "Sentence fluency", lessons: 4, focus: "Comma splices, run-on sentences and run-on lines.", lesson: "sentence-fluency" }
@@ -36,57 +36,57 @@ window.ENGLISH = {
       { strand: "Listening and Speaking", name: "Critical listening", lessons: 3, focus: "Working out the speaker, context and intention; choosing key points; avoiding distractions.", lesson: "listening-for-meaning" },
       { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Discourse markers, idea connectors and clear conversational turn-taking.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Choosing and previewing non-literary texts to read for general understanding.", lesson: "sq4r" },
-      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: null },
+      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: "word-classes" },
       { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: "spelling-and-punctuation" }
     ]},
     { no: 3, title: "Artificial Intelligence and Society", topic: "Healthcare", items: [
-      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details such as keywords, facts, fixed phrases and figurative language.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "Clear pronunciation, homographs, public speaking and appropriate non-verbal cues.", lesson: null },
-      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Reference materials: dictionary, thesaurus, atlas, manual, newspaper, encyclopedia.", lesson: null },
-      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives and simple prepositions.", lesson: null },
-      { strand: "Writing", name: "Elements of effective writing", lessons: 4, focus: "Cohesion and paragraph development.", lesson: null }
+      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details such as keywords, facts, fixed phrases and figurative language.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "Clear pronunciation, homographs, public speaking and appropriate non-verbal cues.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Reference materials: dictionary, thesaurus, atlas, manual, newspaper, encyclopedia.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives and simple prepositions.", lesson: "verbs-adverbs" },
+      { strand: "Writing", name: "Elements of effective writing", lessons: 4, focus: "Cohesion and paragraph development.", lesson: "paragraph-cohesion" }
     ]},
     { no: 4, title: "Travel", topic: "Adventure", items: [
-      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Picking out instructions and directions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Changing the topic, giving and receiving feedback, formal and informal register; the letter 's' and its sounds.", lesson: null },
+      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Picking out instructions and directions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Changing the topic, giving and receiving feedback, formal and informal register; the letter 's' and its sounds.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Study skills", lessons: 4, focus: "The SQ4R method, note making, summaries and reading visuals.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Phrases", lessons: 4, focus: "Noun phrases and verb phrases.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Mechanics of writing: punctuation", lessons: 5, focus: "Quotation marks, dashes, hyphens, slashes and capital letters.", lesson: "spelling-and-punctuation" }
     ]},
     { no: 5, title: "Careers", topic: "Public sector", items: [
-      { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: null },
+      { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: null },
-      { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: null },
+      { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: "writing-process" }
     ]},
     { no: 6, title: "Culture", topic: "Values and beliefs", items: [
-      { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: null },
-      { strand: "Listening and Speaking", name: "Pronunciation and syllabic stress", lessons: 4, focus: "Stress in words; the sounds /ʊ/ and /u:/.", lesson: null },
+      { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Pronunciation and syllabic stress", lessons: 4, focus: "Stress in words; the sounds /ʊ/ and /u:/.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Expressive reading: expression, speed, accuracy, pace, volume and intonation.", lesson: "reading-fluency" },
       { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Relative clauses and adverbial clauses.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Creative writing", lessons: 5, focus: "Descriptive and narrative essays; verbs made from other word classes.", lesson: "creative-writing" }
     ]},
     { no: 7, title: "Sports and Games", topic: "Popular sports", items: [
-      { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: null },
+      { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: null },
-      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: null },
+      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: "functional-writing" }
     ]},
     { no: 8, title: "Health and Safety", topic: "Personal", items: [
-      { strand: "Listening and Speaking", name: "Intensive listening and viewing", lessons: 4, focus: "Listening for understanding; using visuals and non-verbal cues.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: null },
-      { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: null },
+      { strand: "Listening and Speaking", name: "Intensive listening and viewing", lessons: 4, focus: "Listening for understanding; using visuals and non-verbal cues.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: "functional-writing" }
     ]},
     { no: 9, title: "Income", topic: "Types and sources", items: [
-      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 4, focus: "Oral presentations and intonation; the sounds /ð/ and /θ/.", lesson: null },
+      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 4, focus: "Oral presentations and intonation; the sounds /ð/ and /θ/.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Critical and close reading", lessons: 4, focus: "Purpose, audience and attitude; phrasal verbs and binomial expressions.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Sentences", lessons: 4, focus: "Active and passive sentences; subject-verb agreement.", lesson: "sv-agreement" },
-      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "A notice of a meeting, an agenda and minutes.", lesson: null }
+      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "A notice of a meeting, an agenda and minutes.", lesson: "functional-writing" }
     ]}
   ],
 
