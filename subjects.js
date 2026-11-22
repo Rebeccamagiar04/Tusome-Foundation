@@ -42,7 +42,7 @@
       h3.style.marginTop = "0.6rem";
 
       const p = document.createElement("p");
-      p.textContent = "Grade 10 guided learning and practice activities.";
+      p.textContent = s.availability || "Learning activities are being prepared.";
 
       const a = document.createElement("a");
       a.href = s.link || ("lesson.html?subject=" + encodeURIComponent(s.id));
