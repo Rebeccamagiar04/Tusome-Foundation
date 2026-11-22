@@ -13,7 +13,7 @@ window.TUSOME_DATA = {
   },
   subjects: [
     { id: "english", name: "English", icon: "📖", pathway: "core", track: "core", link: "english.html", availability: "Grade 10 learning topics and practice" },
-    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "mathematics.html", availability: "Grade 10 lessons and interactive mathematics practice" },
+    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "mathematics-learning.html", availability: "Detailed Grade 10 lessons and interactive mathematics practice" },
     { id: "biology", name: "Biology", icon: "🧬", pathway: "stem", track: "pure", link: "biology.html", availability: "Detailed explanations, biological applications and topic checks" },
     { id: "chemistry", name: "Chemistry", icon: "⚗️", pathway: "stem", track: "pure", link: "chemistry.html", availability: "Detailed explanations, chemical models and topic checks" },
     { id: "physics", name: "Physics", icon: "⚡", pathway: "stem", track: "pure", link: "physics.html", availability: "Detailed explanations, equations and worked applications" }
