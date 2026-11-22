@@ -1,6 +1,6 @@
-// Non-repetitive, single-subject Grade 10 practice engine for TUSOME.
-// Combines procedural question generation for Mathematics with deck-shuffled
-// question banks and continuous question numbering for other subjects.
+// Single-subject Grade 10 practice engine for the TUSOME pilot.
+// Uses randomized question templates for all five subjects and keeps
+// static banks available as a fallback if a subject has no generator.
 
 (function () {
   "use strict";
