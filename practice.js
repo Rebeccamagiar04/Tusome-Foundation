@@ -47,120 +47,207 @@
     };
   }
 
+  function generated(subject, topic, question, correct, distractors, explanation) {
+    var options = shuffleArray([String(correct)].concat(distractors.map(String)).filter(function (v, i, a) { return a.indexOf(v) === i; }).slice(0, 4));
+    return {
+      id: subject.toLowerCase().replace(/[^a-z]/g, "") + "-gen-" + Date.now() + "-" + randInt(1, 999999),
+      subject: subject,
+      topic: topic,
+      question: question,
+      options: options,
+      correctIndex: options.indexOf(String(correct)),
+      explanation: explanation
+    };
+  }
+
   var MATH_GENERATORS = [
     function () {
-      var a = randInt(2, 7);
-      var x = randInt(2, 12);
-      var b = randInt(2, 15);
-      var isAdd = Math.random() < 0.5;
-      var c = isAdd ? (a * x + b) : (a * x - b);
-      var mid = isAdd ? (c - b) : (c + b);
-      var sign = isAdd ? "+" : "-";
-      var built = buildShuffledOptions(String(x), [mid, x + 1, Math.max(1, x - 1), x + 2]);
-
-      return {
-        id: "math-lin-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Linear Equations",
-        question: "Solve for x: " + a + "x " + sign + " " + b + " = " + c,
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: (isAdd ? "Subtract " : "Add ") + b + " to get " + a + "x = " + mid + ", then divide by " + a + " to get x = " + x + "."
-      };
+      var base = randInt(2, 9), m = randInt(1, 4), n = randInt(1, 3);
+      var answer = Math.pow(base, m + n);
+      return generated("Mathematics", "Indices and Logarithms", "Simplify " + base + "^" + m + " × " + base + "^" + n + ".", answer,
+        [Math.pow(base, m * n), Math.pow(base, m + n + 1), base * (m + n)],
+        "When multiplying powers with the same base, add the indices: " + base + "^(" + m + " + " + n + ") = " + answer + ".");
     },
     function () {
-      var a = randInt(2, 6);
-      var x = randInt(2, 8);
-      var b = randInt(1, 10);
-      var isAdd = Math.random() < 0.5;
-      var prod = a * x;
-      var ans = isAdd ? (prod + b) : (prod - b);
-      var sign = isAdd ? "+" : "-";
-      var built = buildShuffledOptions(String(ans), [prod, ans + a, Math.max(1, ans - b), ans + 3]);
-
-      return {
-        id: "math-sub-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Algebraic Substitution",
-        question: "Evaluate " + a + "x " + sign + " " + b + " when x = " + x + ".",
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: "Substitute x = " + x + ": " + a + "(" + x + ") " + sign + " " + b + " = " + ans + "."
-      };
+      var a = randInt(1, 8), x = randInt(2, 9), b = randInt(1, 8);
+      var answer = a * x * x + b;
+      return generated("Mathematics", "Quadratic Expressions and Equations", "Evaluate " + a + "x² + " + b + " when x = " + x + ".", answer,
+        [a * x + b, a * (x + b) * (x + b), a * x * x - b],
+        "Substitute x = " + x + ": " + a + " × " + x + "² + " + b + " = " + answer + ".");
     },
     function () {
-      var base = randInt(2, 5);
-      var m = randInt(2, 4);
-      var n = randInt(1, 3);
-      var totalPow = m + n;
-      var ans = Math.pow(base, totalPow);
-      var wrongMult = Math.pow(base, m * n);
-      var built = buildShuffledOptions(String(ans), [wrongMult, Math.pow(base, totalPow - 1), base * totalPow, ans + base]);
-
-      return {
-        id: "math-idx-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Indices & Powers",
-        question: "Simplify and evaluate " + base + "^" + m + " * " + base + "^" + n + ".",
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: "Add the indices: " + base + "^(" + m + " + " + n + ") = " + base + "^" + totalPow + " = " + ans + "."
-      };
+      var scale = randInt(2, 5), area = randInt(3, 12), answer = area * scale * scale;
+      return generated("Mathematics", "Similarity and Enlargement", "A similar shape has an area of " + area + " cm². It is enlarged by a linear scale factor of " + scale + ". Find its new area.", answer + " cm²",
+        [(area * scale) + " cm²", (area * scale * 2) + " cm²", (area + scale) + " cm²"],
+        "Area scale factor = " + scale + "² = " + (scale * scale) + ". New area = " + area + " × " + (scale * scale) + " = " + answer + " cm².");
     },
     function () {
-      var r1 = randInt(2, 5);
-      var r2 = randInt(3, 6);
-      var mult = randInt(3, 10);
-      var total = (r1 + r2) * mult;
-      var share1 = r1 * mult;
-      var share2 = r2 * mult;
-      var built = buildShuffledOptions(String(share1), [share2, mult, total, share1 + mult]);
-
-      return {
-        id: "math-rat-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Ratios & Proportions",
-        question: "Share " + total + " in the ratio " + r1 + " : " + r2 + ". What is the first share?",
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: "Total parts = " + (r1 + r2) + ". One part = " + total + " / " + (r1 + r2) + " = " + mult + ". First share = " + r1 + " * " + mult + " = " + share1 + "."
-      };
+      var values = [randInt(2, 12), randInt(2, 12), randInt(2, 12), randInt(2, 12)];
+      var sum = values.reduce(function (a, b) { return a + b; }, 0), answer = sum / values.length;
+      return generated("Mathematics", "Statistics", "Find the mean of " + values.join(", ") + ".", answer,
+        [answer + 1, Math.max(1, answer - 2), sum],
+        "Mean = total ÷ number of values = " + sum + " ÷ 4 = " + answer + ".");
     },
     function () {
-      var length = randInt(6, 15);
-      var width = randInt(3, length - 1);
-      var area = length * width;
-      var perim = 2 * (length + width);
-      var built = buildShuffledOptions(area + " cm^2", [perim + " cm^2", (area + width) + " cm^2", Math.max(4, area - width) + " cm^2"]);
-
-      return {
-        id: "math-geo-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Area & Perimeter",
-        question: "Find the area of a rectangle of length " + length + " cm and width " + width + " cm.",
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: "Area = length * width = " + length + " * " + width + " = " + area + " cm^2."
-      };
+      var red = randInt(1, 5), blue = randInt(1, 5), total = red + blue;
+      return generated("Mathematics", "Probability", "A bag contains " + red + " red counters and " + blue + " blue counters. What is the probability of picking a red counter?", red + "/" + total,
+        [blue + "/" + total, "1/" + total, total + "/" + red],
+        "Probability = favourable outcomes ÷ total outcomes = " + red + "/" + total + ".");
     },
     function () {
-      var lsf = randInt(2, 4);
-      var origArea = randInt(5, 16);
-      var asf = lsf * lsf;
-      var ans = origArea * asf;
-      var built = buildShuffledOptions(ans + " cm^2", [(origArea * lsf) + " cm^2", (origArea * (asf + 1)) + " cm^2", (ans + lsf) + " cm^2"]);
-
-      return {
-        id: "math-enl-" + Date.now() + "-" + randInt(1, 999),
-        subject: "Mathematics",
-        topic: "Similarity & Enlargement",
-        question: "A shape of area " + origArea + " cm^2 is enlarged by linear scale factor " + lsf + ". What is the new area?",
-        options: built.options,
-        correctIndex: built.correctIndex,
-        explanation: "Area scale factor = " + lsf + "^2 = " + asf + ". New area = " + origArea + " * " + asf + " = " + ans + " cm^2."
-      };
+      var angle = [30, 45, 60][randInt(0, 2)];
+      var answer = angle === 30 ? "1/2" : angle === 45 ? "√2/2" : "√3/2";
+      return generated("Mathematics", "Trigonometry", "In a right-angled triangle, what is the exact value of sin " + angle + "°?", answer,
+        ["0", "1", "√3"],
+        "The standard exact value is sin " + angle + "° = " + answer + ".");
     }
   ];
+
+  var SUBJECT_GENERATORS = {
+    "Biology": [
+      function () {
+        var items = [
+          ["Which cell structure controls movement of substances into and out of a cell?", "Cell membrane", ["Nucleus", "Ribosome", "Mitochondrion"], "The cell membrane is selectively permeable and regulates movement into and out of the cell."],
+          ["Which organelle contains chlorophyll for trapping light during photosynthesis?", "Chloroplast", ["Mitochondrion", "Nucleus", "Vacuole"], "Chloroplasts contain chlorophyll, which absorbs light energy for photosynthesis."],
+          ["Which cell structure contains most of the genetic material?", "Nucleus", ["Cell wall", "Cytoplasm", "Cell membrane"], "The nucleus contains the cell's genetic material and helps control cell activities."],
+          ["Which test is commonly used to identify starch in a food sample?", "Iodine solution", ["Benedict's solution", "Biuret reagent", "Ethanol emulsion"], "Iodine solution turns blue-black when starch is present."]
+        ];
+        var v = items[randInt(0, items.length - 1)];
+        return generated("Biology", "Cell Structure and Specialisation / Chemicals of Life", v[0], v[1], v[2], v[3]);
+      },
+      function () {
+        var length = randInt(3, 9), width = randInt(2, 6), area = length * width;
+        return generated("Biology", "Specimen Collection and Preservation", "A rectangular leaf specimen is " + length + " cm long and " + width + " cm wide. What is its measured area?", area + " cm²",
+          [(length + width) + " cm²", (2 * (length + width)) + " cm²", (area + length) + " cm²"],
+          "For a rectangular outline, area = length × width = " + length + " × " + width + " = " + area + " cm². This is a simple measurement exercise during specimen study.");
+      },
+      function () {
+        var plants = [
+          ["Which plant structure mainly absorbs water and mineral salts from the soil?", "Root hair", ["Stoma", "Petal", "Leaf cuticle"], "Root hairs provide a large surface area for absorbing water and mineral salts."],
+          ["Which tiny openings allow gaseous exchange in many leaves?", "Stomata", ["Xylem vessels", "Root caps", "Pollen grains"], "Stomata are pores that allow gaseous exchange; guard cells regulate their opening."],
+          ["Which tissue transports water and mineral salts from roots to other plant parts?", "Xylem", ["Phloem", "Epidermis", "Palisade tissue"], "Xylem transports water and dissolved mineral salts through the plant."]
+        ];
+        var v = plants[randInt(0, plants.length - 1)];
+        return generated("Biology", "Anatomy and Physiology of Plants", v[0], v[1], v[2], v[3]);
+      },
+      function () {
+        var animal = [
+          ["Which type of insect mouthpart is adapted for siphoning nectar?", "Siphoning mouthpart", ["Biting and chewing", "Piercing and sucking", "Scraping"], "Butterflies and moths use a long siphoning proboscis to take in nectar."],
+          ["What is the main function of red blood cells in mammals?", "Transport oxygen", ["Produce hormones", "Digest proteins", "Filter urine"], "Red blood cells contain haemoglobin, which carries oxygen."]
+        ];
+        var v = animal[randInt(0, animal.length - 1)];
+        return generated("Biology", "Anatomy and Physiology of Animals", v[0], v[1], v[2], v[3]);
+      }
+    ],
+    "Chemistry": [
+      function () {
+        var elements = [["Hydrogen","H",1],["Helium","He",2],["Lithium","Li",3],["Beryllium","Be",4],["Boron","B",5],["Carbon","C",6],["Nitrogen","N",7],["Oxygen","O",8],["Fluorine","F",9],["Neon","Ne",10],["Sodium","Na",11],["Magnesium","Mg",12],["Aluminium","Al",13],["Silicon","Si",14],["Phosphorus","P",15],["Sulfur","S",16],["Chlorine","Cl",17],["Argon","Ar",18],["Potassium","K",19],["Calcium","Ca",20]];
+        var e = elements[randInt(0, elements.length - 1)];
+        var others = shuffleArray(elements.filter(function (x) { return x[1] !== e[1]; })).slice(0, 3).map(function (x) { return x[1]; });
+        return generated("Chemistry", "The Atom and the Periodic Table", "What is the chemical symbol for " + e[0] + " (atomic number " + e[2] + ")?", e[1], others,
+          e[0] + " has the chemical symbol " + e[1] + " and atomic number " + e[2] + ".");
+      },
+      function () {
+        var p = randInt(2, 18), n = randInt(1, 20), mass = p + n;
+        return generated("Chemistry", "The Atom", "An atom has " + p + " protons and " + n + " neutrons. What is its mass number?", mass,
+          [p, n, mass + 1],
+          "Mass number = number of protons + number of neutrons = " + p + " + " + n + " = " + mass + ".");
+      },
+      function () {
+        var tests = [
+          ["Blue litmus paper is placed in an acidic solution. What happens?", "It turns red", ["It turns blue", "It turns green", "It becomes a metal"], "Acids turn blue litmus paper red."],
+          ["Which products are formed when an acid reacts with a suitable base in neutralisation?", "Salt and water", ["Hydrogen and oxygen", "Carbon dioxide and water", "Salt and hydrogen"], "A typical acid-base neutralisation produces a salt and water."],
+          ["Which pH value is acidic at room temperature?", "3", ["7", "9", "12"], "A pH below 7 indicates an acidic solution."]
+        ];
+        var v = tests[randInt(0, tests.length - 1)];
+        return generated("Chemistry", "Acids and Bases", v[0], v[1], v[2], v[3]);
+      },
+      function () {
+        var atoms = randInt(1, 4), valence = atoms * 2;
+        return generated("Chemistry", "Chemical Bonding", "A simplified model shows " + atoms + " atoms each contributing one electron to a shared pair arrangement. How many contributed electrons are shown?", atoms,
+          [valence, atoms + 1, Math.max(0, atoms - 1)],
+          "Each of the " + atoms + " atoms contributes one electron, so the total contributed is " + atoms + ". This is a basic electron-counting prompt; actual bonding depends on the atoms involved.");
+      }
+    ],
+    "Physics": [
+      function () {
+        var force = randInt(20, 100) * 10, area = randInt(2, 10), pressure = force / area;
+        return generated("Physics", "Pressure", "A force of " + force + " N acts normally on an area of " + area + " m². Calculate the pressure.", pressure + " Pa",
+          [(force * area) + " Pa", (force + area) + " Pa", (force / (area + 1)) + " Pa"],
+          "Pressure = force ÷ area = " + force + " ÷ " + area + " = " + pressure + " Pa.");
+      },
+      function () {
+        var mass = randInt(2, 12), height = randInt(2, 8), g = 10, work = mass * g * height;
+        return generated("Physics", "Energy, Work, Power and Machines", "A " + mass + " kg load is lifted vertically through " + height + " m. Use g = 10 N/kg. How much work is done against gravity?", work + " J",
+          [(mass * height) + " J", (mass * g) + " J", (work + 10) + " J"],
+          "Work done = mgh = " + mass + " × 10 × " + height + " = " + work + " J.");
+      },
+      function () {
+        var distance = randInt(20, 100) * 5, time = randInt(5, 20), speed = distance / time;
+        return generated("Physics", "Introduction to Physics", "A learner covers " + distance + " m in " + time + " s. What is the average speed?", speed + " m/s",
+          [(distance * time) + " m/s", (time / distance) + " m/s", (speed + 2) + " m/s"],
+          "Average speed = distance ÷ time = " + distance + " ÷ " + time + " = " + speed + " m/s.");
+      },
+      function () {
+        var f = randInt(2, 12), t = randInt(2, 8), moment = f * t;
+        return generated("Physics", "Moments and Equilibrium", "A force of " + f + " N acts perpendicular to a pivot at a distance of " + t + " m. What is its moment?", moment + " N m",
+          [(f + t) + " N m", (f / t) + " N m", (moment + f) + " N m"],
+          "Moment = force × perpendicular distance from pivot = " + f + " × " + t + " = " + moment + " N m.");
+      },
+      function () {
+        var frequency = randInt(2, 10) * 2, period = 1 / frequency;
+        return generated("Physics", "Properties of Waves", "A wave has a frequency of " + frequency + " Hz. What is its period?", period + " s",
+          [(1 / (frequency + 1)) + " s", frequency + " s", (frequency * 2) + " s"],
+          "Period T = 1 ÷ frequency = 1 ÷ " + frequency + " = " + period + " s.");
+      },
+      function () {
+        var mass = randInt(2, 8), volume = mass * randInt(2, 5), density = mass / volume;
+        return generated("Physics", "Mechanical Properties of Materials", "A sample has mass " + mass + " kg and volume " + volume + " m³. What is its density?", density + " kg/m³",
+          [(mass * volume) + " kg/m³", (volume / mass) + " kg/m³", (density + 1) + " kg/m³"],
+          "Density = mass ÷ volume = " + mass + " ÷ " + volume + " = " + density + " kg/m³.");
+      }
+    ],
+    "English": [
+      function () {
+        var subjects = ["The learner", "The learners", "My sister", "The players", "Each student"];
+        var singular = [true, false, true, false, true];
+        var idx = randInt(0, subjects.length - 1);
+        var correct = singular[idx] ? "is" : "are";
+        return generated("English", "Grammar in Use: Subject-Verb Agreement", subjects[idx] + " ___ ready for the activity.", correct,
+          [correct === "is" ? "are" : "is", "be", "were"],
+          "The subject "" + subjects[idx] + "" takes "" + correct + "" in this present-tense sentence.");
+      },
+      function () {
+        var nouns = [
+          ["team", "collective noun"], ["honesty", "abstract noun"], ["Nairobi", "proper noun"], ["teacher", "common noun"]
+        ];
+        var item = nouns[randInt(0, nouns.length - 1)];
+        return generated("English", "Grammar in Use: Nouns", "In the sentence "The " + item[0] + " matters", what type of noun is "" + item[0] + ""?", item[1],
+          ["proper noun", "common noun", "abstract noun", "collective noun"].filter(function (x) { return x !== item[1]; }).slice(0, 3),
+          """ + item[0] + "" is a " + item[1] + ".");
+      },
+      function () {
+        var pairs = [
+          ["She is interested ___ science.", "in", ["on", "at", "by"]],
+          ["The books are ___ the table.", "on", ["at", "into", "between"]],
+          ["We arrived ___ school early.", "at", ["in", "on", "by"]],
+          ["He has lived here ___ 2022.", "since", ["for", "during", "by"]]
+        ];
+        var p = pairs[randInt(0, pairs.length - 1)];
+        return generated("English", "Grammar in Use: Simple Prepositions", p[0], p[1], p[2],
+          "The correct preposition is "" + p[1] + "" in this context.");
+      },
+      function () {
+        var items = [
+          ["Which linking word best shows contrast?", "However", ["Furthermore", "Therefore", "For example"], ""However" introduces a contrasting idea."],
+          ["Which sentence uses the correct past tense?", "They went to the library yesterday.", ["They go to the library yesterday.", "They gone to the library yesterday.", "They going to the library yesterday."], ""Went" is the simple past tense of "go"."],
+          ["Which feature helps connect ideas across a paragraph?", "Cohesive linking words", ["Random topic changes", "Repeated unrelated details", "Missing punctuation"], "Cohesive devices make relationships between ideas clear."]
+        ];
+        var p = items[randInt(0, items.length - 1)];
+        return generated("English", "Writing: Cohesion and Grammar in Use", p[0], p[1], p[2], p[3]);
+      }
+    ]
+  };
 
   var STATIC_BANKS = {
     "Biology": [
@@ -420,31 +507,23 @@
     decks[subj] = shuffleArray(bank);
   }
 
+  var lastGeneratedSignatures = {};
   function nextQuestionForSubject(subj) {
-    if (subj === "Mathematics") {
-      var attempts = 0;
-      var candidate = null;
-      while (attempts < 8) {
-        var gen = MATH_GENERATORS[randInt(0, MATH_GENERATORS.length - 1)];
-        candidate = gen();
-        if (candidate.question !== lastMathSignature) {
-          lastMathSignature = candidate.question;
-          break;
+    var generators = subj === "Mathematics" ? MATH_GENERATORS : SUBJECT_GENERATORS[subj];
+    if (generators && generators.length) {
+      var attempts = 0, candidate = null;
+      while (attempts < 12) {
+        candidate = generators[randInt(0, generators.length - 1)]();
+        if (!lastGeneratedSignatures[subj] || candidate.question !== lastGeneratedSignatures[subj]) {
+          lastGeneratedSignatures[subj] = candidate.question;
+          return candidate;
         }
         attempts++;
       }
       return candidate;
     }
-
-    if (!decks[subj] || decks[subj].length === 0) {
-      refillDeck(subj);
-    }
-    var item = decks[subj].pop();
-    if (currentQuestion && item && item.id === currentQuestion.id && decks[subj].length > 0) {
-      decks[subj].unshift(item);
-      item = decks[subj].pop();
-    }
-    return item;
+    if (!decks[subj] || decks[subj].length === 0) refillDeck(subj);
+    return decks[subj].pop();
   }
 
   function syncSubjectUI() {
