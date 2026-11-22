@@ -17,292 +17,234 @@
   }
 
   var TOPIC_GENERATORS = {
-    linear: {
-      name: "Linear Equations",
+    realNumbers: {
+      name: "Real Numbers",
       generate: function () {
-        var a = randInt(2, 7);
-        var x = randInt(2, 12);
-        var isAdd = Math.random() < 0.5;
-        var b = randInt(2, 15);
-        var c = isAdd ? (a * x + b) : (a * x - b);
-        var mid = isAdd ? (c - b) : (c + b);
-        var opWord = isAdd ? "Subtract" : "Add";
-        var sign = isAdd ? "+" : "-";
-
+        var a = randInt(2, 9) * randInt(2, 4);
+        var b = randInt(2, 9) * randInt(2, 4);
+        function gcd(x, y) { return y ? gcd(y, x % y) : x; }
+        var answer = gcd(a, b);
         return {
-          topicKey: "linear",
-          topicName: "Linear Equations",
-          promptHeading: "Solve for x:",
-          equation: a + "x " + sign + " " + b + " = " + c,
-          context: "Undo " + (isAdd ? "addition" : "subtraction") + " first, then divide both sides by " + a + ".",
-          answerLabel: "Your answer: x =",
-          answer: x,
-          midValue: mid,
-          midHint: "Good start! " + a + "x = " + mid + " is before the final division. Now divide " + mid + " by " + a + " to get x.",
-          generalHint: opWord + " " + b + " " + (isAdd ? "from" : "to") + " both sides first so " + a + "x is alone.",
+          topicKey: "realNumbers", topicName: "Real Numbers",
+          promptHeading: "Find the highest common factor (HCF):",
+          equation: "HCF of " + a + " and " + b,
+          context: "Find the greatest whole number that divides both numbers exactly.",
+          answerLabel: "Your answer: HCF =",
+          answer: answer, midValue: null,
+          generalHint: "List the factors of both numbers and choose the greatest factor they share.",
           steps: [
-            { label: "Given:", expr: a + "x " + sign + " " + b + " = " + c, spoken: "We start with " + a + " x " + (isAdd ? "plus " : "minus ") + b + " equals " + c + "." },
-            { label: opWord + " " + b + ":", expr: a + "x = " + mid, spoken: opWord + " " + b + " on both sides to get " + a + " x equals " + mid + "." },
-            { label: "Divide by " + a + ":", expr: "x = " + x, spoken: "Divide both sides by " + a + ". " + mid + " divided by " + a + " gives x equals " + x + "." }
+            { label: "Factors of " + a + ":", expr: factors(a).join(", "), spoken: "The factors of " + a + " are " + factors(a).join(", ") + "." },
+            { label: "Factors of " + b + ":", expr: factors(b).join(", "), spoken: "The factors of " + b + " are " + factors(b).join(", ") + "." },
+            { label: "Highest common factor:", expr: "HCF = " + answer, spoken: "The greatest common factor is " + answer + "." }
           ]
         };
+        function factors(n) {
+          var out = [];
+          for (var i = 1; i <= n; i++) if (n % i === 0) out.push(i);
+          return out;
+        }
       }
     },
-
-    substitution: {
-      name: "Algebraic Substitution",
-      generate: function () {
-        var a = randInt(2, 6);
-        var x = randInt(2, 8);
-        var b = randInt(1, 12);
-        var isAdd = Math.random() < 0.5;
-        var prod = a * x;
-        var ans = isAdd ? (prod + b) : (prod - b);
-        var sign = isAdd ? "+" : "-";
-
-        return {
-          topicKey: "substitution",
-          topicName: "Algebraic Substitution",
-          promptHeading: "Evaluate the expression:",
-          equation: a + "x " + sign + " " + b + "  (when x = " + x + ")",
-          context: "Replace x with " + x + ", multiply first, then " + (isAdd ? "add " : "subtract ") + b + ".",
-          answerLabel: "Your answer: Value =",
-          answer: ans,
-          midValue: prod,
-          midHint: "You multiplied " + a + " * " + x + " = " + prod + " correctly! Next " + (isAdd ? "add " : "subtract ") + b + ".",
-          generalHint: "Substitute x = " + x + " into " + a + "(" + x + ") " + sign + " " + b + " and multiply first.",
-          steps: [
-            { label: "Substitute x = " + x + ":", expr: a + "(" + x + ") " + sign + " " + b, spoken: "Substitute x equals " + x + " into the expression." },
-            { label: "Multiply:", expr: prod + " " + sign + " " + b, spoken: a + " times " + x + " equals " + prod + "." },
-            { label: "Simplify:", expr: "= " + ans, spoken: prod + " " + (isAdd ? "plus " : "minus ") + b + " equals " + ans + "." }
-          ]
-        };
-      }
-    },
-
     indices: {
-      name: "Indices & Powers",
+      name: "Indices and Logarithms",
       generate: function () {
-        var isDiv = Math.random() < 0.45;
-        var base = randInt(2, 5);
-
-        if (!isDiv) {
-          var m = randInt(2, 4);
-          var n = randInt(1, 3);
-          var totalPow = m + n;
-          var ans = Math.pow(base, totalPow);
-
+        var base = [2, 3, 5][randInt(0, 2)];
+        var exponent = randInt(2, 4);
+        var value = Math.pow(base, exponent);
+        if (Math.random() < 0.5) {
           return {
-            topicKey: "indices",
-            topicName: "Indices & Powers",
+            topicKey: "indices", topicName: "Indices and Logarithms",
             promptHeading: "Simplify and evaluate:",
-            equation: base + "^" + m + " * " + base + "^" + n,
-            context: "Same base (" + base + "): add the powers (" + m + " + " + n + "), then evaluate.",
+            equation: base + "^2 × " + base + "^" + exponent,
+            context: "The bases are the same. Add the indices, then evaluate the power.",
             answerLabel: "Your answer: Value =",
-            answer: ans,
-            midValue: totalPow,
-            midHint: "You found the combined power " + totalPow + "! Now evaluate " + base + "^" + totalPow + ".",
-            generalHint: "Add indices " + m + " + " + n + " = " + totalPow + ", then find " + base + " to the power " + totalPow + ".",
+            answer: Math.pow(base, exponent + 2), midValue: exponent + 2,
+            midHint: "You combined the indices correctly. Now evaluate " + base + "^" + (exponent + 2) + ".",
+            generalHint: "For the same base, add the indices when multiplying: 2 + " + exponent + ".",
             steps: [
-              { label: "Given:", expr: base + "^" + m + " * " + base + "^" + n, spoken: base + " to the power " + m + " times " + base + " to the power " + n + "." },
-              { label: "Add indices:", expr: base + "^(" + m + "+" + n + ") = " + base + "^" + totalPow, spoken: "Add " + m + " and " + n + " to get " + base + " to the power " + totalPow + "." },
-              { label: "Evaluate:", expr: "= " + ans, spoken: base + " to the power " + totalPow + " equals " + ans + "." }
+              { label: "Given:", expr: base + "^2 × " + base + "^" + exponent, spoken: "We have powers with the same base." },
+              { label: "Add indices:", expr: base + "^(2 + " + exponent + ") = " + base + "^" + (exponent + 2), spoken: "Add the indices to get " + (exponent + 2) + "." },
+              { label: "Evaluate:", expr: "= " + Math.pow(base, exponent + 2), spoken: "The answer is " + Math.pow(base, exponent + 2) + "." }
             ]
           };
         }
-
-        var nDiv = randInt(2, 3);
-        var mDiv = nDiv + randInt(1, 2);
-        var diffPow = mDiv - nDiv;
-        var ansDiv = Math.pow(base, diffPow);
-
         return {
-          topicKey: "indices",
-          topicName: "Indices & Powers",
-          promptHeading: "Simplify and evaluate:",
-          equation: base + "^" + mDiv + " / " + base + "^" + nDiv,
-          context: "Same base (" + base + "): subtract the powers (" + mDiv + " - " + nDiv + "), then evaluate.",
-          answerLabel: "Your answer: Value =",
-          answer: ansDiv,
-          midValue: diffPow,
-          midHint: "You found the power " + diffPow + "! Now calculate " + base + "^" + diffPow + ".",
-          generalHint: "Subtract indices: " + mDiv + " - " + nDiv + " = " + diffPow + ", then evaluate " + base + "^" + diffPow + ".",
+          topicKey: "indices", topicName: "Indices and Logarithms",
+          promptHeading: "Evaluate the logarithm:",
+          equation: "log base " + base + " of " + value,
+          context: "Ask: what power must the base " + base + " be raised to in order to get " + value + "?",
+          answerLabel: "Your answer: exponent =",
+          answer: exponent, midValue: null,
+          generalHint: "Rewrite the logarithm as a power: " + base + "^? = " + value + ".",
           steps: [
-            { label: "Given:", expr: base + "^" + mDiv + " / " + base + "^" + nDiv, spoken: base + " to the power " + mDiv + " divided by " + base + " to the power " + nDiv + "." },
-            { label: "Subtract indices:", expr: base + "^(" + mDiv + "-" + nDiv + ") = " + base + "^" + diffPow, spoken: "Subtract " + nDiv + " from " + mDiv + " to get " + base + " to the power " + diffPow + "." },
-            { label: "Evaluate:", expr: "= " + ansDiv, spoken: base + " to the power " + diffPow + " equals " + ansDiv + "." }
+            { label: "Write as a power:", expr: base + "^? = " + value, spoken: "A logarithm asks which exponent gives the value." },
+            { label: "Recall the power:", expr: base + "^" + exponent + " = " + value, spoken: base + " to the power " + exponent + " equals " + value + "." },
+            { label: "Therefore:", expr: "log base " + base + " of " + value + " = " + exponent, spoken: "The logarithm equals " + exponent + "." }
           ]
         };
       }
     },
-
     quadratics: {
-      name: "Quadratic Expressions I",
+      name: "Quadratic Expressions and Equations",
       generate: function () {
-        var r1 = randInt(1, 4);
-        var r2 = randInt(1, 4);
-        var x = randInt(2, 6);
-        var b = r1 + r2;
-        var c = r1 * r2;
-        var ans = (x + r1) * (x + r2);
-        var xSq = x * x;
-
+        var b = randInt(2, 8);
+        var c = randInt(1, 8);
+        var x = randInt(1, 5);
+        var x2 = x * x;
+        var bx = b * x;
+        var answer = x2 + bx + c;
         return {
-          topicKey: "quadratics",
-          topicName: "Quadratic Expressions I",
+          topicKey: "quadratics", topicName: "Quadratic Expressions and Equations",
           promptHeading: "Evaluate the quadratic expression:",
-          equation: "x^2 + " + b + "x + " + c + "  (when x = " + x + ")",
-          context: "Substitute x = " + x + ": compute x^2, then " + b + "x, then add " + c + ".",
+          equation: "x² + " + b + "x + " + c + " when x = " + x,
+          context: "Substitute the given value of x, then evaluate each term using the order of operations.",
           answerLabel: "Your answer: Value =",
-          answer: ans,
-          midValue: xSq,
-          midHint: "x^2 = " + xSq + " is right! Next add " + b + " * " + x + " (" + (b * x) + ") and " + c + ".",
-          generalHint: "Substitute x = " + x + ": (" + x + ")^2 + " + b + "(" + x + ") + " + c + ".",
+          answer: answer, midValue: x2,
+          midHint: "You calculated x². Now add " + bx + " and " + c + " to complete the expression.",
+          generalHint: "Substitute " + x + " for x: (" + x + ")² + " + b + "(" + x + ") + " + c + ".",
           steps: [
-            { label: "Substitute x = " + x + ":", expr: "(" + x + ")^2 + " + b + "(" + x + ") + " + c, spoken: "Substitute x equals " + x + " into the quadratic expression." },
-            { label: "Compute terms:", expr: xSq + " + " + (b * x) + " + " + c, spoken: "x squared is " + xSq + ", " + b + " times " + x + " is " + (b * x) + ", plus " + c + "." },
-            { label: "Total:", expr: "= " + ans, spoken: "Adding all terms gives " + ans + "." }
+            { label: "Substitute:", expr: "(" + x + ")² + " + b + "(" + x + ") + " + c, spoken: "Substitute " + x + " for x." },
+            { label: "Evaluate powers and products:", expr: x2 + " + " + bx + " + " + c, spoken: "x squared is " + x2 + " and " + b + " times " + x + " is " + bx + "." },
+            { label: "Add:", expr: "= " + answer, spoken: "The final value is " + answer + "." }
           ]
         };
       }
     },
-
     enlargement: {
-      name: "Similarity & Enlargement",
+      name: "Similarity and Enlargement",
       generate: function () {
-        var lsf = randInt(2, 4);
-        var useVolume = Math.random() < 0.45;
-        var origVal = useVolume ? randInt(4, 12) : randInt(5, 18);
-        var factor = useVolume ? Math.pow(lsf, 3) : Math.pow(lsf, 2);
-        var ans = origVal * factor;
-
+        var scale = randInt(2, 4);
+        var isArea = Math.random() < 0.5;
+        var original = randInt(3, 12);
+        var factor = isArea ? scale * scale : scale * scale * scale;
+        var answer = original * factor;
         return {
-          topicKey: "enlargement",
-          topicName: "Similarity & Enlargement",
-          promptHeading: useVolume ? "Find the enlarged Volume:" : "Find the enlarged Area:",
-          equation: (useVolume ? "Original Volume = " + origVal + " cm^3" : "Original Area = " + origVal + " cm^2") + ", L.S.F = " + lsf,
-          context: useVolume
-            ? "Volume Scale Factor (V.S.F) = (L.S.F)^3 = " + lsf + "^3 = " + factor + "."
-            : "Area Scale Factor (A.S.F) = (L.S.F)^2 = " + lsf + "^2 = " + factor + ".",
-          answerLabel: useVolume ? "New Volume (cm^3) =" : "New Area (cm^2) =",
-          answer: ans,
-          midValue: origVal * lsf,
-          midHint: "Multiplying by " + lsf + " only scales one dimension. Use " + (useVolume ? "V.S.F = " + lsf + "^3 = " + factor : "A.S.F = " + lsf + "^2 = " + factor) + ".",
-          generalHint: "First find " + (useVolume ? "V.S.F = " + lsf + "^3 = " + factor : "A.S.F = " + lsf + "^2 = " + factor) + ", then multiply by " + origVal + ".",
+          topicKey: "enlargement", topicName: "Similarity and Enlargement",
+          promptHeading: isArea ? "Find the enlarged area:" : "Find the enlarged volume:",
+          equation: (isArea ? "Original area = " : "Original volume = ") + original + (isArea ? " cm²" : " cm³") + "; linear scale factor = " + scale,
+          context: isArea ? "Area scale factor is the square of the linear scale factor." : "Volume scale factor is the cube of the linear scale factor.",
+          answerLabel: isArea ? "Your answer: area (cm²) =" : "Your answer: volume (cm³) =",
+          answer: answer, midValue: original * scale,
+          midHint: "Remember to square the linear scale factor for area or cube it for volume.",
+          generalHint: (isArea ? "Use " + scale + "² = " + factor : "Use " + scale + "³ = " + factor) + ", then multiply by " + original + ".",
           steps: [
-            { label: "Linear Scale Factor:", expr: "L.S.F = " + lsf, spoken: "The linear scale factor is " + lsf + "." },
-            { label: useVolume ? "V.S.F = (L.S.F)^3:" : "A.S.F = (L.S.F)^2:", expr: lsf + (useVolume ? "^3 = " : "^2 = ") + factor, spoken: (useVolume ? "Cube " : "Square ") + lsf + " to get " + factor + "." },
-            { label: "Enlarged value:", expr: origVal + " * " + factor + " = " + ans, spoken: "Multiply " + origVal + " by " + factor + " to get " + ans + "." }
+            { label: "Linear scale factor:", expr: scale, spoken: "The linear scale factor is " + scale + "." },
+            { label: isArea ? "Area scale factor:" : "Volume scale factor:", expr: scale + (isArea ? "² = " : "³ = ") + factor, spoken: "The scale factor becomes " + factor + "." },
+            { label: "New measurement:", expr: original + " × " + factor + " = " + answer, spoken: "Multiply " + original + " by " + factor + " to get " + answer + "." }
           ]
         };
       }
     },
-
-    ratios: {
-      name: "Ratios & Proportions",
+    reflection: {
+      name: "Reflection and Congruence",
       generate: function () {
-        var r1 = randInt(2, 5);
-        var r2 = randInt(3, 7);
-        var multiplier = randInt(4, 12);
-        var total = (r1 + r2) * multiplier;
-        var sumParts = r1 + r2;
-        var share1 = r1 * multiplier;
-        var share2 = r2 * multiplier;
-
+        var x = randInt(1, 8) * (Math.random() < 0.5 ? -1 : 1);
+        var y = randInt(1, 8) * (Math.random() < 0.5 ? -1 : 1);
         return {
-          topicKey: "ratios",
-          topicName: "Ratios & Proportions",
-          promptHeading: "Share in a given ratio:",
-          equation: "Share " + total + " in ratio " + r1 + " : " + r2 + " (first share)",
-          context: "Add the parts (" + r1 + " + " + r2 + "), divide " + total + " by the total parts, then multiply by " + r1 + ".",
-          answerLabel: "Your answer: First share =",
-          answer: share1,
-          midValue: multiplier,
-          midHint: "You found 1 part = " + multiplier + "! Now multiply " + multiplier + " by " + r1 + " for the first share.",
-          generalHint: "Total parts = " + sumParts + ". Divide " + total + " / " + sumParts + " = " + multiplier + ", then multiply by " + r1 + ".",
+          topicKey: "reflection", topicName: "Reflection and Congruence",
+          promptHeading: "Reflect the point in the x-axis:",
+          equation: "Point P(" + x + ", " + y + ") → find the y-coordinate of P′",
+          context: "A reflection in the x-axis keeps the x-coordinate and changes the sign of the y-coordinate.",
+          answerLabel: "Your answer: new y-coordinate =",
+          answer: -y, midValue: null,
+          generalHint: "For reflection in the x-axis, change y to its opposite: " + y + " becomes " + (-y) + ".",
           steps: [
-            { label: "Total parts:", expr: r1 + " + " + r2 + " = " + sumParts + " parts", spoken: "Add " + r1 + " and " + r2 + " to get " + sumParts + " parts." },
-            { label: "One part:", expr: total + " / " + sumParts + " = " + multiplier, spoken: "Divide " + total + " by " + sumParts + " to get " + multiplier + "." },
-            { label: "First share:", expr: r1 + " * " + multiplier + " = " + share1 + "  (second: " + share2 + ")", spoken: "Multiply " + r1 + " by " + multiplier + " to get " + share1 + "." }
+            { label: "Original point:", expr: "(" + x + ", " + y + ")", spoken: "The original point has coordinates " + x + " and " + y + "." },
+            { label: "Reflection rule:", expr: "(x, y) → (x, −y)", spoken: "Reflection in the x-axis changes the sign of the y-coordinate." },
+            { label: "Image point:", expr: "(" + x + ", " + (-y) + ")", spoken: "The reflected point is " + x + " comma " + (-y) + "." }
           ]
         };
       }
     },
-
-    geometry: {
-      name: "Area & Perimeter",
+    rotation: {
+      name: "Rotation",
       generate: function () {
-        var isArea = Math.random() < 0.6;
-        var length = randInt(6, 16);
-        var width = randInt(3, length - 1);
-
-        if (isArea) {
-          var area = length * width;
-          var perim = 2 * (length + width);
-          return {
-            topicKey: "geometry",
-            topicName: "Area & Perimeter",
-            promptHeading: "Calculate the Area (cm^2):",
-            equation: "Rectangle: length = " + length + " cm, width = " + width + " cm",
-            context: "Area = length * width.",
-            answerLabel: "Your answer: Area (cm^2) =",
-            answer: area,
-            midValue: perim,
-            midHint: perim + " cm is the perimeter. For Area, multiply " + length + " * " + width + ".",
-            generalHint: "Multiply length * width = " + length + " * " + width + ".",
-            steps: [
-              { label: "Formula:", expr: "Area = length * width", spoken: "Area of a rectangle is length times width." },
-              { label: "Substitute:", expr: "Area = " + length + " * " + width, spoken: length + " times " + width + "." },
-              { label: "Result:", expr: "Area = " + area + " cm^2", spoken: "Equals " + area + " square centimetres." }
-            ]
-          };
-        }
-
-        var perim2 = 2 * (length + width);
-        var halfPerim = length + width;
+        var x = randInt(1, 7);
+        var y = randInt(1, 7);
         return {
-          topicKey: "geometry",
-          topicName: "Area & Perimeter",
-          promptHeading: "Calculate the Perimeter (cm):",
-          equation: "Rectangle: length = " + length + " cm, width = " + width + " cm",
-          context: "Perimeter = 2(length + width).",
-          answerLabel: "Your answer: Perimeter (cm) =",
-          answer: perim2,
-          midValue: halfPerim,
-          midHint: halfPerim + " cm is one length plus one width—multiply by 2 for all four sides.",
-          generalHint: "Add " + length + " + " + width + " = " + halfPerim + ", then multiply by 2.",
+          topicKey: "rotation", topicName: "Rotation",
+          promptHeading: "Rotate the point 90° anticlockwise about the origin:",
+          equation: "Point P(" + x + ", " + y + "); find the new x-coordinate",
+          context: "A 90° anticlockwise rotation about the origin maps (x, y) to (−y, x).",
+          answerLabel: "Your answer: new x-coordinate =",
+          answer: -y, midValue: null,
+          generalHint: "Use the rule (x, y) → (−y, x). The new x-coordinate is the opposite of the original y-coordinate.",
           steps: [
-            { label: "Formula:", expr: "P = 2(length + width)", spoken: "Perimeter is 2 times length plus width." },
-            { label: "Add sides:", expr: "P = 2(" + length + " + " + width + ") = 2(" + halfPerim + ")", spoken: length + " plus " + width + " is " + halfPerim + "." },
-            { label: "Result:", expr: "P = " + perim2 + " cm", spoken: "2 times " + halfPerim + " equals " + perim2 + " centimetres." }
+            { label: "Original point:", expr: "(" + x + ", " + y + ")", spoken: "The original point is " + x + " comma " + y + "." },
+            { label: "Rotation rule:", expr: "(x, y) → (−y, x)", spoken: "For 90 degrees anticlockwise, the coordinates become negative y comma x." },
+            { label: "Image point:", expr: "(" + (-y) + ", " + x + ")", spoken: "The image point is " + (-y) + " comma " + x + "." }
           ]
         };
       }
     },
-
+    trigonometry: {
+      name: "Trigonometry",
+      generate: function () {
+        var items = [
+          { q: "sin 30°", value: 0.5, fraction: "1/2" },
+          { q: "cos 60°", value: 0.5, fraction: "1/2" },
+          { q: "tan 45°", value: 1, fraction: "1" }
+        ];
+        var item = items[randInt(0, items.length - 1)];
+        return {
+          topicKey: "trigonometry", topicName: "Trigonometry",
+          promptHeading: "Find the exact trigonometric value:",
+          equation: item.q,
+          context: "Recall the standard trigonometric ratios for special angles.",
+          answerLabel: "Your answer (decimal) =",
+          answer: item.value, midValue: null,
+          generalHint: item.q + " = " + item.fraction + " = " + item.value + ".",
+          steps: [
+            { label: "Identify the ratio:", expr: item.q, spoken: "We need the value of " + item.q + "." },
+            { label: "Use the standard value:", expr: item.fraction, spoken: "The standard exact value is " + item.fraction + "." },
+            { label: "Decimal form:", expr: "= " + item.value, spoken: "In decimal form, this is " + item.value + "." }
+          ]
+        };
+      }
+    },
+    statistics: {
+      name: "Statistics",
+      generate: function () {
+        var values = [randInt(2, 12), randInt(2, 12), randInt(2, 12), randInt(2, 12)];
+        var sum = values.reduce(function (a, b) { return a + b; }, 0);
+        var mean = sum / values.length;
+        return {
+          topicKey: "statistics", topicName: "Statistics",
+          promptHeading: "Find the mean of the data:",
+          equation: values.join(", "),
+          context: "Add all the values and divide by the number of values.",
+          answerLabel: "Your answer: mean =",
+          answer: mean, midValue: sum,
+          midHint: "You found the total. Divide " + sum + " by 4 because there are four values.",
+          generalHint: "Mean = (" + values.join(" + ") + ") ÷ 4 = " + mean + ".",
+          steps: [
+            { label: "Add the values:", expr: values.join(" + ") + " = " + sum, spoken: "The sum of the values is " + sum + "." },
+            { label: "Count the values:", expr: "4 values", spoken: "There are four values." },
+            { label: "Calculate the mean:", expr: sum + " ÷ 4 = " + mean, spoken: "Divide " + sum + " by 4 to get " + mean + "." }
+          ]
+        };
+      }
+    },
     probability: {
-      name: "Probability I",
+      name: "Probability",
       generate: function () {
-        var fav = randInt(2, 5);
-        var other = randInt(3, 5);
-        var total = fav + other;
-        var dec = Math.round((fav / total) * 10) / 10;
-
+        var favourable = randInt(1, 5);
+        var other = randInt(1, 5);
+        var total = favourable + other;
+        var answer = Math.round((favourable / total) * 100) / 100;
         return {
-          topicKey: "probability",
-          topicName: "Probability I",
-          promptHeading: "Probability as a decimal (1 d.p.):",
-          equation: "Bag has " + fav + " blue balls and " + other + " red balls. P(blue) = ?",
-          context: "P(blue) = favourable outcomes / total outcomes (" + fav + " / " + total + ").",
-          answerLabel: "Your answer (1 d.p.) =",
-          answer: dec,
-          midValue: fav,
-          midHint: fav + " is the number of blue balls. Divide " + fav + " by total balls (" + total + ").",
-          generalHint: "Total balls = " + fav + " + " + other + " = " + total + ". Divide " + fav + " / " + total + " to 1 decimal place.",
+          topicKey: "probability", topicName: "Probability",
+          promptHeading: "Find the probability as a decimal:",
+          equation: "A bag has " + favourable + " blue counters and " + other + " red counters. Find P(blue).",
+          context: "Probability = number of favourable outcomes ÷ total number of equally likely outcomes.",
+          answerLabel: "Your answer (2 d.p.) =",
+          answer: answer, midValue: favourable,
+          midHint: "You identified the favourable outcomes. Divide " + favourable + " by " + total + " and round to 2 decimal places.",
+          generalHint: "P(blue) = " + favourable + " ÷ " + total + " = " + answer + ".",
           steps: [
-            { label: "Total outcomes:", expr: fav + " + " + other + " = " + total + " balls", spoken: "There are " + total + " balls in total." },
-            { label: "Probability:", expr: "P(blue) = " + fav + " / " + total, spoken: fav + " blue balls out of " + total + " total balls." },
-            { label: "Decimal (1 d.p.):", expr: "= " + dec, spoken: fav + " divided by " + total + " is about " + dec + "." }
+            { label: "Total counters:", expr: favourable + " + " + other + " = " + total, spoken: "There are " + total + " counters altogether." },
+            { label: "Set up probability:", expr: favourable + " / " + total, spoken: "There are " + favourable + " favourable outcomes out of " + total + "." },
+            { label: "Decimal:", expr: "= " + answer, spoken: "The probability as a decimal is " + answer + "." }
           ]
         };
       }
@@ -337,7 +279,7 @@
 
       if (!form || !answerInput || !equationEl || !feedbackEl || !stepsListEl) return;
 
-      var activeTopicKey = "linear";
+      var activeTopicKey = "realNumbers";
       var currentProblem = null;
       var visibleStepCount = 0;
       var completedLinesOnCanvas = 0;
@@ -511,7 +453,7 @@
           animFrameId = null;
         }
 
-        activeTopicKey = TOPIC_GENERATORS[topicKey] ? topicKey : "linear";
+        activeTopicKey = TOPIC_GENERATORS[topicKey] ? topicKey : "realNumbers";
         currentProblem = TOPIC_GENERATORS[activeTopicKey].generate();
         visibleStepCount = 0;
         completedLinesOnCanvas = 0;
@@ -543,7 +485,7 @@
         recordSafe({
           id: "math-gen-" + activeTopicKey + "-" + Date.now(),
           title: "Practised " + currentProblem.topicName + ": " + currentProblem.equation,
-          subject: "Mathematics",
+          subject: "Core Mathematics",
           topic: currentProblem.topicName,
           type: "math",
           url: "mathematics.html"
@@ -683,7 +625,7 @@
         });
       }
 
-      generateForTopic("linear");
+      generateForTopic("realNumbers");
     } catch (fatalErr) {
       var eq = document.getElementById("math-equation");
       var fb = document.getElementById("math-feedback");
