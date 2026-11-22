@@ -5,7 +5,7 @@
   const D = window.ENGLISH;
   const grid = document.getElementById("english-course-map");
   const sourceLink = document.getElementById("english-source-link");
-  if (sourceLink && D.source) { sourceLink.href = D.source.url; sourceLink.textContent = "Read " + D.source.title; }
+  if (sourceLink && D && D.source) { sourceLink.href = D.source.url; sourceLink.textContent = "Read " + D.source.title; }
   if (!D || !grid) return;
 
   const search = document.getElementById("english-search");
