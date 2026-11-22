@@ -64,6 +64,7 @@
       "Electrostatics":"physics-waves-electricity",
       "Current Electricity":"physics-waves-electricity",
       "Introduction to electronics":"physics-waves-electricity",
+      "Introduction to Electronics":"physics-waves-electricity",
       "Temperature and Thermal Expansion":"physics-thermal-environment-space",
       "Mechanical Properties of Materials":"physics-thermal-environment-space",
       "Greenhouse Effect and Climate Change":"physics-thermal-environment-space",
