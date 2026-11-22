@@ -13,7 +13,7 @@ const CORE_FILES = [
   "./physics.html",
   "./curriculum.html",
   "./mathematics.html",
-  "./mathematics-learning.html",
+  "./mathematics-practice.html",
   "./lesson.html",
   "./practice.html",
   "./onboarding.html",
