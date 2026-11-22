@@ -33,11 +33,11 @@ window.ENGLISH = {
       { strand: "Writing", name: "Sentence fluency", lessons: 4, focus: "Comma splices, run-on sentences and run-on lines.", lesson: "sentence-fluency" }
     ]},
     { no: 2, title: "Environment", topic: "Climate change", items: [
-      { strand: "Listening and Speaking", name: "Critical listening", lessons: 3, focus: "Working out the speaker, context and intention; choosing key points; avoiding distractions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Discourse markers; the sounds /ə/, /ɑ:/ and /ɜ:/; onomatopoeia and idiophones.", lesson: null },
-      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Choosing and previewing non-literary texts to read for general understanding.", lesson: null },
+      { strand: "Listening and Speaking", name: "Critical listening", lessons: 3, focus: "Working out the speaker, context and intention; choosing key points; avoiding distractions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Discourse markers, idea connectors and clear conversational turn-taking.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Choosing and previewing non-literary texts to read for general understanding.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: null },
-      { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: null }
+      { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: "spelling-and-punctuation" }
     ]},
     { no: 3, title: "Artificial Intelligence and Society", topic: "Healthcare", items: [
       { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details such as keywords, facts, fixed phrases and figurative language.", lesson: null },
@@ -50,8 +50,8 @@ window.ENGLISH = {
       { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Picking out instructions and directions.", lesson: null },
       { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Changing the topic, giving and receiving feedback, formal and informal register; the letter 's' and its sounds.", lesson: null },
       { strand: "Reading", name: "Study skills", lessons: 4, focus: "The SQ4R method, note making, summaries and reading visuals.", lesson: "sq4r" },
-      { strand: "Grammar in Use", name: "Phrases", lessons: 4, focus: "Noun phrases and verb phrases.", lesson: null },
-      { strand: "Writing", name: "Mechanics of writing: punctuation", lessons: 5, focus: "Quotation marks, dashes, hyphens, slashes and capital letters.", lesson: null }
+      { strand: "Grammar in Use", name: "Phrases", lessons: 4, focus: "Noun phrases and verb phrases.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Mechanics of writing: punctuation", lessons: 5, focus: "Quotation marks, dashes, hyphens, slashes and capital letters.", lesson: "spelling-and-punctuation" }
     ]},
     { no: 5, title: "Careers", topic: "Public sector", items: [
       { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: null },
@@ -63,28 +63,28 @@ window.ENGLISH = {
     { no: 6, title: "Culture", topic: "Values and beliefs", items: [
       { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: null },
       { strand: "Listening and Speaking", name: "Pronunciation and syllabic stress", lessons: 4, focus: "Stress in words; the sounds /ʊ/ and /u:/.", lesson: null },
-      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Expressive reading: expression, speed, accuracy, pace, volume and intonation.", lesson: null },
-      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Relative clauses and adverbial clauses.", lesson: null },
-      { strand: "Writing", name: "Creative writing", lessons: 5, focus: "Descriptive and narrative essays; verbs made from other word classes.", lesson: null }
+      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Expressive reading: expression, speed, accuracy, pace, volume and intonation.", lesson: "reading-fluency" },
+      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Relative clauses and adverbial clauses.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Creative writing", lessons: 5, focus: "Descriptive and narrative essays; verbs made from other word classes.", lesson: "creative-writing" }
     ]},
     { no: 7, title: "Sports and Games", topic: "Popular sports", items: [
       { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: null },
       { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: null },
       { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: null },
       { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: null },
-      { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: null }
+      { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: "functional-writing" }
     ]},
     { no: 8, title: "Health and Safety", topic: "Personal", items: [
       { strand: "Listening and Speaking", name: "Intensive listening and viewing", lessons: 4, focus: "Listening for understanding; using visuals and non-verbal cues.", lesson: null },
       { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: null },
       { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: null },
-      { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: null },
+      { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: "phrases-clauses-sentences" },
       { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: "functional-writing" }
     ]},
     { no: 9, title: "Income", topic: "Types and sources", items: [
       { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: null },
       { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 4, focus: "Oral presentations and intonation; the sounds /ð/ and /θ/.", lesson: null },
-      { strand: "Reading", name: "Critical and close reading", lessons: 4, focus: "Purpose, audience and attitude; phrasal verbs and binomial expressions.", lesson: null },
+      { strand: "Reading", name: "Critical and close reading", lessons: 4, focus: "Purpose, audience and attitude; phrasal verbs and binomial expressions.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Sentences", lessons: 4, focus: "Active and passive sentences; subject-verb agreement.", lesson: "sv-agreement" },
       { strand: "Writing", name: "Functional writing", lessons: 5, focus: "A notice of a meeting, an agenda and minutes.", lesson: null }
     ]}
@@ -506,6 +506,55 @@ window.ENGLISH = {
       questions:[
         {q:"Which items belong in a memo heading?",options:["To, From, Date and Subject","A list of characters","A bibliography only","A poem title"],answer:0,why:"A memo heading identifies the recipient, sender, date and subject."},
         {q:"What should you check before sending an email with an attachment?",options:["That the correct file is attached","That the subject line is empty","That the message has no greeting","That the recipient is unknown"],answer:0,why:"Always confirm the correct file is attached before sending."}
+      ]
+    }
+,
+    {
+      id:"phrases-clauses-sentences",title:"Phrases, Clauses and Sentence Patterns",
+      where:"Themes 4–8. Grammar in Use, Phrases, Clauses and Sentence Structure",
+      outcomes:["Distinguish a phrase from a clause.","Identify noun, verb, adjective, adverb and prepositional phrases.","Recognise common sentence patterns and simple and compound sentences."],
+      blocks:[
+        {title:"Phrases and clauses",text:"A phrase is a group of related words that works as a unit but does not contain a complete subject–verb combination. A clause contains a subject and a verb. An independent clause can stand alone; a dependent clause needs another clause to complete its meaning.",list:["Noun phrase: the very tall tree.","Verb phrase: has been studying.","Adverb phrase: quite carefully.","Clause: because the rain stopped."]},
+        {title:"Types of phrases",text:"A noun phrase functions like a noun; a verb phrase contains the main verb and its auxiliaries; an adjective phrase describes a noun; an adverb phrase modifies a verb, adjective or adverb; a prepositional phrase begins with a preposition and has an object.",list:[]},
+        {title:"Sentence patterns",text:"A simple sentence has one independent clause. A compound sentence joins two independent clauses, often with a coordinating conjunction such as and, but or so. Common patterns include subject–verb (SV), subject–verb–object (SVO) and subject–verb–complement (SVC).",list:[]}
+      ],
+      example:{title:"Analyse: 'The learners have been reading quietly in the library.'",steps:["Subject: 'The learners'.","Verb phrase: 'have been reading'.","Adverb: 'quietly' tells how they are reading.","Prepositional phrase: 'in the library' tells where the reading happens.","The sentence contains one independent clause, so it is a simple sentence."],pitfall:"A long sentence is not automatically a compound sentence. Count the independent clauses, not the number of words."},
+      alt:["A phrase is a building block; a clause is a group with a subject and verb; a sentence expresses a complete thought.","Underline the subject once and the verb twice. This can help you identify clauses before naming the sentence pattern."],
+      questions:[
+        {q:"Which group of words is a clause?",options:["under the old bridge","because the bus arrived","very quickly","the tall green tree"],answer:1,why:"'The bus arrived' contains a subject and a verb, even though the word 'because' makes it dependent."},
+        {q:"Which pattern is used in 'Achieng opened the window'?",options:["SVO","SV","SVC","SVOO"],answer:0,why:"Achieng is the subject, opened is the verb and the window is the object."}
+      ]
+    },
+    {
+      id:"spelling-and-punctuation",title:"Spelling, Abbreviations and Punctuation",
+      where:"Themes 2 and 4. Writing, Mechanics of Writing",
+      outcomes:["Apply common spelling patterns and distinguish commonly confused words.","Use abbreviations and acronyms appropriately.","Choose punctuation that makes meaning clear."],
+      blocks:[
+        {title:"Spelling with attention",text:"English spelling reflects patterns but also contains exceptions. Check word families, prefixes and suffixes, and the position of letters when spelling unfamiliar words. Keep a personal list of words you often confuse.",list:["their / there / they're have different meanings.","principal refers to a school leader or main item; principle means a rule or belief.","Acronyms are formed from initial letters and may be pronounced as words; abbreviations shorten words or phrases."]},
+        {title:"Punctuation guides the reader",text:"A full stop ends a statement; a question mark ends a direct question; an exclamation mark signals strong feeling or emphasis. Commas separate items and help organise sentence structure. Quotation marks show direct speech or quoted words.",list:[]},
+        {title:"Dashes, hyphens and capital letters",text:"A hyphen joins parts of some compound words; a dash can mark a break or additional comment. Capital letters begin sentences and proper nouns. Follow the style required by the task and be consistent.",list:[]}
+      ],
+      example:{title:"Edit the sentence",steps:["Original: 'their going to visit the principle tomorrow'.","Use 'they're' because it means 'they are'.","Use 'principal' if the sentence refers to a school leader.","Corrected: 'They're going to visit the principal tomorrow.'"],pitfall:"Do not rely on sound alone: many confusing English words are pronounced alike but have different spellings and meanings."},
+      alt:["Read the sentence and ask what each word means. Then choose the spelling that matches the meaning, not just the sound.","Punctuation is a set of road signs: it shows where ideas stop, pause, connect or need emphasis."],
+      questions:[
+        {q:"Which word completes the sentence: 'The school ___ addressed the learners'?",options:["principal","principle","principel","principall"],answer:0,why:"Principal refers to the head of a school; principle means a rule or belief."},
+        {q:"Which punctuation mark normally ends a direct question?",options:["Question mark","Comma","Hyphen","Apostrophe"],answer:0,why:"A direct question ends with a question mark."}
+      ]
+    },
+    {
+      id:"creative-writing",title:"Narrative, Descriptive and Argumentative Writing",
+      where:"Themes 6 and 8. Writing, Creative Writing",
+      outcomes:["Plan a narrative or descriptive essay with a clear structure.","Use sensory detail and precise vocabulary.","Build an argument using reasons and relevant evidence."],
+      blocks:[
+        {title:"Narrative writing",text:"A narrative tells a sequence of events. It usually establishes a setting and characters, introduces a problem or change, develops events and reaches a resolution. Use time connectives and dialogue where they help the reader follow the story.",list:[]},
+        {title:"Descriptive writing",text:"A descriptive essay creates a clear impression of a person, place, object or experience. Use precise nouns, vivid but controlled adjectives, sensory details and an organised viewpoint. Avoid listing adjectives without developing an image.",list:[]},
+        {title:"Argumentative and expository writing",text:"An argumentative essay presents a position and supports it with reasons and evidence while considering other views. An expository essay explains a topic clearly. Both need a focused introduction, organised paragraphs and a conclusion that follows from the discussion.",list:[]}
+      ],
+      example:{title:"Plan an argument: 'Schools should create more reading time.'",steps:["Position: schools should protect regular reading time.","Reason 1: reading develops vocabulary and comprehension.","Reason 2: quiet reading builds concentration and independent learning.","Consider another view: lessons are already busy; respond by proposing a short, scheduled reading period.","Conclude by restating the position and the main benefits."],pitfall:"An argument is not stronger because it is louder. Support claims with relevant reasons, examples or evidence."},
+      alt:["A narrative takes the reader through events; a descriptive text helps the reader imagine; an argument tries to persuade through reasons.","Before drafting, write your main point in one sentence. Every paragraph should help develop that point."],
+      questions:[
+        {q:"Which feature is most important in an argumentative essay?",options:["A clear position supported by reasons and evidence","A list of unrelated events","Only descriptive adjectives","A conclusion with no connection to the topic"],answer:0,why:"An argument needs a clear claim and relevant support."},
+        {q:"Which technique is especially useful in descriptive writing?",options:["Sensory details","Unexplained abbreviations","Random facts","Repeated conclusions"],answer:0,why:"Sensory details help readers imagine what is being described."}
       ]
     }
   ]
