@@ -64,40 +64,40 @@
     function () {
       var base = randInt(2, 9), m = randInt(1, 4), n = randInt(1, 3);
       var answer = Math.pow(base, m + n);
-      return generated("Mathematics", "Indices and Logarithms", "Simplify " + base + "^" + m + " × " + base + "^" + n + ".", answer,
+      return generated("Core Mathematics", "Indices and Logarithms", "Simplify " + base + "^" + m + " × " + base + "^" + n + ".", answer,
         [Math.pow(base, m * n), Math.pow(base, m + n + 1), base * (m + n)],
         "When multiplying powers with the same base, add the indices: " + base + "^(" + m + " + " + n + ") = " + answer + ".");
     },
     function () {
       var a = randInt(1, 8), x = randInt(2, 9), b = randInt(1, 8);
       var answer = a * x * x + b;
-      return generated("Mathematics", "Quadratic Expressions and Equations", "Evaluate " + a + "x² + " + b + " when x = " + x + ".", answer,
+      return generated("Core Mathematics", "Quadratic Expressions and Equations", "Evaluate " + a + "x² + " + b + " when x = " + x + ".", answer,
         [a * x + b, a * (x + b) * (x + b), a * x * x - b],
         "Substitute x = " + x + ": " + a + " × " + x + "² + " + b + " = " + answer + ".");
     },
     function () {
       var scale = randInt(2, 5), area = randInt(3, 12), answer = area * scale * scale;
-      return generated("Mathematics", "Similarity and Enlargement", "A similar shape has an area of " + area + " cm². It is enlarged by a linear scale factor of " + scale + ". Find its new area.", answer + " cm²",
+      return generated("Core Mathematics", "Similarity and Enlargement", "A similar shape has an area of " + area + " cm². It is enlarged by a linear scale factor of " + scale + ". Find its new area.", answer + " cm²",
         [(area * scale) + " cm²", (area * scale * 2) + " cm²", (area + scale) + " cm²"],
         "Area scale factor = " + scale + "² = " + (scale * scale) + ". New area = " + area + " × " + (scale * scale) + " = " + answer + " cm².");
     },
     function () {
       var values = [randInt(2, 12), randInt(2, 12), randInt(2, 12), randInt(2, 12)];
       var sum = values.reduce(function (a, b) { return a + b; }, 0), answer = sum / values.length;
-      return generated("Mathematics", "Statistics", "Find the mean of " + values.join(", ") + ".", answer,
+      return generated("Core Mathematics", "Statistics", "Find the mean of " + values.join(", ") + ".", answer,
         [answer + 1, Math.max(1, answer - 2), sum],
         "Mean = total ÷ number of values = " + sum + " ÷ 4 = " + answer + ".");
     },
     function () {
       var red = randInt(1, 5), blue = randInt(1, 5), total = red + blue;
-      return generated("Mathematics", "Probability", "A bag contains " + red + " red counters and " + blue + " blue counters. What is the probability of picking a red counter?", red + "/" + total,
+      return generated("Core Mathematics", "Probability", "A bag contains " + red + " red counters and " + blue + " blue counters. What is the probability of picking a red counter?", red + "/" + total,
         [blue + "/" + total, "1/" + total, total + "/" + red],
         "Probability = favourable outcomes ÷ total outcomes = " + red + "/" + total + ".");
     },
     function () {
       var angle = [30, 45, 60][randInt(0, 2)];
       var answer = angle === 30 ? "1/2" : angle === 45 ? "√2/2" : "√3/2";
-      return generated("Mathematics", "Trigonometry", "In a right-angled triangle, what is the exact value of sin " + angle + "°?", answer,
+      return generated("Core Mathematics", "Trigonometry", "In a right-angled triangle, what is the exact value of sin " + angle + "°?", answer,
         ["0", "1", "√3"],
         "The standard exact value is sin " + angle + "° = " + answer + ".");
     }
@@ -116,10 +116,13 @@
         return generated("Biology", "Cell Structure and Specialisation / Chemicals of Life", v[0], v[1], v[2], v[3]);
       },
       function () {
-        var length = randInt(3, 9), width = randInt(2, 6), area = length * width;
-        return generated("Biology", "Specimen Collection and Preservation", "A rectangular leaf specimen is " + length + " cm long and " + width + " cm wide. What is its measured area?", area + " cm²",
-          [(length + width) + " cm²", (2 * (length + width)) + " cm²", (area + length) + " cm²"],
-          "For a rectangular outline, area = length × width = " + length + " × " + width + " = " + area + " cm². This is a simple measurement exercise during specimen study.");
+        var tools = [
+          ["small insects moving through grass", "sweep net", ["thermometer", "measuring cylinder", "microscope slide"], "A sweep net is used to collect small insects from vegetation."],
+          ["tiny insects from a narrow hiding place", "pooter (aspirator)", ["metre rule", "stopwatch", "funnel"], "A pooter (aspirator) helps collect small insects safely by suction."],
+          ["small crawling animals on the ground", "pitfall trap", ["test tube holder", "balance", "hand lens"], "A pitfall trap can collect small crawling animals moving across the ground."]
+        ];
+        var v = tools[randInt(0, tools.length - 1)];
+        return generated("Biology", "Specimen Collection and Preservation", "Which apparatus is suitable for collecting " + v[0] + "?", v[1], v[2], v[3]);
       },
       function () {
         var plants = [
@@ -163,10 +166,9 @@
         return generated("Chemistry", "Acids and Bases", v[0], v[1], v[2], v[3]);
       },
       function () {
-        var atoms = randInt(1, 4), valence = atoms * 2;
-        return generated("Chemistry", "Chemical Bonding", "A simplified model shows " + atoms + " atoms each contributing one electron to a shared pair arrangement. How many contributed electrons are shown?", atoms,
-          [valence, atoms + 1, Math.max(0, atoms - 1)],
-          "Each of the " + atoms + " atoms contributes one electron, so the total contributed is " + atoms + ". This is a basic electron-counting prompt; actual bonding depends on the atoms involved.");
+        return generated("Chemistry", "Chemical Bonding", "Which type of chemical bond forms when atoms share pairs of electrons?", "Covalent bond",
+          ["Ionic bond", "Metallic bond", "Hydrogen bond"],
+          "A covalent bond forms when atoms share one or more pairs of electrons.");
       }
     ],
     "Physics": [
@@ -484,9 +486,9 @@
 
   if (!form || !optionsEl || !questionEl) return;
 
-  var subjects = ["Mathematics", "English", "Biology", "Chemistry", "Physics"];
+  var subjects = ["Core Mathematics", "English", "Biology", "Chemistry", "Physics"];
   var requestedSubject = new URLSearchParams(window.location.search).get("subject");
-  var subjectNames = { maths: "Mathematics", english: "English", biology: "Biology", chemistry: "Chemistry", physics: "Physics" };
+  var subjectNames = { maths: "Core Mathematics", english: "English", biology: "Biology", chemistry: "Chemistry", physics: "Physics" };
   var activeSubject = subjectNames[requestedSubject] && subjects.indexOf(subjectNames[requestedSubject]) !== -1 ? subjectNames[requestedSubject] : subjects[0];
   var questionCounter = 0;
   var currentQuestion = null;
@@ -509,7 +511,7 @@
 
   var lastGeneratedSignatures = {};
   function nextQuestionForSubject(subj) {
-    var generators = subj === "Mathematics" ? MATH_GENERATORS : SUBJECT_GENERATORS[subj];
+    var generators = subj === "Core Mathematics" ? MATH_GENERATORS : SUBJECT_GENERATORS[subj];
     if (generators && generators.length) {
       var attempts = 0, candidate = null;
       while (attempts < 12) {
