@@ -27,3 +27,10 @@ The following document previews are the links surfaced by the official KICD Grad
 ## Independence and copyright
 
 TUSOME is not affiliated with, approved by or endorsed by KICD. The project links to official curriculum documents for reference and does not claim ownership of KICD curriculum designs. Learners and teachers should consult the official documents and approved learning materials for the full curriculum requirements.
+
+
+## Subject teaching content development
+
+The current branch is expanding the subject pages beyond curriculum maps and short practice prompts. TUSOME-authored lessons are being developed for each Grade 10 subject, using original explanations, examples, applications and formative checks. The KICD documents remain curriculum references; TUSOME does not reproduce proprietary textbook content and is not affiliated with or endorsed by KICD.
+
+KICD's Senior School library identifies Grade 10 as the foundational Senior School curriculum and lists STEM, Social Sciences, and Arts & Sports Science as the three broad pathways. The current TUSOME pilot remains limited to the selected Core and STEM subjects described elsewhere in this repository.

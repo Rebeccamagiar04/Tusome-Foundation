@@ -1170,3 +1170,35 @@ button, input, select, textarea {
   color: #52627f;
   font-size: .92rem;
 }
+
+
+/* Subject-specific teaching pages */
+.subject-learning { padding-bottom: 2rem; }
+.subject-layout { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); gap: 1.25rem; align-items: start; margin-top: 1.5rem; }
+.subject-sidebar { position: sticky; top: 5.5rem; max-height: calc(100vh - 6.5rem); overflow: auto; }
+.subject-sidebar label { display: block; font-weight: 800; margin-bottom: .5rem; }
+.subject-sidebar input { width: 100%; min-height: 2.8rem; padding: .55rem .75rem; border: 1px solid #cbd5e1; border-radius: 10px; margin-bottom: .8rem; }
+.subject-topic-list { display: grid; gap: .35rem; }
+.subject-strand-label { margin: 1rem 0 .25rem; color: var(--blue); font-size: .88rem; }
+.subject-topic-button { display: block; width: 100%; text-align: left; border: 1px solid transparent; background: #f5f7fb; color: var(--navy); padding: .65rem .75rem; border-radius: 9px; cursor: pointer; font: inherit; font-size: .93rem; }
+.subject-topic-button:hover, .subject-topic-button.is-active { background: var(--pale-blue); border-color: var(--blue); color: var(--blue); font-weight: 800; }
+.subject-main { min-width: 0; }
+.subject-lesson { padding: clamp(1rem, 3vw, 2rem); }
+.subject-lesson-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; align-items: center; }
+.subject-teaching-section { padding: 1.1rem 0; border-bottom: 1px solid #e5eaf4; }
+.subject-teaching-section h3 { color: var(--blue); }
+.subject-teaching-section p { max-width: 75ch; }
+.subject-teaching-section li { margin-bottom: .45rem; }
+.subject-example, .subject-misconception, .subject-check { margin-top: 1.25rem; padding: 1.1rem; border-radius: 12px; }
+.subject-example { background: var(--pale-blue); }
+.subject-misconception { background: var(--soft-orange); }
+.subject-check { border: 1px solid #d8e1f2; }
+.subject-answer-option { display: block; width: 100%; text-align: left; margin: .45rem 0; padding: .7rem .85rem; border: 1px solid #cbd5e1; border-radius: 9px; background: white; color: var(--navy); cursor: pointer; font: inherit; }
+.subject-answer-option:hover:not(:disabled) { border-color: var(--blue); background: var(--pale-blue); }
+.subject-answer-option:disabled { opacity: .75; cursor: default; }
+.subject-check [aria-live] { font-weight: 700; margin-top: .7rem; }
+@media (max-width: 760px) {
+ .subject-layout { grid-template-columns: 1fr; }
+ .subject-sidebar { position: static; max-height: none; }
+ .subject-topic-list { max-height: 18rem; overflow: auto; }
+}

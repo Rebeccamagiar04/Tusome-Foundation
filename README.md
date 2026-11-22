@@ -58,3 +58,12 @@ GitHub Pages deployment: https://rebeccamagiar04.github.io/Tusome-Foundation/
 ## Project purpose
 
 TUSOME aims to make learning more understandable and engaging through clear explanations, guided practice and accessible browser-based learning tools.
+
+
+## Subject-specific learning pages (development branch)
+
+The deep-subject-learning branch introduces dedicated learning pages for Biology, Chemistry, Physics and Core Mathematics, alongside the existing English learning page. These pages use a shared accessible presentation engine and the common `style.css`, while each subject has its own HTML page and subject-specific JavaScript content.
+
+The new science and mathematics lessons are organised around learning outcomes, concept explanations, applications or worked examples, common misconceptions and checks for understanding. The existing Mathematics practice generator remains a separate practice experience.
+
+This is an in-progress expansion, not a claim that every learning outcome has already received a complete lesson. Content must be checked against the current KICD Grade 10 designs, reviewed for scientific and mathematical accuracy, and tested on mobile before release.
