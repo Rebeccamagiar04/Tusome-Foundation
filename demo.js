@@ -3,21 +3,23 @@
 (function () {
   const questions = [
     {
-      equation: "2x + 3 = 11",
-      answer: 4,
-      mid: 8,
+      equation: "2³ × 2² = ?",
+      answer: 32,
+      mid: 5,
+      midMessage: "You correctly added the indices to get 5. Now evaluate 2⁵ to find the final value.",
       steps: [
-        { text: "Subtract 3 from both sides:", math: "2x = 8" },
-        { text: "Divide both sides by 2:", math: "x = 4" }
+        { text: "Multiply powers with the same base by adding their indices:", math: "2³ × 2² = 2^(3 + 2) = 2⁵" },
+        { text: "Evaluate the power:", math: "2⁵ = 32" }
       ]
     },
     {
-      equation: "3x + 2 = 17",
-      answer: 5,
-      mid: 15,
+      equation: "log₂ 16 = ?",
+      answer: 4,
+      mid: 16,
+      midMessage: "16 is the value produced by the power. A logarithm asks which exponent gives 16: 2^? = 16.",
       steps: [
-        { text: "Subtract 2 from both sides:", math: "3x = 15" },
-        { text: "Divide both sides by 3:", math: "x = 5" }
+        { text: "Rewrite the logarithm as a power:", math: "2^? = 16" },
+        { text: "Since 2⁴ = 16, the exponent is:", math: "log₂ 16 = 4" }
       ]
     }
   ];
@@ -51,7 +53,7 @@
       message = "✗ Not quite yet, and that's okay. Let's work through it together.";
       feedbackEl.classList.add("is-wrong");
     } else if (state.status === "forgot") {
-      message = "✗ Good start! You subtracted correctly and got " + q.mid + ". That is the value of the x-term, so one more step is needed: divide to find x.";
+      message = "✗ Good start! " + q.midMessage;
       feedbackEl.classList.add("is-wrong");
     }
 

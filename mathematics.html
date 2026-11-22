@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interactive Mathematics — TUSOME</title>
-  <meta name="description" content="Practise Grade 10 mathematics across multiple topics with dynamic question generation, mistake hints, handwriting working, and narration.">
+  <title>Interactive Core Mathematics — TUSOME</title>
+  <meta name="description" content="Practise Grade 10 Core Mathematics across multiple topics with dynamic question generation, mistake hints, handwriting working, and narration.">
   <meta name="theme-color" content="#2457D6">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="subjects.html">Subjects</a></li>
-          <li><a href="mathematics.html" aria-current="page">Mathematics</a></li>
+          <li><a href="mathematics.html" aria-current="page">Core Mathematics</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="progress.html">Progress</a></li>
         </ul>
@@ -54,28 +54,30 @@
 
   <main id="main" class="section">
     <div class="container">
-      <p class="eyebrow">GRADE 10 • MULTI-TOPIC MATHEMATICS</p>
-      <h1>Interactive Mathematics</h1>
+      <p class="eyebrow">GRADE 10 • CORE MATHEMATICS</p>
+      <h1>Interactive Core Mathematics</h1>
       <p class="section-sub">
-        Choose any Grade 10 topic below to generate fresh practice problems, get mistake-specific hints, and watch the handwritten solution unfold step by step.
+        Choose a Grade 10 topic to practise, receive feedback and hints, and follow the worked solution step by step.
       </p>
+      <p class="section-sub">Topic labels follow the KICD Grade 10 Core Mathematics design. <a href="https://kicd.ac.ke/cbc-materials/curriculum-designs/senior-school-designs/" target="_blank" rel="noopener noreferrer">View the official curriculum directory</a>. TUSOME is an independent learning project.</p>
 
       <div class="filter-bar" id="math-topic-chips" role="group" aria-label="Select Mathematics topic">
-        <button type="button" class="chip is-active" data-topic="linear">Linear Equations</button>
-        <button type="button" class="chip" data-topic="substitution">Algebraic Substitution</button>
-        <button type="button" class="chip" data-topic="indices">Indices &amp; Powers</button>
-        <button type="button" class="chip" data-topic="ratios">Ratios &amp; Proportions</button>
-        <button type="button" class="chip" data-topic="geometry">Area &amp; Perimeter</button>
-        <button type="button" class="chip" data-topic="quadratics">Quadratics</button>
-       <button type="button" class="chip" data-topic="enlargement">Scale Factors (A.S.F / V.S.F)</button>
-       <button type="button" class="chip" data-topic="probability">Probability</button>
+        <button type="button" class="chip is-active" data-topic="realNumbers">Real Numbers</button>
+        <button type="button" class="chip" data-topic="indices">Indices and Logarithms</button>
+        <button type="button" class="chip" data-topic="quadratics">Quadratic Expressions and Equations</button>
+        <button type="button" class="chip" data-topic="enlargement">Similarity and Enlargement</button>
+        <button type="button" class="chip" data-topic="reflection">Reflection and Congruence</button>
+        <button type="button" class="chip" data-topic="rotation">Rotation</button>
+        <button type="button" class="chip" data-topic="trigonometry">Trigonometry</button>
+        <button type="button" class="chip" data-topic="statistics">Statistics</button>
+        <button type="button" class="chip" data-topic="probability">Probability</button>
 
       </div>
 
       <div class="math-layout">
         <section class="card-panel math-question-panel" aria-labelledby="math-q-heading">
           <div class="section-header-inline">
-            <span class="demo-tag" id="math-subtopic-badge">Linear Equations</span>
+            <span class="demo-tag" id="math-subtopic-badge">Real Numbers</span>
             <button class="btn btn-secondary" id="math-new-btn" type="button">Generate new question</button>
           </div>
 
@@ -160,7 +162,7 @@
         <ul class="footer-links">
           <li><a href="subjects.html">Subjects</a></li>
           <li><a href="lesson.html?subject=maths">Lessons</a></li>
-          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="mathematics.html">Interactive Core Mathematics</a></li>
           <li><a href="practice.html">Practice</a></li>
         </ul>
       </div>

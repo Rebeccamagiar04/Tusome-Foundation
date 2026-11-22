@@ -75,7 +75,7 @@
     activityList.textContent = "";
     if (state.recentActivity.length === 0) {
       const li = document.createElement("li");
-      li.textContent = "No activities recorded yet. Open a lesson or try an interactive math question to begin.";
+      li.textContent = "No activities recorded yet. Open a lesson or try an interactive Core Mathematics question to begin.";
       activityList.appendChild(li);
     } else {
       state.recentActivity.slice(0, 8).forEach(function (item) {

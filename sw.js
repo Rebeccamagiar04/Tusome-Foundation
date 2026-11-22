@@ -2,7 +2,7 @@
 // Caches the learner-facing pages and local assets for repeat visits.
 // First visit still needs an internet connection so the cache can be installed.
 
-const CACHE_NAME = "tusome-static-v1";
+const CACHE_NAME = "tusome-static-v2";
 const CORE_FILES = [
   "./",
   "./index.html",
@@ -70,7 +70,7 @@ self.addEventListener("fetch", function (event) {
         return response;
       }).catch(function () {
         return caches.match(request).then(function (cached) {
-          return cached || caches.match("./index.html");
+          return cached || caches.match(request, { ignoreSearch: true }).then(function (page) { return page || caches.match("./index.html"); });
         });
       })
     );

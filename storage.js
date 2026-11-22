@@ -10,7 +10,7 @@
       name: "",
       grade: "10",
       pathway: "stem",
-      selectedSubjects: ["maths", "biology", "english"],
+      selectedSubjects: [],
       onboarded: false
     },
     completedLessons: [],
