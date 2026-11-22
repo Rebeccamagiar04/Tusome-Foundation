@@ -287,86 +287,13 @@
       }
     ],
 
-    "Business Studies": [
-      {
-        id: "biz-1",
-        subject: "Business Studies",
-        topic: "Needs, Wants & Scarcity",
-        question: "Which item is a basic human need rather than a want?",
-        options: ["Clean drinking water", "A smartphone", "A wristwatch", "Designer clothes"],
-        correctIndex: 0,
-        explanation: "Clean water, food, and shelter are basic needs essential for survival."
-      },
-      {
-        id: "biz-2",
-        subject: "Business Studies",
-        topic: "Scarcity & Choice",
-        question: "What is opportunity cost?",
-        options: [
-          "The next-best alternative forgone when making a choice",
-          "The total money in a bank account",
-          "The price of a free sample",
-          "Money earned before expenses"
-        ],
-        correctIndex: 0,
-        explanation: "Opportunity cost is the next-best alternative given up when you choose one option over another."
-      },
-      {
-        id: "biz-3",
-        subject: "Business Studies",
-        topic: "Scarcity & Choice",
-        question: "Why must individuals and businesses make choices?",
-        options: [
-          "Resources are scarce while human wants are unlimited",
-          "Goods never cost money",
-          "Time is unlimited",
-          "Wants never change"
-        ],
-        correctIndex: 0,
-        explanation: "Scarcity of resources relative to unlimited wants forces people to prioritise and choose."
-      },
-      {
-        id: "biz-4",
-        subject: "Business Studies",
-        topic: "Goods & Services",
-        question: "How does a service differ from a physical good?",
-        options: [
-          "A service is an intangible action or task performed for someone",
-          "A service can always be stored in a warehouse",
-          "A service has weight in kilograms",
-          "A service is always free"
-        ],
-        correctIndex: 0,
-        explanation: "Services are intangible activities or benefits (such as transport, teaching, or hairdressing) rather than physical objects."
-      },
-      {
-        id: "biz-5",
-        subject: "Business Studies",
-        topic: "Production & Enterprise",
-        question: "What is the main purpose of business activity in a community?",
-        options: [
-          "To satisfy human needs and wants while creating value",
-          "To waste scarce materials",
-          "To avoid customer feedback",
-          "To stop trade completely"
-        ],
-        correctIndex: 0,
-        explanation: "Businesses organise resources to produce goods or services that meet needs and wants."
-      },
-      {
-        id: "biz-6",
-        subject: "Business Studies",
-        topic: "Decision Making",
-        question: "If a student has KSh 200 and chooses a revision guide instead of a snack, what is the opportunity cost?",
-        options: [
-          "The snack they gave up",
-          "The KSh 200 change",
-          "The revision guide itself",
-          "Zero"
-        ],
-        correctIndex: 0,
-        explanation: "The opportunity cost is the alternative item (the snack) given up to get the revision guide."
-      }
+    "Physics": [
+      { id: "phy-1", subject: "Physics", topic: "Measurement", question: "Which SI unit is used to measure length?", options: ["Metre (m)", "Kilogram (kg)", "Second (s)", "Kelvin (K)"], correctIndex: 0, explanation: "The metre (m) is the SI base unit for length." },
+      { id: "phy-2", subject: "Physics", topic: "Measurement", question: "Which instrument is most suitable for measuring the diameter of a thin wire accurately?", options: ["Micrometer screw gauge", "Stopwatch", "Thermometer", "Measuring cylinder"], correctIndex: 0, explanation: "A micrometer screw gauge is designed for measuring very small thicknesses or diameters." },
+      { id: "phy-3", subject: "Physics", topic: "Motion", question: "A learner walks 20 metres in 5 seconds. What is the learner's average speed?", options: ["4 m/s", "15 m/s", "25 m/s", "100 m/s"], correctIndex: 0, explanation: "Average speed = distance ÷ time = 20 m ÷ 5 s = 4 m/s." },
+      { id: "phy-4", subject: "Physics", topic: "Forces", question: "What is the SI unit of force?", options: ["Newton (N)", "Joule (J)", "Watt (W)", "Pascal (Pa)"], correctIndex: 0, explanation: "Force is measured in newtons (N)." },
+      { id: "phy-5", subject: "Physics", topic: "Energy", question: "Which energy store increases when a book is lifted onto a high shelf?", options: ["Gravitational potential energy", "Chemical energy", "Sound energy", "Nuclear energy"], correctIndex: 0, explanation: "Lifting an object increases its gravitational potential energy because its height increases." },
+      { id: "phy-6", subject: "Physics", topic: "Density", question: "A block has a mass of 200 g and a volume of 50 cm³. What is its density?", options: ["4 g/cm³", "10 g/cm³", "150 g/cm³", "250 g/cm³"], correctIndex: 0, explanation: "Density = mass ÷ volume = 200 g ÷ 50 cm³ = 4 g/cm³." }
     ],
 
     "English": [
@@ -470,8 +397,10 @@
 
   if (!form || !optionsEl || !questionEl) return;
 
-  var subjects = ["Mathematics"].concat(Object.keys(STATIC_BANKS));
-  var activeSubject = subjects[0];
+  var subjects = ["Mathematics", "English", "Biology", "Chemistry", "Physics"];
+  var requestedSubject = new URLSearchParams(window.location.search).get("subject");
+  var subjectNames = { maths: "Mathematics", english: "English", biology: "Biology", chemistry: "Chemistry", physics: "Physics" };
+  var activeSubject = subjectNames[requestedSubject] && subjects.indexOf(subjectNames[requestedSubject]) !== -1 ? subjectNames[requestedSubject] : subjects[0];
   var questionCounter = 0;
   var currentQuestion = null;
   var lastMathSignature = "";
