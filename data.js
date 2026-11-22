@@ -6,7 +6,7 @@ window.TUSOME_DATA = {
     { id: "core", title: "Core Subjects" },
     { id: "stem", title: "STEM" }
   ],
-  tracks: { core: "Core Subject", pure: "STEM" },
+  tracks: { core: "Core Subjects", pure: "STEM" },
   curriculumSource: "https://kicd.ac.ke/cbc-materials/curriculum-designs/senior-school-designs/",
   notes: {
     "note.maths": "Core Mathematics practice with generated questions, worked steps, and feedback."
