@@ -1220,3 +1220,8 @@ button, input, select, textarea {
   text-align: center;
   line-height: 1.25;
 }
+
+/* Respect the HTML hidden attribute even on elements with explicit layout styles. */
+[hidden] {
+  display: none !important;
+}
