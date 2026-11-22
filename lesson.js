@@ -7,48 +7,50 @@
 
   const LESSONS = [
     {
-      key: "maths-linear-equations",
+      key: "maths-indices-logarithms",
       subjectId: "maths",
-      subjectName: "Mathematics",
-      title: "Solving Two-Step Linear Equations",
-      summary: "Break down equations with one unknown so you can isolate the variable cleanly without guessing.",
+      subjectName: "Core Mathematics",
+      title: "Indices and Logarithms",
+      summary: "Explore how indices represent repeated multiplication and how logarithms help us find an unknown exponent.",
       outcomes: [
-        "Explain what it means to keep both sides of an equation balanced.",
-        "Undo addition or subtraction before undoing multiplication or division.",
-        "Check a solution by substituting the value back into the original equation."
+        "Explain an index as a number of repeated equal factors.",
+        "Apply basic laws of indices when multiplying and dividing powers with the same base.",
+        "Recognise that a logarithm is the inverse operation of exponentiation."
       ],
       sections: [
         {
-          heading: "1. What an equation really means",
-          body: "An equals sign (=) means the expression on the left has the exact same value as the expression on the right. Whenever you change one side, you must apply the exact same operation to the other side."
+          heading: "1. Understanding indices",
+          body: "In 2³, the number 2 is the base and 3 is the index (or exponent). It means 2 × 2 × 2, which equals 8. The index tells us how many times the base is used as a factor; it does not mean 2 × 3."
         },
         {
-          heading: "2. Why order matters when undoing operations",
-          body: "When solving an equation like 2x + 3 = 11, x has first been multiplied by 2 and then had 3 added. To unwrap x, we usually reverse the steps—removing the added or subtracted term first, then dividing out the multiplier."
+          heading: "2. Basic laws of indices",
+          body: "When multiplying powers with the same non-zero base, add the indices: aᵐ × aⁿ = aᵐ⁺ⁿ. When dividing powers with the same non-zero base, subtract the indices: aᵐ ÷ aⁿ = aᵐ⁻ⁿ, provided the denominator is not zero. A power raised to another power uses multiplication of indices: (aᵐ)ⁿ = aᵐⁿ."
         },
         {
-          heading: "3. Always verify your answer",
-          body: "Once you find a value for x, plug it back into the starting equation. If the left side equals the right side, your working is solid."
+          heading: "3. What a logarithm means",
+          body: "A logarithm answers the question: 'What power gives this number?' For example, log₂ 8 = 3 because 2³ = 8. In general, logₐ b = c means aᶜ = b, where a is positive and not equal to 1, and b is positive."
         }
       ],
-      exampleTitle: "Worked Example: Solve 3x + 2 = 17",
+      exampleTitle: "Worked Example: Simplify 2³ × 2² ÷ 2¹",
       exampleSteps: [
-        "Start with 3x + 2 = 17.",
-        "Subtract 2 from both sides: 3x = 15.",
-        "Divide both sides by 3: x = 5.",
-        "Check: 3(5) + 2 = 15 + 2 = 17. It balances."
+        "The powers have the same base, 2, so use the multiplication and division laws.",
+        "Add the indices when multiplying: 3 + 2 = 5.",
+        "Subtract the index when dividing: 5 − 1 = 4.",
+        "Therefore, 2³ × 2² ÷ 2¹ = 2⁴ = 16.",
+        "A related logarithm fact is log₂ 16 = 4, because 2⁴ = 16."
       ],
-      pitfall: "Common mistake: Dividing by 3 before subtracting 2, or stopping at 3x = 15 without dividing by 3 at the end.",
-      checkQuestion: "In the equation 4x - 6 = 14, what should you do first?",
+      pitfall: "Common mistake: Adding or subtracting indices when the bases are different, or treating 2³ as 2 × 3. The index laws shown here require the same base.",
+      checkQuestion: "Simplify 3² × 3⁴.",
       checkOptions: [
-        "Add 6 to both sides to get 4x = 20",
-        "Divide only 14 by 4",
-        "Subtract 14 from 6"
+        "3⁶",
+        "3⁸",
+        "3²",
+        "9⁶"
       ],
       checkCorrect: 0,
-      checkFeedbackRight: "Spot on! Adding 6 removes -6 cleanly so 4x = 20, making the next division step straightforward.",
-      checkFeedbackWrong: "Not quite—start by undoing -6 by adding 6 to both sides so 4x sits alone on the left.",
-      altExplanation: "Picture a weighing scale with a bag of 3x and 2 single weights on one side, balancing 17 single weights on the other. Take away 2 weights from both sides: 3x balances 15 weights. Split those 15 weights into 3 equal groups—each group has 5."
+      checkFeedbackRight: "Correct! The bases are the same, so add the indices: 2 + 4 = 6. The result is 3⁶.",
+      checkFeedbackWrong: "Look at the bases first. Since both are 3, keep the base and add the indices: 2 + 4.",
+      altExplanation: "Think of 3² as two 3s multiplied together and 3⁴ as four more 3s. Putting them together gives six factors of 3, which is 3⁶."
     },
     {
       key: "biology-cells",
@@ -180,40 +182,55 @@
       altExplanation: "Think of a paragraph like a mini-meal: the topic sentence is the main dish, supporting details are the ingredients that give it substance, and the closing line wraps it up neatly."
     },
     {
-      key: "physics-measurement-motion",
+      key: "physics-pressure",
       subjectId: "physics",
       subjectName: "Physics",
-      title: "Introduction to Measurement and Motion",
-      summary: "Explore how physical quantities are measured and how distance and time help us describe motion.",
+      title: "Pressure",
+      summary: "Learn how force and area determine pressure, and why the same force can have different effects on different surfaces.",
       outcomes: [
-        "Identify the SI units for length and time.",
-        "Choose suitable instruments for measuring length and time.",
-        "Calculate average speed using distance divided by time."
+        "Define pressure as force acting normally per unit area.",
+        "Use pressure = force ÷ area to solve straightforward problems.",
+        "State the SI unit of pressure and explain how area affects pressure."
       ],
       sections: [
-        { heading: "1. Physical quantities and units", body: "Physics uses measurable quantities to describe the natural world. Length, time, mass, and temperature are examples. A measurement is meaningful when it includes a number and a unit." },
-        { heading: "2. Measuring carefully", body: "A metre rule or measuring tape can measure ordinary lengths. A stopwatch measures time intervals. A micrometer screw gauge is useful for very small diameters or thicknesses. Read scales carefully and record units." },
-        { heading: "3. Describing motion with speed", body: "Average speed tells us how much distance an object covers per unit time. Calculate it by dividing the total distance travelled by the time taken. The SI unit is metres per second (m/s)." }
+        {
+          heading: "1. What pressure means",
+          body: "Pressure describes how concentrated a force is over a surface. The same force produces greater pressure when it acts on a smaller area, and lower pressure when it is spread over a larger area."
+        },
+        {
+          heading: "2. The formula and unit",
+          body: "For a force acting normally on a surface, pressure (P) = force (F) ÷ area (A). The SI unit is the pascal (Pa). One pascal is one newton per square metre (1 Pa = 1 N/m²)."
+        },
+        {
+          heading: "3. Pressure in everyday situations",
+          body: "A sharp nail has a very small tip area, so a given force creates high pressure and helps it enter a surface. Wide snowshoes spread a person's weight over a larger area, reducing pressure on the snow."
+        }
       ],
-      exampleTitle: "Worked Example: Finding Average Speed",
+      exampleTitle: "Worked Example: Calculating Pressure",
       exampleSteps: [
-        "A learner walks 30 metres in 10 seconds.",
-        "Use average speed = distance divided by time.",
-        "Average speed = 30 m divided by 10 s = 3 m/s.",
-        "The learner's average speed is 3 metres per second."
+        "A force of 200 N acts normally on an area of 0.5 m².",
+        "Write the formula: pressure = force ÷ area.",
+        "Substitute: pressure = 200 N ÷ 0.5 m².",
+        "Calculate: pressure = 400 N/m² = 400 Pa."
       ],
-      pitfall: "Common mistake: Dividing time by distance instead of distance by time, or leaving the unit out of the final answer.",
-      checkQuestion: "A cyclist travels 60 metres in 12 seconds. What is the average speed?",
-      checkOptions: ["5 m/s", "48 m/s", "72 m/s", "720 m/s"],
+      pitfall: "Common mistake: Multiplying force by area instead of dividing, or giving the answer without the unit pascal (Pa). Make sure the area is in square metres when using SI units.",
+      checkQuestion: "A force of 100 N acts normally on an area of 2 m². What pressure is produced?",
+      checkOptions: [
+        "50 Pa",
+        "200 Pa",
+        "102 Pa",
+        "0.02 Pa"
+      ],
       checkCorrect: 0,
-      checkFeedbackRight: "Correct! Average speed = 60 m divided by 12 s = 5 m/s.",
-      checkFeedbackWrong: "Try distance divided by time: 60 divided by 12 = 5 m/s.",
-      altExplanation: "Imagine walking along a 60-metre path in 12 seconds. If you cover equal distances each second on average, you cover 5 metres each second."
+      checkFeedbackRight: "Correct! Pressure = 100 N ÷ 2 m² = 50 N/m², which is 50 Pa.",
+      checkFeedbackWrong: "Use pressure = force ÷ area. Divide 100 by 2, then write the unit as pascals (Pa).",
+      altExplanation: "Imagine pressing your palm and then one fingertip against soft dough with the same force. Your fingertip touches a smaller area, so the force is concentrated and makes a deeper mark. That is greater pressure."
     }
   ];
 
   const selectEl = document.getElementById("lesson-select");
   const subjectTag = document.getElementById("lesson-subject-tag");
+  const curriculumSourceEl = document.getElementById("lesson-curriculum-source");
   const titleEl = document.getElementById("lesson-title");
   const summaryEl = document.getElementById("lesson-summary");
   const outcomesEl = document.getElementById("lesson-outcomes");
@@ -246,6 +263,8 @@
     activeLesson = lesson;
     const subjObj = D && D.getSubject ? D.getSubject(lesson.subjectId) : null;
     const subjLabel = subjObj ? subjObj.name : lesson.subjectName;
+    const curriculumInfo = D && D.curriculum ? D.curriculum[lesson.subjectId] : null;
+    if (curriculumSourceEl) curriculumSourceEl.textContent = curriculumInfo && curriculumInfo.source ? curriculumInfo.source : "Grade 10 subject design";
 
     subjectTag.textContent = "GRADE 10 • " + subjLabel.toUpperCase();
     titleEl.textContent = lesson.title;
