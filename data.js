@@ -21,14 +21,14 @@ window.TUSOME_DATA = {
   curriculum: {
     english: {
       title: "English",
-      source: "KICD Grade 10 English Curriculum Design (2025)",
+      source: "KICD Grade 10 English Curriculum Design (July 2025)",
       strands: [
-        { name: "Listening and Speaking", topics: ["Extensive listening", "Critical listening", "Intensive listening", "Selective listening", "Interactive listening", "Responsive listening", "Speaking etiquette", "Conversational skills", "Speaking fluency", "Face-to-face and online meetings"] },
-        { name: "Reading", topics: ["Reading fluency", "Extensive reading", "Reference materials", "Study skills", "Library skills", "Intensive reading and comprehension", "Critical reading", "Paraphrasing, summarising and note-making"] },
-        { name: "Grammar in Use", topics: ["Nouns and pronouns", "Main and auxiliary verbs", "Tense and aspect", "Adjectives and simple prepositions", "Determiners", "Phrases", "Adverbs", "Clauses", "Sentence patterns and types", "Active and passive voice", "Subject-verb agreement", "Count and non-count nouns", "Sentence fluency and comma use"] },
-        { name: "Writing", topics: ["Spelling rules, abbreviations and acronyms", "Paragraphing, cohesion and linking words", "Essay structure and writing process", "Punctuation", "Functional writing: memos, diaries and journals", "Narrative and descriptive essays", "Emails and letter writing", "Argumentative and expository essays", "Short reports and questionnaires"] }
+        { name: "Listening and Speaking", topics: ["Extensive Listening", "Speaking Etiquette", "Critical Listening", "Conversational Skills", "Intensive Listening", "Speaking Fluency", "Selective Listening", "Face-to-Face and Online Meetings", "Responsive Listening", "Pronunciation and Word Stress", "Distinguishing Fact and Opinion", "Listening to Visuals", "Informative Speeches"] },
+        { name: "Reading", topics: ["Reading Fluency", "Extensive Reading: Literary and Non-Literary Texts", "Reference Materials", "Study Skills and Library Skills", "Intensive Reading and Comprehension", "Oral Narrative and Descriptive Text", "SOAR, Paraphrasing, Summarising and Note-Making", "Critical Reading"] },
+        { name: "Grammar in Use", topics: ["Nouns, Pronouns and Phrasal Quantifiers", "Main and Auxiliary Verbs", "Tense and Aspect", "Adjectives and Simple Prepositions", "Determiners", "Noun and Verb Phrases", "Adverbs and Adverb Phrases", "Adjective and Prepositional Phrases", "Relative Pronouns and Clauses", "Adverbial Clauses", "Noun Clauses", "Sentence Patterns and Types", "Active and Passive Voice", "Subject-Verb Agreement", "Count and Non-Count Nouns"] },
+        { name: "Writing", topics: ["Sentence Fluency and Comma Use", "Spelling Rules, Abbreviations and Acronyms", "Paragraphing, Cohesion and Linking Words", "Essay Structure and Writing Process", "Punctuation and Euphemisms", "Functional Writing: Memos, Diaries and Journals", "Narrative and Descriptive Essays", "Emails and Letter Writing", "Argumentative and Expository Essays", "Reminders, Short Reports and Questionnaires"] }
       ],
-      themes: ["Etiquette", "Environment", "Artificial intelligence and society", "Healthcare", "Travel", "Careers", "Culture", "Income: types and sources"]
+      themes: ["Etiquette", "Environment", "Artificial Intelligence and Society: Healthcare", "Travel", "Careers", "Culture", "Sports and Games", "Health and Safety", "Income: Types and Sources"]
     },
     maths: {
       title: "Core Mathematics",
