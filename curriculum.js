@@ -43,7 +43,7 @@
       "Gaseous Exchange and Respiration":"biology-plant-nutrition-transport"
     },
     chemistry: {
-      "Introduction to Chemistry":"chemistry-atomic-structure-bonding",
+      "Introduction to Chemistry":"chemistry-introduction",
       "The Atom":"chemistry-atomic-structure-bonding",
       "The Periodic Table":"chemistry-periodic-table-salts",
       "Chemical Bonding":"chemistry-atomic-structure-bonding",
@@ -53,7 +53,7 @@
       "Organic Chemistry":"chemistry-organic-intro"
     },
     physics: {
-      "Introduction to Physics":"physics-pressure",
+      "Introduction to Physics":"physics-introduction",
       "Mechanical Properties of Materials":"physics-materials-radioactivity",
       "Radioactivity and Stability of Isotopes":"physics-materials-radioactivity",
       "Pressure":"physics-pressure",
@@ -103,6 +103,7 @@
       card.appendChild(node("h3",row.topic));
       card.appendChild(node("p",descriptions[subjectId]));
       let key=lessonMap[subjectId][row.topic];
+      if(subjectId==="chemistry" && row.topic.indexOf("Organic Chemistry")===0) key="chemistry-organic-intro";
       if(subjectId==="biology" && row.strand==="Anatomy and Physiology of Animals" && ["Nutrition","Transport","Gaseous Exchange and Respiration"].includes(row.topic)) key="biology-animal-systems";
       const lesson=key&&lessons.find(x=>x.key===key);
       if(lesson){
