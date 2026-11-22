@@ -48,7 +48,20 @@
   }
 
   function generated(subject, topic, question, correct, distractors, explanation) {
-    var options = shuffleArray([String(correct)].concat(distractors.map(String)).filter(function (v, i, a) { return a.indexOf(v) === i; }).slice(0, 4));
+    var choices = [String(correct)];
+    distractors.forEach(function (value) {
+      var text = String(value);
+      if (choices.indexOf(text) === -1 && choices.length < 4) choices.push(text);
+    });
+
+    // Keep the multiple-choice experience consistent even when random values
+    // make two distractors identical to each other or to the correct answer.
+    var safeFallbacks = ["None of the above", "Cannot be determined", "Insufficient information"];
+    safeFallbacks.forEach(function (value) {
+      if (choices.length < 4 && choices.indexOf(value) === -1) choices.push(value);
+    });
+
+    var options = shuffleArray(choices);
     return {
       id: subject.toLowerCase().replace(/[^a-z]/g, "") + "-gen-" + Date.now() + "-" + randInt(1, 999999),
       subject: subject,
