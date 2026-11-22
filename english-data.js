@@ -2,16 +2,16 @@
 // english.js reads it and builds the page. To add a lesson later, add one object
 // to ENGLISH.lessons and put its id in the "lesson" field of the matching course-map item.
 //
-// SOURCE: KICD Senior School Curriculum Design, Grade 10 English (June 2024)
-// https://kicd.ac.ke/wp-content/uploads/2024/07/English-Grade-10-June-2024.pdf
-// The course map (strands, themes, sub-strands, suggested lesson numbers) follows that
-// document. The wording of the outcomes, explanations, examples and questions is our own.
+// SOURCE: KICD Senior School Curriculum Design, Grade 10 English (July 2025)
+// https://drive.google.com/file/d/1OFcHiuBagmwsfkqWe2aaDCaf_4JR4tt7/preview
+// The course map (strands, themes and sub-strands) follows the 2025 design; suggested lesson
+// numbers may differ by version. The wording of the outcomes, explanations, examples and questions is our own.
 
 window.ENGLISH = {
 
   source: {
-    title: "KICD Senior School Curriculum Design: Grade 10 English (June 2024)",
-    url: "https://kicd.ac.ke/wp-content/uploads/2024/07/English-Grade-10-June-2024.pdf"
+    title: "KICD Senior School Curriculum Design: Grade 10 English (July 2025)",
+    url: "https://drive.google.com/file/d/1OFcHiuBagmwsfkqWe2aaDCaf_4JR4tt7/preview"
   },
 
   // The four strands and their suggested number of lessons
@@ -26,67 +26,67 @@ window.ENGLISH = {
   // "lesson" is the id of an interactive lesson below, or null if it is coming soon.
   themes: [
     { no: 1, title: "Etiquette", topic: "Social", items: [
-      { strand: "Listening and Speaking", name: "Extensive listening", lessons: 3, focus: "Picking out key information, characters, places and events from recordings.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking: etiquette", lessons: 4, focus: "Using polite language in different settings; the sounds /ɒ/ and /ɔ:/.", lesson: null },
-      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Previewing, skimming and scanning; collocations and binomials.", lesson: null },
+      { strand: "Listening and Speaking", name: "Extensive listening", lessons: 3, focus: "Picking out key information, characters, places and events from recordings.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking: etiquette", lessons: 4, focus: "Using polite language in different settings; the sounds /ɒ/ and /ɔ:/.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Previewing, skimming and scanning; collocations and binomials.", lesson: "reading-fluency" },
       { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Nouns, pronouns and determiners.", lesson: "word-classes" },
       { strand: "Writing", name: "Sentence fluency", lessons: 4, focus: "Comma splices, run-on sentences and run-on lines.", lesson: "sentence-fluency" }
     ]},
     { no: 2, title: "Environment", topic: "Climate change", items: [
-      { strand: "Listening and Speaking", name: "Critical listening", lessons: 3, focus: "Working out the speaker, context and intention; choosing key points; avoiding distractions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Discourse markers; the sounds /ə/, /ɑ:/ and /ɜ:/; onomatopoeia and idiophones.", lesson: null },
-      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Choosing and previewing non-literary texts to read for general understanding.", lesson: null },
-      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: null },
-      { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: null }
+      { strand: "Listening and Speaking", name: "Critical listening", lessons: 3, focus: "Working out the speaker, context and intention; choosing key points; avoiding distractions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Discourse markers, idea connectors and clear conversational turn-taking.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Choosing and previewing non-literary texts to read for general understanding.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: "word-classes" },
+      { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: "spelling-and-punctuation" }
     ]},
-    { no: 3, title: "Technology", topic: "Communication apps", items: [
-      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details; the sounds /ʌ/, /æ/, /aʊ/, /əʊ/, /w/ and /j/.", lesson: null },
-      { strand: "Listening and Speaking", name: "Non-verbal cues", lessons: 3, focus: "Facial expressions, gestures, eye contact and body movement.", lesson: null },
-      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Reference materials: dictionary, thesaurus, atlas, manual, newspaper, encyclopedia.", lesson: null },
-      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives, coordinating conjunctions and simple prepositions.", lesson: null },
-      { strand: "Writing", name: "Elements of effective writing", lessons: 4, focus: "Cohesion and paragraph development.", lesson: null }
+    { no: 3, title: "Artificial Intelligence and Society", topic: "Healthcare", items: [
+      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details such as keywords, facts, fixed phrases and figurative language.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "Clear pronunciation, homographs, public speaking and appropriate non-verbal cues.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Reference materials: dictionary, thesaurus, atlas, manual, newspaper, encyclopedia.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives and simple prepositions.", lesson: "verbs-adverbs" },
+      { strand: "Writing", name: "Elements of effective writing", lessons: 4, focus: "Cohesion and paragraph development.", lesson: "paragraph-cohesion" }
     ]},
     { no: 4, title: "Travel", topic: "Adventure", items: [
-      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Picking out instructions and directions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Changing the topic, giving and receiving feedback, formal and informal register; the letter 's' and its sounds.", lesson: null },
+      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Picking out instructions and directions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Conversational skills", lessons: 4, focus: "Changing the topic, giving and receiving feedback, formal and informal register; the letter 's' and its sounds.", lesson: "speaking-etiquette" },
       { strand: "Reading", name: "Study skills", lessons: 4, focus: "The SQ4R method, note making, summaries and reading visuals.", lesson: "sq4r" },
-      { strand: "Grammar in Use", name: "Phrases", lessons: 4, focus: "Noun phrases and verb phrases.", lesson: null },
-      { strand: "Writing", name: "Mechanics of writing: punctuation", lessons: 5, focus: "Quotation marks, dashes, hyphens, slashes and capital letters.", lesson: null }
+      { strand: "Grammar in Use", name: "Phrases", lessons: 4, focus: "Noun phrases and verb phrases.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Mechanics of writing: punctuation", lessons: 5, focus: "Quotation marks, dashes, hyphens, slashes and capital letters.", lesson: "spelling-and-punctuation" }
     ]},
     { no: 5, title: "Careers", topic: "Public sector", items: [
-      { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: null },
-      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: null },
-      { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: null },
-      { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: null }
+      { strand: "Listening and Speaking", name: "Interactive listening", lessons: 3, focus: "Turn-taking, negotiating and clarifying meaning, showing empathy.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: "writing-process" }
     ]},
     { no: 6, title: "Culture", topic: "Values and beliefs", items: [
-      { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: null },
-      { strand: "Listening and Speaking", name: "Pronunciation and syllabic stress", lessons: 4, focus: "Stress in words; the sounds /ʊ/ and /u:/.", lesson: null },
-      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Expressive reading: expression, speed, accuracy, pace, volume and intonation.", lesson: null },
-      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Relative clauses and adverbial clauses.", lesson: null },
-      { strand: "Writing", name: "Creative writing", lessons: 5, focus: "Descriptive and narrative essays; verbs made from other word classes.", lesson: null }
+      { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Pronunciation and syllabic stress", lessons: 4, focus: "Stress in words; the sounds /ʊ/ and /u:/.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Expressive reading: expression, speed, accuracy, pace, volume and intonation.", lesson: "reading-fluency" },
+      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Relative clauses and adverbial clauses.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Creative writing", lessons: 5, focus: "Descriptive and narrative essays; verbs made from other word classes.", lesson: "creative-writing" }
     ]},
     { no: 7, title: "Sports and Games", topic: "Popular sports", items: [
-      { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: null },
-      { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: null },
-      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: null },
-      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: null },
-      { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: null }
+      { strand: "Listening and Speaking", name: "Critical listening", lessons: 4, focus: "Telling facts from opinions.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Pronunciation and emphatic stress", lessons: 4, focus: "Sentence stress and emphasis; the sounds /f/, /ŋ/ and /ŋg/.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Transition words; denotative and connotative meaning.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Clauses", lessons: 4, focus: "Noun clauses.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Functional writing", lessons: 4, focus: "Letters of complaint, request and inquiry.", lesson: "functional-writing" }
     ]},
     { no: 8, title: "Health and Safety", topic: "Personal", items: [
-      { strand: "Listening and Speaking", name: "Intensive listening and viewing", lessons: 4, focus: "Listening for understanding; using visuals and non-verbal cues.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: null },
-      { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: null },
-      { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: null },
-      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: null }
+      { strand: "Listening and Speaking", name: "Intensive listening and viewing", lessons: 4, focus: "Listening for understanding; using visuals and non-verbal cues.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: "sq4r" },
+      { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: "phrases-clauses-sentences" },
+      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: "functional-writing" }
     ]},
     { no: 9, title: "Income", topic: "Types and sources", items: [
-      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: null },
-      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 4, focus: "Oral presentations and intonation; the sounds /ð/ and /θ/.", lesson: null },
-      { strand: "Reading", name: "Critical and close reading", lessons: 4, focus: "Purpose, audience and attitude; phrasal verbs and binomial expressions.", lesson: null },
+      { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: "listening-for-meaning" },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 4, focus: "Oral presentations and intonation; the sounds /ð/ and /θ/.", lesson: "speaking-etiquette" },
+      { strand: "Reading", name: "Critical and close reading", lessons: 4, focus: "Purpose, audience and attitude; phrasal verbs and binomial expressions.", lesson: "sq4r" },
       { strand: "Grammar in Use", name: "Sentences", lessons: 4, focus: "Active and passive sentences; subject-verb agreement.", lesson: "sv-agreement" },
-      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "A notice of a meeting, an agenda and minutes.", lesson: null }
+      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "A notice of a meeting, an agenda and minutes.", lesson: "functional-writing" }
     ]}
   ],
 
@@ -441,6 +441,169 @@ window.ENGLISH = {
         { q: "What is the correct order of SQ4R?",
           options: ["Survey, Question, Read, Reflect, Recite, Review", "Question, Survey, Read, Recite, Reflect, Review", "Read, Survey, Question, Review, Recite, Reflect", "Survey, Read, Question, Review, Reflect, Recite"], answer: 0,
           why: "Look first (Survey), ask (Question), read, think (Reflect), say it (Recite), then check (Review)." }
+      ]
+    }
+,
+    {
+      id:"listening-for-meaning", title:"Listening for Meaning and Key Information",
+      where:"Theme 1: Etiquette. Listening and Speaking, Extensive listening",
+      outcomes:["Identify the main idea and supporting details in a spoken text.","Make brief notes about people, places, events and sequence.","Distinguish stated facts from reasonable inferences."],
+      blocks:[
+        {title:"Listen with a purpose",text:"Before listening, read the task and decide what information you need. A clear purpose helps you focus on the main idea, names, dates, places, reasons and actions instead of trying to remember every word.",list:["For the main idea, ask what the whole message is mostly about.","For details, listen for specific names, times, places and instructions.","For sequence, notice first, later, meanwhile and finally."]},
+        {title:"Use more than one listen",text:"On the first listen, identify the speaker, situation and general topic. On the second, check details and fill gaps in your notes. If you miss a word, keep listening; later information may clarify it.",list:["Write key words rather than full sentences.","Use numbers or arrows to show sequence.","Check that each note answers the question asked."]},
+        {title:"Fact and inference",text:"A fact is directly stated or can be checked. An inference is a conclusion drawn from clues. If a speaker says the ground is wet and people have umbrellas, you may infer that it has rained, even if the speaker does not say so." ,list:[]}
+      ],
+      example:{title:"A school clean-up announcement",steps:["The clean-up begins at 8.00 a.m. on Saturday at the main gate.","Its purpose is to collect litter and clear blocked drainage channels.","Learners should bring gloves and drinking water.","The main idea is a planned community clean-up; the time, venue and materials are supporting details."],pitfall:"Do not confuse a supporting detail with the main idea. The main idea covers the whole message."},
+      alt:["Imagine listening like sorting a school bag: keep the information needed for the task and set aside unrelated details.","Summarise the recording in one sentence. If it captures the whole message, you probably identified the main idea."],
+      questions:[
+        {q:"You need to identify where a meeting will take place. Which detail should you listen for?",options:["The venue","The speaker's favourite colour","An unrelated example","A repeated greeting"],answer:0,why:"The venue directly answers where the meeting will take place."},
+        {q:"What should you do if you miss one word in a recording?",options:["Stop listening","Keep listening for more clues","Ignore the whole recording","Guess every remaining answer"],answer:1,why:"Continue listening because later information may clarify the meaning."}
+      ]
+    },
+    {
+      id:"reading-fluency", title:"Reading Fluency, Skimming and Scanning",
+      where:"Theme 1: Etiquette. Reading, Reading fluency",
+      outcomes:["Distinguish skimming from scanning.","Preview a text before close reading.","Read accurately and at a pace that supports understanding."],
+      blocks:[
+        {title:"Preview a text",text:"Previewing means looking at the title, headings, pictures, captions and layout before reading closely. These features help you predict the subject and organise your attention.",list:["Notice the title and subheadings.","Look at diagrams and captions.","Connect the topic with what you already know."]},
+        {title:"Skimming and scanning",text:"Skimming is rapid reading to understand the general idea. Scanning is searching quickly for one specific item such as a date, name, figure or keyword. Choose a strategy that matches your purpose.",list:["Skim an article to identify its main point.","Scan a timetable to find a departure time.","Read closely when you must understand an argument or instruction."]},
+        {title:"Fluency supports meaning",text:"Fluent reading combines accuracy, suitable speed, phrasing and expression. Pause at punctuation and group words into meaningful phrases. Reading too quickly can hide meaning; reading word by word can make it difficult to connect ideas.",list:[]}
+      ],
+      example:{title:"Finding information in a school notice",steps:["Read the heading to identify the subject.","Skim the opening lines to understand the purpose.","Scan for the date, time, venue and contact person.","Read the relevant instructions carefully before acting."],pitfall:"Do not rely on skimming when the task asks for an exact figure or instruction."},
+      alt:["Skimming is like looking at a map to understand the whole route. Scanning is like finding one named street on the map.","Ask whether you need the general message or one exact detail before choosing a reading strategy."],
+      questions:[
+        {q:"You need to find the date of an event in a long notice. Which strategy is best?",options:["Scanning","Skimming only","Reading aloud","Memorising the notice"],answer:0,why:"Scanning helps locate a specific item such as a date."},
+        {q:"What is the main purpose of skimming?",options:["Understand the general idea","Find one exact number","Check every spelling","Copy the entire text"],answer:0,why:"Skimming gives a quick overview of the text."}
+      ]
+    },
+    {
+      id:"writing-process", title:"The Writing Process: Plan, Draft, Revise and Edit",
+      where:"Theme 5: Careers. Writing, The writing process",
+      outcomes:["Identify purpose, audience and form before writing.","Organise and draft a coherent text.","Revise ideas and edit language before publishing."],
+      blocks:[
+        {title:"Plan before drafting",text:"Identify the purpose (why you are writing), audience (who will read it) and form (letter, report, essay or email). Brainstorm relevant ideas and arrange them in a logical order.",list:[]},
+        {title:"Draft and revise",text:"A draft is an early version. Focus first on communicating the message. During revision, check whether ideas are complete, relevant and logically arranged. Add missing explanations and remove repetition.",list:[]},
+        {title:"Edit and publish",text:"Editing improves grammar, vocabulary, spelling, punctuation and sentence structure. Proofreading is a final check for errors. Publishing means presenting or sharing the finished text in the appropriate format.",list:[]}
+      ],
+      example:{title:"Planning an appreciation letter",steps:["Purpose: thank a mentor for guidance.","Audience: the mentor, so use a respectful tone and suitable salutation.","Plan: explain what the mentor did and how it helped you.","Draft, revise for clear ideas, edit language and punctuation, then prepare the final copy."],pitfall:"Do not spend all your time correcting commas before the ideas are organised. Revision comes before final proofreading."},
+      alt:["Think of writing like building a house: plan the design, construct the rooms, inspect the structure, fix defects and then open it for use.","Revision asks 'Does it say what I mean?' Editing asks 'Have I expressed it correctly?'"],
+      questions:[
+        {q:"Which stage focuses on improving the order and development of ideas?",options:["Revision","Publishing","Proofreading only","Typing the title"],answer:0,why:"Revision improves content, organisation and clarity."},
+        {q:"What is the main purpose of proofreading?",options:["Check the final text for errors","Choose a topic","Collect research ideas","Change the audience"],answer:0,why:"Proofreading is the final check for spelling, punctuation and other errors."}
+      ]
+    },
+    {
+      id:"functional-writing", title:"Functional Writing: Reports, Memos and Emails",
+      where:"Theme 8: Health and Safety. Writing, Functional writing",
+      outcomes:["Choose a functional text for a practical purpose.","Use suitable layout and tone in reports, memos and emails.","Present facts and instructions clearly."],
+      blocks:[
+        {title:"Choose the right format",text:"A report records information or findings; a memo communicates an internal message; an email sends a message electronically. Each format has conventions that help the reader find information quickly.",list:["Report: title, purpose, findings and conclusion or recommendations.","Memo: To, From, Date, Subject and concise message.","Email: recipient, clear subject, greeting, message, closing and name."]},
+        {title:"Use an appropriate tone",text:"The audience and purpose guide your language. A formal report or workplace email should be respectful, factual and concise. Avoid slang, vague claims and unnecessary details.",list:[]},
+        {title:"Check the details",text:"Use headings, short paragraphs or numbered points where helpful. Check names, dates, figures and any promised attachments. Separate observed facts from opinions or recommendations.",list:[]}
+      ],
+      example:{title:"Email about a class safety meeting",steps:["Subject: Class safety meeting – Friday","Greeting: Dear Class Representative,","Purpose: 'Please attend a short safety meeting on Friday at 10.00 a.m. in the science room.'","Add any preparation needed and close politely with your name."],pitfall:"An email that says 'See attached' but has no attachment is incomplete. Check the file before sending."},
+      alt:["Ask three questions: who needs this message, what do they need to know, and what action should they take?","A useful functional text lets the reader find the purpose, key facts and next step quickly."],
+      questions:[
+        {q:"Which items belong in a memo heading?",options:["To, From, Date and Subject","A list of characters","A bibliography only","A poem title"],answer:0,why:"A memo heading identifies the recipient, sender, date and subject."},
+        {q:"What should you check before sending an email with an attachment?",options:["That the correct file is attached","That the subject line is empty","That the message has no greeting","That the recipient is unknown"],answer:0,why:"Always confirm the correct file is attached before sending."}
+      ]
+    }
+,
+    {
+      id:"phrases-clauses-sentences",title:"Phrases, Clauses and Sentence Patterns",
+      where:"Themes 4–8. Grammar in Use, Phrases, Clauses and Sentence Structure",
+      outcomes:["Distinguish a phrase from a clause.","Identify noun, verb, adjective, adverb and prepositional phrases.","Recognise common sentence patterns and simple and compound sentences."],
+      blocks:[
+        {title:"Phrases and clauses",text:"A phrase is a group of related words that works as a unit but does not contain a complete subject–verb combination. A clause contains a subject and a verb. An independent clause can stand alone; a dependent clause needs another clause to complete its meaning.",list:["Noun phrase: the very tall tree.","Verb phrase: has been studying.","Adverb phrase: quite carefully.","Clause: because the rain stopped."]},
+        {title:"Types of phrases",text:"A noun phrase functions like a noun; a verb phrase contains the main verb and its auxiliaries; an adjective phrase describes a noun; an adverb phrase modifies a verb, adjective or adverb; a prepositional phrase begins with a preposition and has an object.",list:[]},
+        {title:"Sentence patterns",text:"A simple sentence has one independent clause. A compound sentence joins two independent clauses, often with a coordinating conjunction such as and, but or so. Common patterns include subject–verb (SV), subject–verb–object (SVO) and subject–verb–complement (SVC).",list:[]}
+      ],
+      example:{title:"Analyse: 'The learners have been reading quietly in the library.'",steps:["Subject: 'The learners'.","Verb phrase: 'have been reading'.","Adverb: 'quietly' tells how they are reading.","Prepositional phrase: 'in the library' tells where the reading happens.","The sentence contains one independent clause, so it is a simple sentence."],pitfall:"A long sentence is not automatically a compound sentence. Count the independent clauses, not the number of words."},
+      alt:["A phrase is a building block; a clause is a group with a subject and verb; a sentence expresses a complete thought.","Underline the subject once and the verb twice. This can help you identify clauses before naming the sentence pattern."],
+      questions:[
+        {q:"Which group of words is a clause?",options:["under the old bridge","because the bus arrived","very quickly","the tall green tree"],answer:1,why:"'The bus arrived' contains a subject and a verb, even though the word 'because' makes it dependent."},
+        {q:"Which pattern is used in 'Achieng opened the window'?",options:["SVO","SV","SVC","SVOO"],answer:0,why:"Achieng is the subject, opened is the verb and the window is the object."}
+      ]
+    },
+    {
+      id:"spelling-and-punctuation",title:"Spelling, Abbreviations and Punctuation",
+      where:"Themes 2 and 4. Writing, Mechanics of Writing",
+      outcomes:["Apply common spelling patterns and distinguish commonly confused words.","Use abbreviations and acronyms appropriately.","Choose punctuation that makes meaning clear."],
+      blocks:[
+        {title:"Spelling with attention",text:"English spelling reflects patterns but also contains exceptions. Check word families, prefixes and suffixes, and the position of letters when spelling unfamiliar words. Keep a personal list of words you often confuse.",list:["their / there / they're have different meanings.","principal refers to a school leader or main item; principle means a rule or belief.","Acronyms are formed from initial letters and may be pronounced as words; abbreviations shorten words or phrases."]},
+        {title:"Punctuation guides the reader",text:"A full stop ends a statement; a question mark ends a direct question; an exclamation mark signals strong feeling or emphasis. Commas separate items and help organise sentence structure. Quotation marks show direct speech or quoted words.",list:[]},
+        {title:"Dashes, hyphens and capital letters",text:"A hyphen joins parts of some compound words; a dash can mark a break or additional comment. Capital letters begin sentences and proper nouns. Follow the style required by the task and be consistent.",list:[]}
+      ],
+      example:{title:"Edit the sentence",steps:["Original: 'their going to visit the principle tomorrow'.","Use 'they're' because it means 'they are'.","Use 'principal' if the sentence refers to a school leader.","Corrected: 'They're going to visit the principal tomorrow.'"],pitfall:"Do not rely on sound alone: many confusing English words are pronounced alike but have different spellings and meanings."},
+      alt:["Read the sentence and ask what each word means. Then choose the spelling that matches the meaning, not just the sound.","Punctuation is a set of road signs: it shows where ideas stop, pause, connect or need emphasis."],
+      questions:[
+        {q:"Which word completes the sentence: 'The school ___ addressed the learners'?",options:["principal","principle","principel","principall"],answer:0,why:"Principal refers to the head of a school; principle means a rule or belief."},
+        {q:"Which punctuation mark normally ends a direct question?",options:["Question mark","Comma","Hyphen","Apostrophe"],answer:0,why:"A direct question ends with a question mark."}
+      ]
+    },
+    {
+      id:"creative-writing",title:"Narrative, Descriptive and Argumentative Writing",
+      where:"Themes 6 and 8. Writing, Creative Writing",
+      outcomes:["Plan a narrative or descriptive essay with a clear structure.","Use sensory detail and precise vocabulary.","Build an argument using reasons and relevant evidence."],
+      blocks:[
+        {title:"Narrative writing",text:"A narrative tells a sequence of events. It usually establishes a setting and characters, introduces a problem or change, develops events and reaches a resolution. Use time connectives and dialogue where they help the reader follow the story.",list:[]},
+        {title:"Descriptive writing",text:"A descriptive essay creates a clear impression of a person, place, object or experience. Use precise nouns, vivid but controlled adjectives, sensory details and an organised viewpoint. Avoid listing adjectives without developing an image.",list:[]},
+        {title:"Argumentative and expository writing",text:"An argumentative essay presents a position and supports it with reasons and evidence while considering other views. An expository essay explains a topic clearly. Both need a focused introduction, organised paragraphs and a conclusion that follows from the discussion.",list:[]}
+      ],
+      example:{title:"Plan an argument: 'Schools should create more reading time.'",steps:["Position: schools should protect regular reading time.","Reason 1: reading develops vocabulary and comprehension.","Reason 2: quiet reading builds concentration and independent learning.","Consider another view: lessons are already busy; respond by proposing a short, scheduled reading period.","Conclude by restating the position and the main benefits."],pitfall:"An argument is not stronger because it is louder. Support claims with relevant reasons, examples or evidence."},
+      alt:["A narrative takes the reader through events; a descriptive text helps the reader imagine; an argument tries to persuade through reasons.","Before drafting, write your main point in one sentence. Every paragraph should help develop that point."],
+      questions:[
+        {q:"Which feature is most important in an argumentative essay?",options:["A clear position supported by reasons and evidence","A list of unrelated events","Only descriptive adjectives","A conclusion with no connection to the topic"],answer:0,why:"An argument needs a clear claim and relevant support."},
+        {q:"Which technique is especially useful in descriptive writing?",options:["Sensory details","Unexplained abbreviations","Random facts","Repeated conclusions"],answer:0,why:"Sensory details help readers imagine what is being described."}
+      ]
+    }
+,
+    {
+      id:"speaking-etiquette",title:"Speaking Etiquette and Respectful Conversation",
+      where:"Themes 1–9. Listening and Speaking, Speaking Fluency and Conversational Skills",
+      outcomes:["Choose polite expressions for formal and informal situations.","Take turns and respond without interrupting.","Use tone, volume and non-verbal cues to communicate clearly."],
+      blocks:[
+        {title:"Match language to the situation",text:"The words we choose depend on who we are speaking to, why we are speaking and where the conversation takes place. Formal settings usually call for respectful, complete expressions; friendly conversations may allow more relaxed language.",list:["Formal: 'Could you please explain that point?'","Informal: 'Can you explain that again?'","Avoid insults, mocking accents or language that excludes others."]},
+        {title:"Listen and take turns",text:"Good speaking etiquette includes listening while another person speaks, waiting for a suitable pause, acknowledging contributions and disagreeing with an idea rather than attacking the person.",list:["Use phrases such as 'I understand your point, but…'","Ask for clarification when meaning is unclear.","Keep your voice audible without shouting."]},
+        {title:"Voice and non-verbal cues",text:"Pronunciation, pace, stress and intonation affect meaning. Facial expression, gesture, posture and eye contact can reinforce a message. Use these cues respectfully and consider cultural and personal differences.",list:[]}
+      ],
+      example:{title:"Disagree politely in a group discussion",steps:["A classmate gives an opinion you do not share.","Show that you listened: 'I see why you think that.'","State your view: 'I have a different interpretation because…'","Give a reason and invite a response."],pitfall:"Politeness does not mean pretending to agree. You can disagree firmly while respecting the speaker."},
+      alt:["Think of a conversation as a shared ball game: each person needs a fair turn, and listening helps you respond usefully.","Before speaking, ask whether your words are respectful, relevant and clear."],
+      questions:[
+        {q:"Which expression is most suitable when asking a teacher to repeat an instruction?",options:["Say that again!","Could you please repeat the instruction?","You were not clear.","Whatever."],answer:1,why:"It is respectful, clear and appropriate for a formal school interaction."},
+        {q:"What is the best way to disagree in a group discussion?",options:["Interrupt and raise your voice","Mock the speaker","Explain your different view with a reason","Refuse to listen"],answer:2,why:"Respectful disagreement focuses on reasons and ideas, not personal attacks."}
+      ]
+    },
+    {
+      id:"verbs-adverbs",title:"Verbs, Tense, Aspect and Adverbs",
+      where:"Themes 2–5. Grammar in Use, Word Classes",
+      outcomes:["Distinguish main and auxiliary verbs.","Recognise regular, irregular and phrasal verbs.","Use adverbs of time, place and manner accurately."],
+      blocks:[
+        {title:"Main and auxiliary verbs",text:"A main verb carries the central meaning: 'They planted trees.' An auxiliary verb helps the main verb express tense, aspect, emphasis or voice: 'They are planting trees'; 'They have planted trees'. Common auxiliaries include be, have and do, as well as modal verbs such as can, may and should.",list:["Main: She writes.","Auxiliary + main: She is writing.","Modal + main: She can write."]},
+        {title:"Tense and aspect",text:"Tense locates an action in time, while aspect shows how the action is viewed (for example, ongoing or completed). Compare 'She writes', 'She is writing' and 'She has written'. The auxiliary and verb form work together to express these meanings.",list:[]},
+        {title:"Phrasal verbs and adverbs",text:"A phrasal verb combines a verb with a particle or preposition, often creating a meaning different from the verb alone (look after, give up, turn off). Adverbs can tell when, where or how an action happens: yesterday, outside, carefully.",list:[]}
+      ],
+      example:{title:"Improve: 'The learners worked.'",steps:["Add an adverb of time: 'The learners worked yesterday.'","Add an adverb of place: 'The learners worked outside yesterday.'","Add an adverb of manner: 'The learners worked carefully outside yesterday.'","Each adverb answers a different question: when, where or how."],pitfall:"Not every word ending in -ly is an adverb. Identify the job the word performs in the sentence."},
+      alt:["A verb tells what happens; an auxiliary helps the verb; an adverb adds a detail about the action.","Use the questions when, where and how to identify many common adverbs."],
+      questions:[
+        {q:"In 'The class has completed the task', which word is the auxiliary verb?",options:["class","has","completed","task"],answer:1,why:"'Has' helps the main verb 'completed' form the present perfect."},
+        {q:"Which word is an adverb of manner?",options:["tomorrow","outside","carefully","school"],answer:2,why:"'Carefully' explains how the action is done."}
+      ]
+    },
+    {
+      id:"paragraph-cohesion",title:"Cohesion and Paragraph Development",
+      where:"Themes 3–5. Writing, Paragraphing and Effective Writing",
+      outcomes:["Develop a paragraph around one controlling idea.","Use linking words and reference words to connect sentences.","Maintain logical order and avoid unnecessary repetition."],
+      blocks:[
+        {title:"Unity: one main idea",text:"A unified paragraph develops one controlling idea. Begin with a topic sentence, add relevant explanation or evidence, and finish with a sentence that rounds off the point or links to the next paragraph.",list:["Topic sentence: states the main point.","Supporting sentences: explain, illustrate or provide evidence.","Closing sentence: reinforces the point or creates a transition."]},
+        {title:"Cohesion: connect the ideas",text:"Cohesion is the way words and sentences fit together. Linking words show relationships: addition (also, furthermore), contrast (however, although), cause (because, therefore) and sequence (first, next, finally). Pronouns and repeated key terms can also help readers follow the subject.",list:[]},
+        {title:"Choose links for meaning",text:"Do not add a linking word merely to sound formal. The link must express the real relationship between ideas. Use 'however' for contrast, 'therefore' for a result and 'for example' to introduce an illustration.",list:[]}
+      ],
+      example:{title:"Connect two ideas about communication",steps:["Idea 1: Digital tools help learners share information quickly.","Idea 2: Learners need to protect personal information.","Use a contrast link: 'However, learners need to protect their personal information.'","The second sentence now clearly contrasts a benefit with a responsibility."],pitfall:"A paragraph can contain linking words and still lack cohesion if its ideas are unrelated or poorly ordered."},
+      alt:["Think of cohesion as bridges between houses. Each sentence is a house; linking words help the reader cross from one idea to the next.","Read the first sentence of each paragraph. If the sequence makes sense, the overall structure is probably clear."],
+      questions:[
+        {q:"Which linking word best shows contrast?",options:["Furthermore","However","First","Because"],answer:1,why:"'However' signals that the next idea contrasts with the previous one."},
+        {q:"What should supporting sentences do?",options:["Develop the paragraph's main idea","Introduce unrelated topics","Repeat the topic sentence exactly","Replace punctuation"],answer:0,why:"Supporting sentences explain, illustrate or provide evidence for the controlling idea."}
       ]
     }
   ]

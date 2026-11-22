@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade 10 Curriculum Explorer — TUSOME</title>
+  <meta name="description" content="Explore Grade 10 Biology, Chemistry, Core Mathematics and Physics topics with guided learning links.">
+  <meta name="theme-color" content="#2457D6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html" aria-current="page">Subjects</a></li>
+          <li><a href="mathematics.html">Core Mathematics practice</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+        <div class="nav-account"><a href="onboarding.html">Get Started</a></div>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">GRADE 10 • CURRICULUM EXPLORER</p>
+      <h1 id="course-title">Loading subject...</h1>
+      <p id="course-intro" class="section-sub"></p>
+      <p class="section-sub">The topic map is based on the KICD Grade 10 subject design. TUSOME lesson explanations, worked examples and practice are independently prepared learning support, not official KICD material.</p>
+      <p><a href="https://kicd.ac.ke/cbc-materials/curriculum-designs/senior-school-designs/" target="_blank" rel="noopener noreferrer">Open the official KICD Senior School curriculum directory ↗</a></p>
+      <div class="card-panel">
+        <div class="form-group">
+          <label for="topic-search">Search topics</label>
+          <input id="topic-search" type="search" placeholder="Search a strand or topic">
+        </div>
+        <div class="filter-bar" id="subject-switch" role="group" aria-label="Choose a subject"></div>
+      </div>
+      <p id="topic-count" class="section-sub" aria-live="polite"></p>
+      <div id="curriculum-topics" class="experience-grid"></div>
+      <div class="btn-row">
+        <a class="btn btn-secondary" href="subjects.html">Back to all subjects</a>
+        <a class="btn btn-accent" id="practice-link" href="practice.html">Open subject practice →</a>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-about">
+      <p class="footer-brand">TUSOME</p>
+      <p>Understand more. Achieve more.</p>
+      <p class="footer-note">Independent educational project. Not officially approved or endorsed by KICD.</p>
+    </div>
+  </footer>
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="lesson.js" defer></script>
+  <script src="curriculum.js" defer></script>
+</body>
+</html>

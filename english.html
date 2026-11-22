@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade 10 English — TUSOME</title>
+  <meta name="description" content="Explore the Grade 10 English course map, guided lessons, examples and quick checks.">
+  <meta name="theme-color" content="#2457D6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html" aria-current="page">Subjects</a></li>
+          <li><a href="mathematics.html">Core Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+        <div class="nav-account"><a href="onboarding.html">Get Started</a></div>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">GRADE 10 • CORE SUBJECT</p>
+      <h1>English</h1>
+      <p class="section-sub">Explore the course map by theme and strand, then open an available guided lesson. The course map follows the KICD design; TUSOME's explanations and practice questions are independently written.</p>
+      <p class="section-sub"><a id="english-source-link" href="https://kicd.ac.ke/cbc-materials/curriculum-designs/senior-school-designs/" target="_blank" rel="noopener noreferrer">View the official KICD curriculum source</a>.</p>
+      <div class="card-panel">
+        <div class="form-group">
+          <label for="english-search">Search themes, strands or topics</label>
+          <input id="english-search" type="search" placeholder="Try grammar, reading, etiquette...">
+        </div>
+        <div class="filter-bar" id="english-strand-filters" role="group" aria-label="Filter by English strand"></div>
+      </div>
+      <p id="english-count" class="section-sub" aria-live="polite"></p>
+      <div id="english-course-map" class="experience-grid"></div>
+      <article id="english-lesson-panel" class="card-panel lesson-stage" hidden aria-live="polite">
+        <div class="section-header-inline">
+          <span class="demo-tag">GUIDED LESSON</span>
+          <button class="btn btn-secondary" id="english-back-btn" type="button">Back to course map</button>
+        </div>
+        <p class="eyebrow" id="english-lesson-where"></p>
+        <h2 id="english-lesson-title"></h2>
+        <div class="outcomes-box">
+          <h3>By the end of this lesson, you should be able to:</h3>
+          <ul id="english-outcomes" class="outcomes-list"></ul>
+        </div>
+        <div id="english-blocks" class="lesson-sections"></div>
+        <div class="example-box">
+          <span class="demo-tag">WORKED EXAMPLE</span>
+          <h3 id="english-example-title"></h3>
+          <ol id="english-example-steps" class="steps"></ol>
+          <p id="english-pitfall" class="pitfall-note"></p>
+        </div>
+        <div class="mini-check-box">
+          <span class="demo-tag">CHECK YOUR UNDERSTANDING</span>
+          <div id="english-questions"></div>
+          <p id="english-feedback" class="feedback" role="status" aria-live="polite"></p>
+        </div>
+        <div class="alt-explanation" id="english-alt" hidden>
+          <h3>Another way to understand it</h3>
+          <ul id="english-alt-list"></ul>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="english-alt-btn" type="button">Explain another way</button>
+          <button class="btn btn-primary" id="english-complete-btn" type="button">Mark lesson complete</button>
+          <a class="btn btn-accent" href="practice.html?subject=english">Practise English →</a>
+        </div>
+        <p id="english-status" class="feedback" role="status" aria-live="polite"></p>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-about">
+      <p class="footer-brand">TUSOME</p>
+      <p>Understand more. Achieve more.</p>
+      <p class="footer-note">TUSOME is an independent educational project and is not officially approved or endorsed by KICD.</p>
+    </div>
+  </footer>
+  <script src="data.js" defer></script>
+  <script src="english-data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="english.js" defer></script>
+</body>
+</html>
