@@ -26,9 +26,9 @@ window.ENGLISH = {
   // "lesson" is the id of an interactive lesson below, or null if it is coming soon.
   themes: [
     { no: 1, title: "Etiquette", topic: "Social", items: [
-      { strand: "Listening and Speaking", name: "Extensive listening", lessons: 3, focus: "Picking out key information, characters, places and events from recordings.", lesson: null },
+      { strand: "Listening and Speaking", name: "Extensive listening", lessons: 3, focus: "Picking out key information, characters, places and events from recordings.", lesson: "listening-for-meaning" },
       { strand: "Listening and Speaking", name: "Speaking: etiquette", lessons: 4, focus: "Using polite language in different settings; the sounds /ɒ/ and /ɔ:/.", lesson: null },
-      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Previewing, skimming and scanning; collocations and binomials.", lesson: null },
+      { strand: "Reading", name: "Reading fluency", lessons: 4, focus: "Previewing, skimming and scanning; collocations and binomials.", lesson: "reading-fluency" },
       { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Nouns, pronouns and determiners.", lesson: "word-classes" },
       { strand: "Writing", name: "Sentence fluency", lessons: 4, focus: "Comma splices, run-on sentences and run-on lines.", lesson: "sentence-fluency" }
     ]},
@@ -58,7 +58,7 @@ window.ENGLISH = {
       { strand: "Listening and Speaking", name: "Speaking: etiquette and pronunciation", lessons: 4, focus: "Conducting meetings politely; the sounds /tʃ/, /dʒ/ and /ʒ/.", lesson: null },
       { strand: "Reading", name: "Intensive reading", lessons: 4, focus: "Comprehension strategies; idioms, compound words and proverbs.", lesson: null },
       { strand: "Grammar in Use", name: "Phrases", lessons: 5, focus: "Adverb, adjective and prepositional phrases.", lesson: null },
-      { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: null }
+      { strand: "Writing", name: "The writing process", lessons: 4, focus: "Prewriting, drafting, revising, editing and publishing, for example an appreciation letter.", lesson: "writing-process" }
     ]},
     { no: 6, title: "Culture", topic: "Values and beliefs", items: [
       { strand: "Listening and Speaking", name: "Responsive listening", lessons: 3, focus: "Listening to solve problems and linking what we hear to our own experience.", lesson: null },
@@ -79,7 +79,7 @@ window.ENGLISH = {
       { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "The sound /i:/; synonyms, antonyms and homophones; telling a story fluently.", lesson: null },
       { strand: "Reading", name: "Extensive reading: library skills", lessons: 4, focus: "Starting research and finding materials in a library.", lesson: null },
       { strand: "Grammar in Use", name: "Sentence structure", lessons: 4, focus: "Simple sentence patterns (SV, SVO, SVC, SVOO, SVOA) and compound sentences.", lesson: null },
-      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: null }
+      { strand: "Writing", name: "Functional writing", lessons: 5, focus: "Simple reports, memos and emails with attachments.", lesson: "functional-writing" }
     ]},
     { no: 9, title: "Income", topic: "Types and sources", items: [
       { strand: "Listening and Speaking", name: "Selective listening", lessons: 3, focus: "Filtering and extracting specific information.", lesson: null },
@@ -441,6 +441,71 @@ window.ENGLISH = {
         { q: "What is the correct order of SQ4R?",
           options: ["Survey, Question, Read, Reflect, Recite, Review", "Question, Survey, Read, Recite, Reflect, Review", "Read, Survey, Question, Review, Recite, Reflect", "Survey, Read, Question, Review, Reflect, Recite"], answer: 0,
           why: "Look first (Survey), ask (Question), read, think (Reflect), say it (Recite), then check (Review)." }
+      ]
+    }
+,
+    {
+      id:"listening-for-meaning", title:"Listening for Meaning and Key Information",
+      where:"Theme 1: Etiquette. Listening and Speaking, Extensive listening",
+      outcomes:["Identify the main idea and supporting details in a spoken text.","Make brief notes about people, places, events and sequence.","Distinguish stated facts from reasonable inferences."],
+      blocks:[
+        {title:"Listen with a purpose",text:"Before listening, read the task and decide what information you need. A clear purpose helps you focus on the main idea, names, dates, places, reasons and actions instead of trying to remember every word.",list:["For the main idea, ask what the whole message is mostly about.","For details, listen for specific names, times, places and instructions.","For sequence, notice first, later, meanwhile and finally."]},
+        {title:"Use more than one listen",text:"On the first listen, identify the speaker, situation and general topic. On the second, check details and fill gaps in your notes. If you miss a word, keep listening; later information may clarify it.",list:["Write key words rather than full sentences.","Use numbers or arrows to show sequence.","Check that each note answers the question asked."]},
+        {title:"Fact and inference",text:"A fact is directly stated or can be checked. An inference is a conclusion drawn from clues. If a speaker says the ground is wet and people have umbrellas, you may infer that it has rained, even if the speaker does not say so." ,list:[]}
+      ],
+      example:{title:"A school clean-up announcement",steps:["The clean-up begins at 8.00 a.m. on Saturday at the main gate.","Its purpose is to collect litter and clear blocked drainage channels.","Learners should bring gloves and drinking water.","The main idea is a planned community clean-up; the time, venue and materials are supporting details."],pitfall:"Do not confuse a supporting detail with the main idea. The main idea covers the whole message."},
+      alt:["Imagine listening like sorting a school bag: keep the information needed for the task and set aside unrelated details.","Summarise the recording in one sentence. If it captures the whole message, you probably identified the main idea."],
+      questions:[
+        {q:"You need to identify where a meeting will take place. Which detail should you listen for?",options:["The venue","The speaker's favourite colour","An unrelated example","A repeated greeting"],answer:0,why:"The venue directly answers where the meeting will take place."},
+        {q:"What should you do if you miss one word in a recording?",options:["Stop listening","Keep listening for more clues","Ignore the whole recording","Guess every remaining answer"],answer:1,why:"Continue listening because later information may clarify the meaning."}
+      ]
+    },
+    {
+      id:"reading-fluency", title:"Reading Fluency, Skimming and Scanning",
+      where:"Theme 1: Etiquette. Reading, Reading fluency",
+      outcomes:["Distinguish skimming from scanning.","Preview a text before close reading.","Read accurately and at a pace that supports understanding."],
+      blocks:[
+        {title:"Preview a text",text:"Previewing means looking at the title, headings, pictures, captions and layout before reading closely. These features help you predict the subject and organise your attention.",list:["Notice the title and subheadings.","Look at diagrams and captions.","Connect the topic with what you already know."]},
+        {title:"Skimming and scanning",text:"Skimming is rapid reading to understand the general idea. Scanning is searching quickly for one specific item such as a date, name, figure or keyword. Choose a strategy that matches your purpose.",list:["Skim an article to identify its main point.","Scan a timetable to find a departure time.","Read closely when you must understand an argument or instruction."]},
+        {title:"Fluency supports meaning",text:"Fluent reading combines accuracy, suitable speed, phrasing and expression. Pause at punctuation and group words into meaningful phrases. Reading too quickly can hide meaning; reading word by word can make it difficult to connect ideas.",list:[]}
+      ],
+      example:{title:"Finding information in a school notice",steps:["Read the heading to identify the subject.","Skim the opening lines to understand the purpose.","Scan for the date, time, venue and contact person.","Read the relevant instructions carefully before acting."],pitfall:"Do not rely on skimming when the task asks for an exact figure or instruction."},
+      alt:["Skimming is like looking at a map to understand the whole route. Scanning is like finding one named street on the map.","Ask whether you need the general message or one exact detail before choosing a reading strategy."],
+      questions:[
+        {q:"You need to find the date of an event in a long notice. Which strategy is best?",options:["Scanning","Skimming only","Reading aloud","Memorising the notice"],answer:0,why:"Scanning helps locate a specific item such as a date."},
+        {q:"What is the main purpose of skimming?",options:["Understand the general idea","Find one exact number","Check every spelling","Copy the entire text"],answer:0,why:"Skimming gives a quick overview of the text."}
+      ]
+    },
+    {
+      id:"writing-process", title:"The Writing Process: Plan, Draft, Revise and Edit",
+      where:"Theme 5: Careers. Writing, The writing process",
+      outcomes:["Identify purpose, audience and form before writing.","Organise and draft a coherent text.","Revise ideas and edit language before publishing."],
+      blocks:[
+        {title:"Plan before drafting",text:"Identify the purpose (why you are writing), audience (who will read it) and form (letter, report, essay or email). Brainstorm relevant ideas and arrange them in a logical order.",list:[]},
+        {title:"Draft and revise",text:"A draft is an early version. Focus first on communicating the message. During revision, check whether ideas are complete, relevant and logically arranged. Add missing explanations and remove repetition.",list:[]},
+        {title:"Edit and publish",text:"Editing improves grammar, vocabulary, spelling, punctuation and sentence structure. Proofreading is a final check for errors. Publishing means presenting or sharing the finished text in the appropriate format.",list:[]}
+      ],
+      example:{title:"Planning an appreciation letter",steps:["Purpose: thank a mentor for guidance.","Audience: the mentor, so use a respectful tone and suitable salutation.","Plan: explain what the mentor did and how it helped you.","Draft, revise for clear ideas, edit language and punctuation, then prepare the final copy."],pitfall:"Do not spend all your time correcting commas before the ideas are organised. Revision comes before final proofreading."},
+      alt:["Think of writing like building a house: plan the design, construct the rooms, inspect the structure, fix defects and then open it for use.","Revision asks 'Does it say what I mean?' Editing asks 'Have I expressed it correctly?'"],
+      questions:[
+        {q:"Which stage focuses on improving the order and development of ideas?",options:["Revision","Publishing","Proofreading only","Typing the title"],answer:0,why:"Revision improves content, organisation and clarity."},
+        {q:"What is the main purpose of proofreading?",options:["Check the final text for errors","Choose a topic","Collect research ideas","Change the audience"],answer:0,why:"Proofreading is the final check for spelling, punctuation and other errors."}
+      ]
+    },
+    {
+      id:"functional-writing", title:"Functional Writing: Reports, Memos and Emails",
+      where:"Theme 8: Health and Safety. Writing, Functional writing",
+      outcomes:["Choose a functional text for a practical purpose.","Use suitable layout and tone in reports, memos and emails.","Present facts and instructions clearly."],
+      blocks:[
+        {title:"Choose the right format",text:"A report records information or findings; a memo communicates an internal message; an email sends a message electronically. Each format has conventions that help the reader find information quickly.",list:["Report: title, purpose, findings and conclusion or recommendations.","Memo: To, From, Date, Subject and concise message.","Email: recipient, clear subject, greeting, message, closing and name."]},
+        {title:"Use an appropriate tone",text:"The audience and purpose guide your language. A formal report or workplace email should be respectful, factual and concise. Avoid slang, vague claims and unnecessary details.",list:[]},
+        {title:"Check the details",text:"Use headings, short paragraphs or numbered points where helpful. Check names, dates, figures and any promised attachments. Separate observed facts from opinions or recommendations.",list:[]}
+      ],
+      example:{title:"Email about a class safety meeting",steps:["Subject: Class safety meeting – Friday","Greeting: Dear Class Representative,","Purpose: 'Please attend a short safety meeting on Friday at 10.00 a.m. in the science room.'","Add any preparation needed and close politely with your name."],pitfall:"An email that says 'See attached' but has no attachment is incomplete. Check the file before sending."},
+      alt:["Ask three questions: who needs this message, what do they need to know, and what action should they take?","A useful functional text lets the reader find the purpose, key facts and next step quickly."],
+      questions:[
+        {q:"Which items belong in a memo heading?",options:["To, From, Date and Subject","A list of characters","A bibliography only","A poem title"],answer:0,why:"A memo heading identifies the recipient, sender, date and subject."},
+        {q:"What should you check before sending an email with an attachment?",options:["That the correct file is attached","That the subject line is empty","That the message has no greeting","That the recipient is unknown"],answer:0,why:"Always confirm the correct file is attached before sending."}
       ]
     }
   ]
