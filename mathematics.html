@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Mathematics — TUSOME</title>
+  <meta name="description" content="Practise Grade 10 mathematics across multiple topics with dynamic question generation, mistake hints, handwriting working, and narration.">
+  <meta name="theme-color" content="#2457D6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="mathematics.html" aria-current="page">Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+
+        <div class="nav-account">
+          <a href="onboarding.html">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">GRADE 10 • MULTI-TOPIC MATHEMATICS</p>
+      <h1>Interactive Mathematics</h1>
+      <p class="section-sub">
+        Choose any Grade 10 topic below to generate fresh practice problems, get mistake-specific hints, and watch the handwritten solution unfold step by step.
+      </p>
+
+      <div class="filter-bar" id="math-topic-chips" role="group" aria-label="Select Mathematics topic">
+        <button type="button" class="chip is-active" data-topic="linear">Linear Equations</button>
+        <button type="button" class="chip" data-topic="substitution">Algebraic Substitution</button>
+        <button type="button" class="chip" data-topic="indices">Indices &amp; Powers</button>
+        <button type="button" class="chip" data-topic="ratios">Ratios &amp; Proportions</button>
+        <button type="button" class="chip" data-topic="geometry">Area &amp; Perimeter</button>
+        <button type="button" class="chip" data-topic="quadratics">Quadratics</button>
+       <button type="button" class="chip" data-topic="enlargement">Scale Factors (A.S.F / V.S.F)</button>
+       <button type="button" class="chip" data-topic="probability">Probability</button>
+
+      </div>
+
+      <div class="math-layout">
+        <section class="card-panel math-question-panel" aria-labelledby="math-q-heading">
+          <div class="section-header-inline">
+            <span class="demo-tag" id="math-subtopic-badge">Linear Equations</span>
+            <button class="btn btn-secondary" id="math-new-btn" type="button">Generate new question</button>
+          </div>
+
+          <h2 id="math-q-heading">Solve the problem:</h2>
+          <p class="equation" id="math-equation" aria-live="off"></p>
+          <p id="math-context" class="math-prompt-note"></p>
+
+          <form id="math-form" novalidate>
+            <label for="math-answer" id="math-answer-label">Your answer:</label>
+            <div class="answer-row">
+              <input id="math-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter a number">
+              <button class="btn btn-accent" type="submit">Check answer</button>
+            </div>
+          </form>
+
+          <p class="feedback" id="math-feedback" role="status" aria-live="polite"></p>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="math-show-steps-btn" type="button">
+              Show worked steps
+            </button>
+            <button class="btn btn-secondary" id="math-similar-btn" type="button" hidden>
+              Try another like this
+            </button>
+          </div>
+
+          <ol class="steps" id="math-steps-list"></ol>
+        </section>
+
+        <section class="card-panel math-board-panel" aria-labelledby="board-heading">
+          <div class="board-header">
+            <div>
+              <span class="demo-tag">HANDWRITING NOTEBOOK</span>
+              <h2 id="board-heading">Step-by-step working</h2>
+            </div>
+            <div class="narration-controls" role="group" aria-label="Audio narration controls">
+              <button class="chip is-active" id="voice-play-btn" type="button">Play voice</button>
+              <button class="chip" id="voice-pause-btn" type="button">Pause</button>
+              <button class="chip" id="voice-replay-btn" type="button">Replay voice</button>
+            </div>
+          </div>
+
+          <p id="voice-status" class="voice-status" role="status" aria-live="polite">
+            Narration ready when you play steps or tap Play voice.
+          </p>
+
+          <div class="canvas-frame">
+            <canvas id="math-canvas" width="640" height="360" aria-label="Handwriting-style mathematical working animation"></canvas>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="canvas-replay-btn" type="button">
+              Replay handwriting animation
+            </button>
+            <button class="btn btn-secondary" id="canvas-step-btn" type="button">
+              Draw next line
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">TUSOME</p>
+        <p>Understand more. Achieve more.</p>
+        <p>Let's learn, explore and grow together.</p>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Platform</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="onboarding.html">Onboarding</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Learning</p>
+        <ul class="footer-links">
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="lesson.html?subject=maths">Lessons</a></li>
+          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-note">
+        TUSOME is an independent educational project for Grade 10 learners and is not officially approved or endorsed by KICD.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="mathematics.js" defer></script>
+</body>
+</html>

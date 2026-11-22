@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Started — TUSOME</title>
+  <meta name="description" content="Set up your Grade 10 TUSOME learning profile and select your subjects.">
+  <meta name="theme-color" content="#2457D6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="mathematics.html">Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+
+        <div class="nav-account">
+          <a href="onboarding.html" aria-current="page">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">GRADE 10 SETUP</p>
+      <h1>Set up your learning space</h1>
+      <p class="section-sub">
+        You don't have to understand everything immediately. Let's set up your Grade 10 subjects and start together.
+      </p>
+
+      <form id="onboarding-form" class="card-panel" novalidate>
+        <div class="form-group">
+          <label for="learner-name">What should we call you? (Optional)</label>
+          <input id="learner-name" name="learnerName" type="text" placeholder="e.g. Amina or Learner" maxlength="40">
+        </div>
+
+        <div class="form-row-two">
+          <div class="form-group">
+            <label for="learner-grade">Grade</label>
+            <select id="learner-grade" name="grade">
+              <option value="10" selected>Grade 10 (Active Pilot)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="learner-pathway">Primary pathway focus</label>
+            <select id="learner-pathway" name="pathway">
+              <option value="stem">STEM</option>
+              <option value="social">Social Sciences</option>
+              <option value="arts">Arts and Sports Science</option>
+              <option value="core">Core Subjects</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="form-group subject-fieldset">
+          <legend>Choose your subjects (select at least one)</legend>
+          <div class="filter-bar" role="group" aria-label="Filter subjects by pathway">
+            <button type="button" class="chip is-active" data-filter="all">All</button>
+            <button type="button" class="chip" data-filter="core">Core</button>
+            <button type="button" class="chip" data-filter="stem">STEM</button>
+            <button type="button" class="chip" data-filter="social">Social Sciences</button>
+            <button type="button" class="chip" data-filter="arts">Arts & Sports</button>
+          </div>
+          <div id="subject-choices" class="choice-grid"></div>
+        </fieldset>
+
+        <p class="feedback" id="onboarding-error" role="alert" hidden></p>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" type="submit">Save and go to Dashboard</button>
+          <a class="btn btn-secondary" href="dashboard.html">Skip to Dashboard</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">TUSOME</p>
+        <p>Understand more. Achieve more.</p>
+        <p>Let's learn, explore and grow together.</p>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Platform</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Learning</p>
+        <ul class="footer-links">
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="lesson.html?subject=maths">Lessons</a></li>
+          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-note">
+        TUSOME is an independent educational project for Grade 10 learners and is not officially approved or endorsed by KICD.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="onboarding.js" defer></script>
+</body>
+</html>

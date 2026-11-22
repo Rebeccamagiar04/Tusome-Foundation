@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TUSOME — Understand more. Achieve more.</title>
+  <meta name="description" content="TUSOME is an interactive learning companion for Kenya's Senior School learners.">
+  <meta name="theme-color" content="#2457D6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="mathematics.html">Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+
+        <div class="nav-account">
+          <a href="onboarding.html">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">LEARN • EXPLORE • GROW</p>
+          <h1>Learning is better when we explore together.</h1>
+          <p class="lead">
+            Discover concepts, practise step by step, and build confidence with interactive
+            learning designed around Kenya's Grade 10 Senior School curriculum.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="onboarding.html">Start learning</a>
+            <a class="btn btn-secondary" href="subjects.html">Explore subjects</a>
+          </div>
+        </div>
+
+        <section class="demo" id="try" aria-labelledby="demo-title">
+          <p class="demo-tag" id="demo-title">Sample question</p>
+          <p class="demo-q">Solve for x:</p>
+          <p class="equation" id="demo-equation" aria-live="off"></p>
+
+          <form id="demo-form" novalidate>
+            <label for="demo-answer">Your answer: x =</label>
+            <div class="answer-row">
+              <input id="demo-answer" type="text" inputmode="numeric" autocomplete="off">
+              <button class="btn btn-accent" type="submit">Check my answer</button>
+            </div>
+          </form>
+
+          <p class="feedback" id="demo-feedback" role="status" aria-live="polite"></p>
+          <ol class="steps" id="demo-steps"></ol>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="demo-next" type="button" hidden>
+              Show next step
+            </button>
+            <button class="btn btn-secondary" id="demo-again" type="button" hidden>
+              Try a similar question
+            </button>
+          </div>
+
+          <p>
+            <a href="mathematics.html">Open full Interactive Mathematics & handwriting working →</a>
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <h2 id="how-title">How TUSOME works</h2>
+        <p class="section-sub">
+          A guided learning experience designed to help you understand, practise, and improve.
+        </p>
+        <ol class="how-list">
+          <li>Set your Grade 10 profile and choose your subjects.</li>
+          <li>Explore lessons and step-by-step interactive activities.</li>
+          <li>Practise questions and see clear explanations when stuck.</li>
+          <li>Track your real learning progress as you complete activities.</li>
+        </ol>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="onboarding.html">Set up my Grade 10 profile</a>
+          <a class="btn btn-secondary" href="dashboard.html">Go to Dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pale" id="explore" aria-labelledby="explore-title">
+      <div class="container">
+        <h2 id="explore-title">Core learning spaces</h2>
+        <p class="section-sub">
+          Focused tools built for Grade 10 Senior School learners.
+        </p>
+        <div class="experience-grid">
+          <article class="experience experience-live">
+            <h3>Interactive Mathematics</h3>
+            <p>Solve equations, get mistake-aware hints, and watch step-by-step handwriting working.</p>
+            <a class="btn btn-accent" href="mathematics.html">Open Mathematics</a>
+          </article>
+
+          <article class="experience">
+            <h3>Guided Lessons</h3>
+            <p>Break down topics into clear explanations, examples, and practice checks.</p>
+            <a href="lesson.html?subject=maths">Open a lesson →</a>
+          </article>
+
+          <article class="experience">
+            <h3>Practice & Revision</h3>
+            <p>Test your understanding with immediate feedback and step explanations.</p>
+            <a href="practice.html">Start practising →</a>
+          </article>
+
+          <article class="experience">
+            <h3>Student Dashboard</h3>
+            <p>See your selected Grade 10 subjects, continue learning, and check recent activity.</p>
+            <a href="dashboard.html">Open Dashboard →</a>
+          </article>
+
+          <article class="experience">
+            <h3>Learning Progress</h3>
+            <p>View lessons completed, practice attempts, and topics needing extra revision.</p>
+            <a href="progress.html">View Progress →</a>
+          </article>
+
+          <article class="experience">
+            <h3>Subjects Directory</h3>
+            <p>Browse Grade 10 subjects across STEM, Social Sciences, Arts & Sports, and Core.</p>
+            <a href="subjects.html">Browse Subjects →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">TUSOME</p>
+        <p>Understand more. Achieve more.</p>
+        <p>Let's learn, explore and grow together.</p>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Platform</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="onboarding.html">Onboarding</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Learning</p>
+        <ul class="footer-links">
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="lesson.html?subject=maths">Lessons</a></li>
+          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-note">
+        TUSOME is an independent educational project for Grade 10 learners and is not officially approved or endorsed by KICD.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="demo.js" defer></script>
+</body>
+</html>

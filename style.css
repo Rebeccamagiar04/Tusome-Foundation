@@ -1,0 +1,1133 @@
+
+/* =========================================================
+   TUSOME — Main Stylesheet
+   Mobile-first, accessible and responsive
+   ========================================================= */
+
+/* 1. Brand colours and shared settings */
+:root {
+  --blue: #2457D6;
+  --orange: #FF8A00;
+  --white: #FFFFFF;
+  --navy: #172554;
+  --pale-blue: #EFF5FF;
+  --soft-orange: #FFF3E6;
+
+  --radius: 14px;
+  --space: 1rem;
+  --font: "Nunito", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  --shadow: 0 8px 24px rgba(23, 37, 84, 0.08);
+  --shadow-hover: 0 12px 28px rgba(23, 37, 84, 0.14);
+}
+
+/* 2. Basic page styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--navy);
+  background: var(--white);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  font-weight: 800;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+}
+
+a {
+  color: var(--blue);
+}
+
+img, svg {
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* 3. Header and navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 2px solid var(--pale-blue);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--navy);
+}
+
+.logo {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.menu-toggle {
+  font: inherit;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--pale-blue);
+  border: 0;
+  border-radius: var(--radius);
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.site-nav.open {
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+
+.site-nav li a {
+  display: block;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.site-nav li a:hover,
+.site-nav li a[aria-current="page"] {
+  background: var(--pale-blue);
+  color: var(--blue);
+}
+
+.lang select {
+  font: inherit;
+  color: var(--navy);
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+}
+
+/* Account links in the navigation */
+.nav-account {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.nav-account a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0.45rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.nav-account a:first-child {
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.nav-account a:last-child {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.nav-account a:hover {
+  filter: brightness(0.94);
+}
+
+/* 4. Buttons */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.25rem;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn[hidden] {
+  display: none;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Navy text on orange improves readability */
+.btn-accent {
+  background: var(--orange);
+  color: var(--navy);
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+
+/* 5. Hero section */
+.hero {
+  background: var(--pale-blue);
+  padding: 2.5rem 0;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 15ch;
+  color: var(--navy);
+}
+
+.hero .lead {
+  font-size: 1.15rem;
+  max-width: 55ch;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--blue);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  background: var(--white);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+/* 6. Mathematics demonstration */
+.demo {
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.demo-tag {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.15rem 0.75rem;
+  background: var(--soft-orange);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.demo-q {
+  margin-bottom: 0.25rem;
+}
+
+.equation {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.demo label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.answer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.answer-row input {
+  flex: 1 1 6rem;
+  min-width: 0;
+  min-height: 3rem;
+  font: inherit;
+  font-size: 1.2rem;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  padding: 0 0.75rem;
+}
+
+.feedback {
+  margin: 1rem 0 0;
+  font-weight: 700;
+}
+
+.feedback.is-correct {
+  border-left: 6px solid var(--blue);
+  background: var(--pale-blue);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.feedback.is-wrong {
+  border-left: 6px solid var(--orange);
+  background: var(--soft-orange);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.feedback:empty {
+  display: none;
+}
+
+.steps {
+  margin: 1rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.steps li {
+  margin-bottom: 0.5rem;
+}
+
+.steps .math {
+  font-weight: 800;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.steps li:last-child {
+  animation: write-in 0.5s ease-out;
+}
+
+@keyframes write-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 7. General sections */
+.section {
+  padding: 3rem 0;
+}
+
+.section-pale {
+  background: var(--pale-blue);
+}
+
+.section-sub {
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+.section-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.section-action:hover {
+  text-decoration: underline;
+}
+
+/* 8. How it works */
+.how-list {
+  list-style: none;
+  counter-reset: step;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.how-list li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.25rem 0 0.25rem 3.25rem;
+  font-weight: 700;
+}
+
+.how-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  color: var(--navy);
+  font-weight: 900;
+}
+
+/* 9. Learning experience cards */
+.experience-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.experience {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.experience h3 {
+  color: var(--navy);
+}
+
+.experience p {
+  margin-bottom: 0.75rem;
+}
+
+.experience a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.experience a:hover {
+  text-decoration: underline;
+}
+
+.experience-live {
+  border-color: var(--orange);
+  background: var(--soft-orange);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+  background: var(--pale-blue);
+  border: 1px solid var(--blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* 10. Pathways */
+.path-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.path-list li {
+  border-left: 6px solid var(--blue);
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.path-list li:nth-child(2) {
+  border-color: var(--orange);
+}
+
+.path-list li:nth-child(3) {
+  border-color: var(--navy);
+}
+
+.path-list p {
+  margin: 0;
+}
+
+.path-list a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* 11. Student learning space */
+.learning-space {
+  background: var(--soft-orange);
+  padding: 3rem 0;
+}
+
+.learning-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.learning-card {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.learning-card h3 {
+  color: var(--blue);
+}
+
+.learning-card a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.learning-card a:hover {
+  text-decoration: underline;
+}
+
+/* 12. Footer */
+.site-footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 3rem 0 1.5rem;
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--white);
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-about {
+  max-width: 32ch;
+}
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-heading {
+  font-weight: 900;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-legal a {
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+/* 13. Larger screens */
+@media (min-width: 48rem) {
+  h1 { font-size: 2.6rem; }
+  h2 { font-size: 2rem; }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    padding: 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+  }
+
+  .site-nav li a {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-account {
+    margin: 0;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+  }
+
+  .how-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .how-list li {
+    padding: 3.25rem 0 0;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .path-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .learning-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+  }
+}
+
+/* 14. Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Onboarding, Dashboard & Progress */
+.card-panel {
+  background: var(--white);
+  border: 2px solid var(--pale-blue);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label,
+.subject-fieldset legend {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+  color: var(--navy);
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.55rem 0.85rem;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.form-row-two {
+  display: grid;
+  gap: 1rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--blue);
+  background: var(--white);
+  color: var(--blue);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.chip.is-active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.choice-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.choice-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--pale-blue);
+  border-radius: var(--radius);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.choice-card.is-selected {
+  border-color: var(--blue);
+  background: var(--pale-blue);
+}
+
+.choice-card input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--blue);
+}
+
+.choice-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice-text small {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: var(--pale-blue);
+  border-left: 6px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+.stat-card:nth-child(2) {
+  border-left-color: var(--orange);
+  background: var(--soft-orange);
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.dash-two-col {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.section-header-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.activity-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.activity-list li {
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+  .form-row-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dash-two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .choice-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Interactive Mathematics & Handwriting Canvas */
+.math-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.math-toolbar label {
+  font-weight: 800;
+}
+
+.math-toolbar select {
+  flex: 1 1 16rem;
+  min-height: 2.85rem;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.math-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.math-prompt-note {
+  font-size: 0.98rem;
+  opacity: 0.9;
+}
+
+.board-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.narration-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.voice-status {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+}
+
+.canvas-frame {
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #FFFDF9;
+}
+
+#math-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 60rem) {
+  .math-layout {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+
+
+
+/* Lessons & Practice */
+.lesson-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.lesson-picker label {
+  font-weight: 800;
+}
+
+.lesson-picker select {
+  flex: 1 1 16rem;
+  min-height: 2.85rem;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.example-box {
+  background: var(--pale-blue);
+  border-left: 6px solid var(--blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.alt-explanation {
+  background: var(--soft-orange);
+  border-left: 6px solid var(--orange);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.option-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--pale-blue);
+  border-radius: var(--radius);
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.option-card input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--blue);
+}
+/* Deeper Lesson Layout */
+.outcomes-box {
+  background: var(--pale-blue);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.outcomes-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.outcomes-list li {
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.lesson-sections {
+  margin-bottom: 1.5rem;
+}
+
+.lesson-block {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--pale-blue);
+}
+
+.lesson-block:last-child {
+  border-bottom: 0;
+}
+
+.pitfall-note {
+  margin-top: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--white);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.mini-check-box {
+  background: var(--pale-blue);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+}

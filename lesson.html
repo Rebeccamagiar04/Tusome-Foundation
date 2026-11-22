@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guided Lesson — TUSOME</title>
+  <meta name="description" content="Step-by-step Grade 10 lesson with examples, alternative explanations, and progress tracking.">
+  <meta name="theme-color" content="#2457D6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="mathematics.html">Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+
+        <div class="nav-account">
+          <a href="onboarding.html">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow" id="lesson-subject-tag">GRADE 10 • GUIDED LESSON</p>
+      <h1 id="lesson-title">Loading lesson...</h1>
+      <p class="section-sub" id="lesson-summary"></p>
+
+      <div class="lesson-picker">
+        <label for="lesson-select">Switch topic:</label>
+        <select id="lesson-select"></select>
+      </div>
+
+      <article class="card-panel lesson-stage">
+        <div class="outcomes-box">
+          <span class="demo-tag">LEARNING OUTCOMES</span>
+          <h2>By the end of this lesson, you should be able to:</h2>
+          <ul id="lesson-outcomes" class="outcomes-list"></ul>
+        </div>
+
+        <div class="lesson-sections">
+          <span class="demo-tag">1. STEP-BY-STEP EXPLANATION</span>
+          <div id="lesson-blocks"></div>
+        </div>
+
+        <div class="example-box">
+          <span class="demo-tag">2. WORKED EXAMPLE</span>
+          <h3 id="lesson-example-title"></h3>
+          <ol id="lesson-example-steps" class="steps"></ol>
+          <p id="lesson-pitfall" class="pitfall-note"></p>
+        </div>
+
+        <div class="mini-check-box">
+          <span class="demo-tag">3. QUICK CHECK</span>
+          <h3 id="check-question"></h3>
+          <div id="check-options" class="option-list"></div>
+          <button class="btn btn-secondary" id="check-answer-btn" type="button">Check quick answer</button>
+          <p class="feedback" id="check-feedback" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="confused-btn" type="button">
+            Still confused? Explain another way
+          </button>
+          <button class="btn btn-primary" id="complete-lesson-btn" type="button">
+            Mark lesson complete
+          </button>
+          <a class="btn btn-accent" href="practice.html">Practise more questions →</a>
+        </div>
+
+        <div class="alt-explanation" id="alt-explanation-box" hidden>
+          <h3>Another way to look at it</h3>
+          <p id="alt-explanation-text"></p>
+        </div>
+
+        <p class="feedback" id="lesson-status" role="status" aria-live="polite"></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">TUSOME</p>
+        <p>Understand more. Achieve more.</p>
+        <p>Let's learn, explore and grow together.</p>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Platform</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="onboarding.html">Onboarding</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Learning</p>
+        <ul class="footer-links">
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="lesson.html?subject=maths">Lessons</a></li>
+          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-note">
+        TUSOME is an independent educational project for Grade 10 learners and is not officially approved or endorsed by KICD.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="lesson.js" defer></script>
+</body>
+</html>

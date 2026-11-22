@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Progress — TUSOME</title>
+  <meta name="description" content="Track your completed lessons, practice attempts, and topics to review in TUSOME.">
+  <meta name="theme-color" content="#2457D6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TUSOME home">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#2457D6"/>
+          <path d="M10 16c5-2 10-1 14 2v18c-4-3-9-4-14-2z" fill="#fff"/>
+          <path d="M38 16c-5-2-10-1-14 2v18c4-3 9-4 14-2z" fill="#EFF5FF"/>
+          <path d="M33 5l1.8 4.2L39 11l-4.2 1.8L33 17l-1.8-4.2L27 11l4.2-1.8z" fill="#FF8A00"/>
+        </svg>
+        <span class="brand-name">TUSOME</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="mathematics.html">Mathematics</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html" aria-current="page">Progress</a></li>
+        </ul>
+
+        <div class="nav-account">
+          <a href="onboarding.html">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p class="eyebrow">REAL RECORDED ACTIVITY</p>
+      <h1>My learning progress</h1>
+      <p class="section-sub">
+        Every number below comes from your actual lessons and practice attempts in this browser.
+      </p>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-value" id="prog-lessons">0</span>
+          <span class="stat-label">Completed lessons</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" id="prog-attempts">0</span>
+          <span class="stat-label">Questions attempted</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" id="prog-correct">0</span>
+          <span class="stat-label">Answered correctly</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" id="prog-rate">0%</span>
+          <span class="stat-label">Accuracy rate</span>
+        </article>
+      </div>
+
+      <div class="dash-two-col">
+        <section class="card-panel" aria-labelledby="completed-lessons-heading">
+          <h2 id="completed-lessons-heading">Completed lessons</h2>
+          <ul id="completed-lessons-list" class="activity-list"></ul>
+        </section>
+
+        <section class="card-panel" aria-labelledby="review-topics-heading">
+          <h2 id="review-topics-heading">Topics to revisit</h2>
+          <p class="section-sub">Topics where you missed a question and can try again step by step.</p>
+          <ul id="review-topics-list" class="activity-list"></ul>
+        </section>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mathematics.html">Practise Mathematics</a>
+        <a class="btn btn-secondary" href="dashboard.html">Back to Dashboard</a>
+        <button class="btn btn-secondary" id="reset-progress-btn" type="button">Reset recorded progress</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">TUSOME</p>
+        <p>Understand more. Achieve more.</p>
+        <p>Let's learn, explore and grow together.</p>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Platform</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="onboarding.html">Onboarding</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Learning</p>
+        <ul class="footer-links">
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="lesson.html?subject=maths">Lessons</a></li>
+          <li><a href="mathematics.html">Interactive Mathematics</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-note">
+        TUSOME is an independent educational project for Grade 10 learners and is not officially approved or endorsed by KICD.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="progress.js" defer></script>
+</body>
+</html>
