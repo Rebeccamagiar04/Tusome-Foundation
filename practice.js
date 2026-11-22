@@ -113,6 +113,30 @@
       return generated("Core Mathematics", "Trigonometry", "In a right-angled triangle, what is the exact value of sin " + angle + "°?", answer,
         ["0", "1", "√3"],
         "The standard exact value is sin " + angle + "° = " + answer + ".");
+    },
+    function () {
+      var a = randInt(2, 8) * randInt(2, 5);
+      var b = randInt(2, 8) * randInt(2, 5);
+      function gcd(x, y) { return y ? gcd(y, x % y) : x; }
+      var answer = gcd(a, b);
+      return generated("Core Mathematics", "Real Numbers", "Find the highest common factor (HCF) of " + a + " and " + b + ".", answer,
+        [Math.min(a, b), 1, answer + 1],
+        "The HCF is the greatest whole number that divides both numbers exactly. The HCF of " + a + " and " + b + " is " + answer + ".");
+    },
+    function () {
+      var x = randInt(1, 8) * (Math.random() < 0.5 ? -1 : 1);
+      var y = randInt(1, 8) * (Math.random() < 0.5 ? -1 : 1);
+      return generated("Core Mathematics", "Reflection and Congruence", "A point P(" + x + ", " + y + ") is reflected in the x-axis. What is the image point P′?",
+        "(" + x + ", " + (-y) + ")",
+        ["(" + (-x) + ", " + y + ")", "(" + y + ", " + x + ")", "(" + x + ", " + y + ")"],
+        "Reflection in the x-axis maps (x, y) to (x, −y). Therefore P′ = (" + x + ", " + (-y) + ").");
+    },
+    function () {
+      var x = randInt(1, 8), y = randInt(1, 8);
+      return generated("Core Mathematics", "Rotation", "A point P(" + x + ", " + y + ") is rotated 90° anticlockwise about the origin. What is P′?",
+        "(" + (-y) + ", " + x + ")",
+        ["(" + y + ", " + (-x) + ")", "(" + x + ", " + (-y) + ")", "(" + x + ", " + y + ")"],
+        "A 90° anticlockwise rotation about the origin maps (x, y) to (−y, x). So P′ = (" + (-y) + ", " + x + ").");
     }
   ];
 
