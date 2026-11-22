@@ -552,6 +552,47 @@
       checkFeedbackWrong:"Look for the word reversible: the material returns to its original shape.",
       altExplanation:"A spring that returns to its original length after you release it shows elastic behaviour, as long as you have not stretched it beyond its elastic limit."
     }
+,
+    {
+      key:"chemistry-introduction",subjectId:"chemistry",subjectName:"Chemistry",
+      curriculumTopic:"Inorganic Chemistry → Introduction to Chemistry",
+      title:"What Chemistry Studies and Why It Matters",
+      summary:"Discover how chemistry explains the composition, properties and changes of matter in everyday life.",
+      outcomes:["Define Chemistry as the study of matter and its changes.","Identify major branches and applications of Chemistry.","Describe basic laboratory safety and responsible chemical use."],
+      sections:[
+        {heading:"1. Matter and change",body:"Chemistry studies matter: what substances are made of, how they are structured, the properties they show and how they change. Matter has mass and occupies space. Chemical changes produce new substances, while physical changes alter form or state without changing the substance's chemical identity."},
+        {heading:"2. Branches and applications",body:"Inorganic chemistry studies many substances that are not primarily carbon-based; organic chemistry focuses on carbon compounds; physical chemistry explains energy and rates of chemical processes; analytical chemistry identifies what substances are present and in what amounts; biochemistry studies chemical processes in living things. Chemistry supports agriculture, medicine, food production, manufacturing and environmental management."},
+        {heading:"3. Safe and responsible practice",body:"Read labels, follow teacher instructions, use appropriate protective equipment and never taste laboratory chemicals. Do not mix unknown substances. Dispose of materials as instructed and consider how chemical products and waste affect people and the environment."}
+      ],
+      exampleTitle:"Worked Example: Physical or chemical change?",
+      exampleSteps:["Ice melts into liquid water: the substance remains water, so this is a physical change.","Iron rusts: iron reacts with oxygen and moisture to form rust, a new substance, so this is a chemical change.","Ask whether a new substance has formed to help distinguish the two."],
+      pitfall:"A change of colour alone does not prove a chemical reaction. Look for evidence such as gas formation, a precipitate, energy change or a new substance.",
+      checkQuestion:"Which process is a chemical change?",
+      checkOptions:["Rusting of iron","Melting of ice","Cutting paper","Dissolving sugar in water"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Rusting forms new substances called iron oxides.",
+      checkFeedbackWrong:"Choose the process in which a new substance forms.",
+      altExplanation:"A physical change changes how a substance looks or its state. A chemical change produces a different substance with different properties."
+    },
+    {
+      key:"physics-introduction",subjectId:"physics",subjectName:"Physics",
+      curriculumTopic:"Mechanics and Thermal Physics → Introduction to Physics",
+      title:"Introduction to Physics and Scientific Investigation",
+      summary:"Explore how Physics explains natural phenomena through models, measurements and evidence.",
+      outcomes:["Explain Physics as a branch of science.","Identify major branches and applications of Physics.","Describe the role of measurement, observation and fair testing."],
+      sections:[
+        {heading:"1. What Physics studies",body:"Physics investigates matter, energy, forces, motion and the laws that help explain the physical world. It asks questions about everyday experiences, from why objects fall to how sound, light and electricity behave."},
+        {heading:"2. Branches and applications",body:"Mechanics studies motion and forces; thermal physics studies heat and temperature; waves and optics examine sound and light; electricity and magnetism explore charges, circuits and magnetic effects; modern and space physics investigate atoms, nuclei and the universe. Physics supports engineering, communication, transport, medicine and energy technology."},
+        {heading:"3. Measure and test ideas",body:"A scientific investigation uses observations, suitable instruments, measurements and evidence. Record quantities with units, repeat measurements where possible, identify sources of error and make conclusions that match the data. Use SI units consistently."}
+      ],
+      exampleTitle:"Worked Example: Planning a simple motion investigation",
+      exampleSteps:["Question: how does the time taken depend on the distance travelled by a toy car?","Measure a set of distances along a level track.","Use a stopwatch to time the car over each distance and repeat each trial.","Record distance in metres and time in seconds, then compare the results."],
+      pitfall:"A conclusion should be based on recorded evidence. Do not change results to match what you expected.",
+      checkQuestion:"Which SI unit is used for time?",
+      checkOptions:["Second (s)","Metre (m)","Newton (N)","Joule (J)"],checkCorrect:0,
+      checkFeedbackRight:"Correct. The SI base unit for time is the second.",
+      checkFeedbackWrong:"The second is the SI base unit for time.",
+      altExplanation:"Physics turns observations into explanations. Measure carefully, record units and let the evidence guide your conclusion."
+    }
   ];
 
   window.TUSOME_LESSONS = LESSONS;
