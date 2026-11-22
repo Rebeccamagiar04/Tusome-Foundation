@@ -21,11 +21,22 @@
       "Similarity and Enlargement":"maths-geometry-trigonometry",
       "Reflection and Congruence":"maths-geometry-trigonometry",
       "Rotation":"maths-geometry-trigonometry",
-      "Trigonometry 1":"maths-geometry-trigonometry"
+      "Trigonometry 1":"maths-geometry-trigonometry",
+      "Angle Properties of a Circle":"maths-circles-area-volume-motion",
+      "Area of Polygons":"maths-circles-area-volume-motion",
+      "Area of a Part of a Circle":"maths-circles-area-volume-motion",
+      "Surface Area and Volume of Solids":"maths-circles-area-volume-motion",
+      "Linear Motion":"maths-circles-area-volume-motion",
+      "Statistics":"maths-statistics-probability",
+      "Statistics 1":"maths-statistics-probability",
+      "Probability":"maths-statistics-probability",
+      "Probability 1":"maths-statistics-probability"
     },
     biology: {
       "Introduction to Biology":"biology-cells",
       "Cell Structure and Specialisation":"biology-cells",
+      "Specimen Collection and Preservation":"biology-investigations",
+      "Specimen collection and preservation":"biology-investigations",
       "Chemicals of Life":"biology-chemicals-of-life",
       "Nutrition":"biology-plant-nutrition-transport",
       "Transport":"biology-plant-nutrition-transport",
@@ -38,7 +49,8 @@
       "Chemical Bonding":"chemistry-atomic-structure-bonding",
       "Periodicity":"chemistry-periodic-table-salts",
       "Acids and Bases":"chemistry-periodic-table-salts",
-      "Introduction to Salts":"chemistry-periodic-table-salts"
+      "Introduction to Salts":"chemistry-periodic-table-salts",
+      "Organic Chemistry":"chemistry-organic-intro"
     },
     physics: {
       "Introduction to Physics":"physics-pressure",
@@ -49,7 +61,11 @@
       "Properties of Waves":"physics-waves-electricity",
       "Electrostatics":"physics-waves-electricity",
       "Current Electricity":"physics-waves-electricity",
-      "Introduction to electronics":"physics-waves-electricity"
+      "Introduction to electronics":"physics-waves-electricity",
+      "Temperature and Thermal Expansion":"physics-thermal-environment-space",
+      "Mechanical Properties of Materials":"physics-thermal-environment-space",
+      "Greenhouse Effect and Climate Change":"physics-thermal-environment-space",
+      "Introduction to Space Physics":"physics-thermal-environment-space"
     }
   };
   const names = {maths:"Core Mathematics",biology:"Biology",chemistry:"Chemistry",physics:"Physics"};
@@ -84,7 +100,8 @@
       card.appendChild(node("span",row.strand.toUpperCase(),"tag"));
       card.appendChild(node("h3",row.topic));
       card.appendChild(node("p",descriptions[subjectId]));
-      const key=lessonMap[subjectId][row.topic];
+      let key=lessonMap[subjectId][row.topic];
+      if(subjectId==="biology" && row.strand==="Anatomy and Physiology of Animals" && ["Nutrition","Transport","Gaseous Exchange and Respiration"].includes(row.topic)) key="biology-animal-systems";
       const lesson=key&&lessons.find(x=>x.key===key);
       if(lesson){
         const a=node("a","Open guided lesson →","btn btn-primary");
