@@ -70,7 +70,7 @@ self.addEventListener("fetch", function (event) {
         return response;
       }).catch(function () {
         return caches.match(request).then(function (cached) {
-          return cached || caches.match("./index.html");
+          return cached || caches.match(request, { ignoreSearch: true }).then(function (page) { return page || caches.match("./index.html"); });
         });
       })
     );
