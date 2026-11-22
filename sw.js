@@ -13,6 +13,7 @@ const CORE_FILES = [
   "./physics.html",
   "./curriculum.html",
   "./mathematics.html",
+  "./mathematics-learning.html",
   "./lesson.html",
   "./practice.html",
   "./onboarding.html",
@@ -37,7 +38,8 @@ const CORE_FILES = [
   "./onboarding.js",
   "./dashboard.js",
   "./progress.js",
-  "./mathematics.js"
+  "./mathematics.js",
+  "./mathematics-learning.js"
 ];
 
 self.addEventListener("install", function (event) {
