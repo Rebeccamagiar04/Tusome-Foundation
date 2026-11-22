@@ -410,6 +410,127 @@
       altExplanation:"Imagine wave crests passing a point. Frequency tells you how many pass each second; wavelength tells you how far apart they are. Multiply them to find distance travelled each second."
     }
 
+,
+    {
+      key:"maths-circles-area-volume-motion",subjectId:"maths",subjectName:"Core Mathematics",
+      curriculumTopic:"Measurements and Geometry → Circle Geometry, Area, Solids and Linear Motion",
+      title:"Circle Geometry, Measurement and Linear Motion",
+      summary:"Apply angle properties, area formulae, volume and rate calculations to familiar geometric and motion problems.",
+      outcomes:["Use key angle relationships in circles.","Calculate areas of polygons, sectors and annuli.","Use surface area, volume and speed relationships in practical problems."],
+      sections:[
+        {heading:"1. Angles in circles",body:"A full turn at the centre is 360°. Angles at the centre and circumference standing on the same arc are related: the angle at the centre is twice the angle at the circumference. Angles in the same segment are equal, and the angle in a semicircle is 90°."},
+        {heading:"2. Areas and solids",body:"The area of a sector is (θ/360°)πr² when θ is in degrees. An annulus is the ring between two concentric circles: area = π(R² − r²). For prisms, volume = cross-sectional area × length; for a cylinder, V = πr²h."},
+        {heading:"3. Linear motion",body:"Speed is distance divided by time. Average speed = total distance ÷ total time. Use consistent units: convert minutes to seconds or kilometres to metres before calculating if necessary."}
+      ],
+      exampleTitle:"Worked Example: Area of a 90° sector",
+      exampleSteps:["A circle has radius 4 cm and sector angle 90°.","Sector area = (θ/360°) × πr².","= (90/360) × π × 4².","= 1/4 × 16π = 4π cm², approximately 12.57 cm²."],
+      pitfall:"The sector formula gives a fraction of the whole circle. Check that the angle is measured in degrees and that the final area uses square units.",
+      checkQuestion:"A car travels 150 km in 3 hours. What is its average speed?",
+      checkOptions:["50 km/h","45 km/h","150 km/h","450 km/h"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Average speed = 150 ÷ 3 = 50 km/h.",
+      checkFeedbackWrong:"Divide the total distance by the total time.",
+      altExplanation:"A sector is a slice of a circle. If the angle is one quarter of 360°, its area is one quarter of the full circle's area."
+    },
+    {
+      key:"maths-statistics-probability",subjectId:"maths",subjectName:"Core Mathematics",
+      curriculumTopic:"Statistics and Probability → Statistics 1 and Probability 1",
+      title:"Statistics and Probability",
+      summary:"Summarise data using averages and spread, then calculate probabilities for single and combined events.",
+      outcomes:["Find and interpret mean, median, mode and range.","Read and interpret frequency tables and statistical displays.","Calculate probabilities using sample spaces and simple event rules."],
+      sections:[
+        {heading:"1. Measures of central tendency",body:"The mean is the total of all values divided by the number of values. The median is the middle value after arranging data in order. The mode is the most frequent value. The range is the largest value minus the smallest value."},
+        {heading:"2. Presenting data",body:"Frequency tables organise repeated values. Bar charts compare categories; histograms represent grouped continuous data with touching bars. Read the axes, scale and labels before drawing conclusions."},
+        {heading:"3. Probability",body:"For equally likely outcomes, P(event) = favourable outcomes ÷ total possible outcomes. Probability lies between 0 and 1. Mutually exclusive events cannot happen together; independent events do not change one another's probabilities."}
+      ],
+      exampleTitle:"Worked Example: Mean and probability",
+      exampleSteps:["For data 2, 4, 4, 6, add the values: 2 + 4 + 4 + 6 = 16.","There are four values, so mean = 16 ÷ 4 = 4.","A bag contains 3 blue and 2 red counters: total = 5.","P(blue) = 3/5 = 0.6."],
+      pitfall:"The mean is affected by extreme values. The median may better represent the centre when a data set contains an unusually large or small value.",
+      checkQuestion:"A fair die is rolled once. What is the probability of getting an even number?",
+      checkOptions:["1/2","1/6","2/3","1"],checkCorrect:0,
+      checkFeedbackRight:"Correct. The even outcomes are 2, 4 and 6: 3 out of 6, or 1/2.",
+      checkFeedbackWrong:"List the even outcomes and divide their number by the six possible outcomes.",
+      altExplanation:"Probability is a fraction of the possible outcomes. If half of the equally likely outcomes meet your condition, the probability is one half."
+    },
+    {
+      key:"biology-investigations",subjectId:"biology",subjectName:"Biology",
+      curriculumTopic:"Cell Biology and Biodiversity → Introduction to Biology and Specimen Collection",
+      title:"Biology, Scientific Investigation and Specimens",
+      summary:"Use scientific questions and careful specimen handling to investigate living things responsibly.",
+      outcomes:["Explain the scope and importance of Biology.","Plan a simple fair investigation using observations and measurements.","Describe safe collection, labelling and preservation of specimens."],
+      sections:[
+        {heading:"1. What Biology studies",body:"Biology is the scientific study of living organisms and their interactions. Its fields include botany, zoology, ecology, anatomy, physiology, genetics, microbiology and biotechnology. Biological knowledge supports health, agriculture, conservation and industry."},
+        {heading:"2. Investigating scientifically",body:"A scientific investigation begins with a question. Identify the variable you change, the variable you measure and the factors you keep constant. Collect repeatable observations, record units, look for patterns and base conclusions on evidence."},
+        {heading:"3. Collecting specimens responsibly",body:"Use appropriate tools such as forceps, nets or sample containers, depending on the specimen. Label samples with useful information such as name, location and date. Avoid unnecessary harm to organisms and follow safety, hygiene and conservation guidance. Preservation methods depend on the specimen and should follow teacher instructions."}
+      ],
+      exampleTitle:"Worked Example: Investigating light and seedling growth",
+      exampleSteps:["Question: does light affect seedling growth?","Use similar seedlings and keep soil, water, container and temperature as similar as possible.","Change the light exposure and measure seedling height at the same time each day.","Repeat measurements, record results in a table and compare the growth patterns."],
+      pitfall:"If several variables change at once, you cannot tell which one caused the observed difference.",
+      checkQuestion:"In an investigation of how light affects plant growth, what should be measured as the outcome?",
+      checkOptions:["Seedling growth or height","The colour of the ruler","The learner's name","The classroom number"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Growth or height is the dependent variable being measured.",
+      checkFeedbackWrong:"Measure the outcome that may change when light exposure changes.",
+      altExplanation:"A fair test changes one main factor, measures the result and keeps other important conditions the same."
+    },
+    {
+      key:"biology-animal-systems",subjectId:"biology",subjectName:"Biology",
+      curriculumTopic:"Anatomy and Physiology of Animals → Nutrition, Transport, Gaseous Exchange and Respiration",
+      title:"Animal Nutrition, Transport and Respiration",
+      summary:"Trace how animals obtain nutrients, move materials around the body and release energy in cells.",
+      outcomes:["Describe the stages of nutrition in animals.","Explain the roles of blood and the circulatory system.","Distinguish gaseous exchange from cellular respiration."],
+      sections:[
+        {heading:"1. Nutrition in animals",body:"Animal nutrition involves ingestion, digestion, absorption, assimilation and egestion. Digestion breaks large insoluble food molecules into smaller soluble molecules. The small intestine is adapted for absorption through its large surface area and villi."},
+        {heading:"2. Transport in animals",body:"The circulatory system transports oxygen, nutrients, hormones and waste products. In humans, the heart pumps blood through vessels. Arteries carry blood away from the heart, veins return blood to it, and capillaries allow exchange with tissues."},
+        {heading:"3. Gaseous exchange and respiration",body:"Gaseous exchange is the movement of oxygen and carbon dioxide between an organism and its environment. Cellular respiration is the chemical process that releases energy from food in cells. Aerobic respiration uses oxygen; it is not the same thing as breathing."}
+      ],
+      exampleTitle:"Worked Example: Following oxygen to a muscle cell",
+      exampleSteps:["Air enters the lungs and reaches the alveoli.","Oxygen diffuses across the thin alveolar wall into blood.","The heart pumps oxygenated blood to body tissues.","Oxygen diffuses into muscle cells and is used in aerobic respiration."],
+      pitfall:"Breathing, gaseous exchange and cellular respiration are related but different processes. Do not use the terms as if they mean the same thing.",
+      checkQuestion:"Which blood vessels allow exchange of substances between blood and body tissues?",
+      checkOptions:["Capillaries","Arteries only","Veins only","The heart chambers"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Capillaries have thin walls that allow exchange with tissues.",
+      checkFeedbackWrong:"Look for the smallest vessels with very thin walls.",
+      altExplanation:"Think of the circulatory system as a delivery network: the heart is the pump, vessels are routes, and capillaries are the delivery points."
+    },
+    {
+      key:"chemistry-organic-intro",subjectId:"chemistry",subjectName:"Chemistry",
+      curriculumTopic:"Organic Chemistry → Introductory Concepts",
+      title:"Introduction to Organic Chemistry",
+      summary:"Explore carbon's bonding ability and recognise common families of simple organic compounds.",
+      outcomes:["Explain why carbon forms many compounds.","Recognise hydrocarbons as compounds containing carbon and hydrogen only.","Distinguish saturated and unsaturated hydrocarbons at an introductory level."],
+      sections:[
+        {heading:"1. Why carbon is special",body:"Carbon has four electrons in its outer shell and can form four covalent bonds. Carbon atoms can bond to one another to form chains and rings, producing a very large variety of compounds."},
+        {heading:"2. Hydrocarbons",body:"Hydrocarbons contain only carbon and hydrogen. Alkanes are saturated hydrocarbons with carbon-carbon single bonds. Alkenes contain at least one carbon-carbon double bond and are unsaturated. Their structures influence their chemical behaviour."},
+        {heading:"3. Organic compounds in daily life",body:"Organic compounds occur in fuels, food, medicines, plastics, fibres and many biological molecules. Their uses and environmental effects depend on their structures and properties. Safe handling and responsible disposal are important."}
+      ],
+      exampleTitle:"Worked Example: Classifying a hydrocarbon",
+      exampleSteps:["A compound contains only carbon and hydrogen.","Its displayed structure shows only single bonds between carbon atoms.","It is a saturated hydrocarbon and belongs to the alkane family.","If a carbon-carbon double bond were present, it would be an unsaturated alkene."],
+      pitfall:"Do not assume every compound containing carbon is a hydrocarbon. A hydrocarbon contains only carbon and hydrogen.",
+      checkQuestion:"Which statement describes a hydrocarbon?",
+      checkOptions:["It contains only carbon and hydrogen","It must contain oxygen","It contains only metals","It cannot form covalent bonds"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Hydrocarbons contain carbon and hydrogen only.",
+      checkFeedbackWrong:"Focus on the two elements named in the word hydrocarbon.",
+      altExplanation:"Hydrocarbons are compounds built from carbon and hydrogen atoms. Other organic compounds may also contain oxygen, nitrogen or other elements."
+    },
+    {
+      key:"physics-thermal-environment-space",subjectId:"physics",subjectName:"Physics",
+      curriculumTopic:"Mechanics and Thermal Physics; Environmental and Space Physics",
+      title:"Thermal Expansion, Climate and Space Physics",
+      summary:"Explain how heating changes materials and how physical processes connect Earth's climate with space.",
+      outcomes:["Distinguish temperature from thermal energy.","Explain expansion when materials are heated.","Describe the greenhouse effect and introductory space-weather ideas."],
+      sections:[
+        {heading:"1. Temperature and thermal expansion",body:"Temperature indicates how hot or cold a body is and is related to the average kinetic energy of its particles. When most materials are heated, their particles move or vibrate more and the material expands. Different materials expand by different amounts."},
+        {heading:"2. Everyday applications",body:"Expansion gaps on bridges and railway tracks allow materials to expand safely. Liquid-in-glass thermometers use the expansion of a liquid to indicate temperature. The design of structures must consider temperature changes."},
+        {heading:"3. Greenhouse effect and space",body:"Greenhouse gases absorb and re-emit infrared radiation, warming Earth's lower atmosphere. The natural greenhouse effect makes Earth habitable; increased greenhouse gas concentrations strengthen warming and contribute to climate change. Space physics also studies the Sun, solar activity and how space weather can affect satellites and communication systems."}
+      ],
+      exampleTitle:"Worked Example: Why bridges need expansion joints",
+      exampleSteps:["A bridge warms during a hot day.","Its materials expand as their temperature rises.","Expansion joints provide room for this change in length.","Without enough space, large stresses could damage the structure."],
+      pitfall:"The greenhouse effect is not the same as the ozone-layer issue. They involve different atmospheric processes.",
+      checkQuestion:"Why are expansion joints used on long bridges?",
+      checkOptions:["To allow materials to expand and contract safely","To make the bridge heavier","To stop gravity","To increase friction"],checkCorrect:0,
+      checkFeedbackRight:"Correct. The joints accommodate changes in length as temperature changes.",
+      checkFeedbackWrong:"Think about what happens to many solids when their temperature rises.",
+      altExplanation:"A bridge behaves a little like a long metal ruler: it becomes slightly longer when heated. Joints provide space for that movement."
+    }
   ];
 
   window.TUSOME_LESSONS = LESSONS;
