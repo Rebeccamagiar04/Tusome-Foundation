@@ -2,15 +2,15 @@
 // english.js reads it and builds the page. To add a lesson later, add one object
 // to ENGLISH.lessons and put its id in the "lesson" field of the matching course-map item.
 //
-// SOURCE: KICD Senior School Curriculum Design, Grade 10 English (June 2024)
-// https://kicd.ac.ke/wp-content/uploads/2024/07/English-Grade-10-June-2024.pdf
-// The course map (strands, themes, sub-strands, suggested lesson numbers) follows that
-// document. The wording of the outcomes, explanations, examples and questions is our own.
+// SOURCE: KICD Senior School Curriculum Design, Grade 10 English (July 2025)
+// https://drive.google.com/file/d/1OFcHiuBagmwsfkqWe2aaDCaf_4JR4tt7/preview
+// The course map (strands, themes and sub-strands) follows the 2025 design; suggested lesson
+// numbers may differ by version. The wording of the outcomes, explanations, examples and questions is our own.
 
 window.ENGLISH = {
 
   source: {
-    title: "KICD Senior School Curriculum Design: Grade 10 English (June 2024)",
+    title: "KICD Senior School Curriculum Design: Grade 10 English (July 2025)",
     url: "https://kicd.ac.ke/wp-content/uploads/2024/07/English-Grade-10-June-2024.pdf"
   },
 
@@ -39,11 +39,11 @@ window.ENGLISH = {
       { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Verbs (main, auxiliary, regular, irregular, phrasal) and adverbs of time, place and manner.", lesson: null },
       { strand: "Writing", name: "Mechanics of writing: spelling", lessons: 4, focus: "Spelling rules; abbreviations and acronyms; commonly misspelt and confused words.", lesson: null }
     ]},
-    { no: 3, title: "Technology", topic: "Communication apps", items: [
-      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details; the sounds /ʌ/, /æ/, /aʊ/, /əʊ/, /w/ and /j/.", lesson: null },
-      { strand: "Listening and Speaking", name: "Non-verbal cues", lessons: 3, focus: "Facial expressions, gestures, eye contact and body movement.", lesson: null },
+    { no: 3, title: "Artificial Intelligence and Society", topic: "Healthcare", items: [
+      { strand: "Listening and Speaking", name: "Intensive listening", lessons: 4, focus: "Listening for specific details such as keywords, facts, fixed phrases and figurative language.", lesson: null },
+      { strand: "Listening and Speaking", name: "Speaking fluency", lessons: 3, focus: "Clear pronunciation, homographs, public speaking and appropriate non-verbal cues.", lesson: null },
       { strand: "Reading", name: "Extensive reading", lessons: 4, focus: "Reference materials: dictionary, thesaurus, atlas, manual, newspaper, encyclopedia.", lesson: null },
-      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives, coordinating conjunctions and simple prepositions.", lesson: null },
+      { strand: "Grammar in Use", name: "Word classes", lessons: 5, focus: "Adjectives and simple prepositions.", lesson: null },
       { strand: "Writing", name: "Elements of effective writing", lessons: 4, focus: "Cohesion and paragraph development.", lesson: null }
     ]},
     { no: 4, title: "Travel", topic: "Adventure", items: [
