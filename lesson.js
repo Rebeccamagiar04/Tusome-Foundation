@@ -137,49 +137,6 @@
       altExplanation: "A simple memory hook: Acid turns Blue litmus Red (A → B → R). If you test a sample and blue becomes red, you are looking at an acid."
     },
     {
-      key: "business-needs-wants",
-      subjectId: "business-studies",
-      subjectName: "Business Studies",
-      title: "Needs, Wants, and Scarcity",
-      summary: "See why scarcity forces choices for individuals, households, and businesses every day.",
-      outcomes: [
-        "Distinguish clearly between basic human needs and wants.",
-        "Explain why scarcity exists even when people work hard.",
-        "Identify opportunity cost when choosing between alternatives."
-      ],
-      sections: [
-        {
-          heading: "1. Needs vs. wants",
-          body: "Needs are essentials required for survival—food, water, shelter, and basic clothing. Wants are desires that make life more comfortable or enjoyable, which can expand endlessly."
-        },
-        {
-          heading: "2. Scarcity and choice",
-          body: "Resources like money, time, and raw materials are limited (scarce), while human wants are unlimited. Because we cannot have everything at once, we must make choices."
-        },
-        {
-          heading: "3. Opportunity cost",
-          body: "Every choice has a trade-off. The opportunity cost of a decision is the value of the next-best alternative you had to give up."
-        }
-      ],
-      exampleTitle: "Worked Example: Deciding How to Use Limited Study & Work Time",
-      exampleSteps: [
-        "Suppose you have 2 hours this evening: you can either revise Mathematics or help restock a family kiosk.",
-        "Because time is scarce, choosing one means giving up the other for tonight.",
-        "If your next-best option was revising Mathematics, missing that revision is the opportunity cost."
-      ],
-      pitfall: "Common mistake: Treating 'wants' as useless or confusing scarcity (limited resources relative to wants) with temporary shortages.",
-      checkQuestion: "What is opportunity cost?",
-      checkOptions: [
-        "The next-best alternative given up when a choice is made",
-        "The total price of all items in a shop",
-        "A resource that never runs out"
-      ],
-      checkCorrect: 0,
-      checkFeedbackRight: "Exactly! Opportunity cost is what you give up by choosing your preferred option over the next-best alternative.",
-      checkFeedbackWrong: "Not quite—opportunity cost specifically refers to the next-best alternative you sacrifice when making a choice.",
-      altExplanation: "If you have KES 100 and must choose between buying a notebook for revision or a snack, picking the notebook means your opportunity cost is the snack you passed up."
-    },
-    {
       key: "english-paragraph-structure",
       subjectId: "english",
       subjectName: "English",
@@ -221,6 +178,37 @@
       checkFeedbackRight: "Well done! Good supporting sentences clarify, prove, or illustrate the paragraph's main idea.",
       checkFeedbackWrong: "Not quite—supporting sentences should explain or illustrate the main idea stated in the topic sentence.",
       altExplanation: "Think of a paragraph like a mini-meal: the topic sentence is the main dish, supporting details are the ingredients that give it substance, and the closing line wraps it up neatly."
+    },
+    {
+      key: "physics-measurement-motion",
+      subjectId: "physics",
+      subjectName: "Physics",
+      title: "Introduction to Measurement and Motion",
+      summary: "Explore how physical quantities are measured and how distance and time help us describe motion.",
+      outcomes: [
+        "Identify the SI units for length and time.",
+        "Choose suitable instruments for measuring length and time.",
+        "Calculate average speed using distance divided by time."
+      ],
+      sections: [
+        { heading: "1. Physical quantities and units", body: "Physics uses measurable quantities to describe the natural world. Length, time, mass, and temperature are examples. A measurement is meaningful when it includes a number and a unit." },
+        { heading: "2. Measuring carefully", body: "A metre rule or measuring tape can measure ordinary lengths. A stopwatch measures time intervals. A micrometer screw gauge is useful for very small diameters or thicknesses. Read scales carefully and record units." },
+        { heading: "3. Describing motion with speed", body: "Average speed tells us how much distance an object covers per unit time. Calculate it by dividing the total distance travelled by the time taken. The SI unit is metres per second (m/s)." }
+      ],
+      exampleTitle: "Worked Example: Finding Average Speed",
+      exampleSteps: [
+        "A learner walks 30 metres in 10 seconds.",
+        "Use average speed = distance divided by time.",
+        "Average speed = 30 m divided by 10 s = 3 m/s.",
+        "The learner's average speed is 3 metres per second."
+      ],
+      pitfall: "Common mistake: Dividing time by distance instead of distance by time, or leaving the unit out of the final answer.",
+      checkQuestion: "A cyclist travels 60 metres in 12 seconds. What is the average speed?",
+      checkOptions: ["5 m/s", "48 m/s", "72 m/s", "720 m/s"],
+      checkCorrect: 0,
+      checkFeedbackRight: "Correct! Average speed = 60 m divided by 12 s = 5 m/s.",
+      checkFeedbackWrong: "Try distance divided by time: 60 divided by 12 = 5 m/s.",
+      altExplanation: "Imagine walking along a 60-metre path in 12 seconds. If you cover equal distances each second on average, you cover 5 metres each second."
     }
   ];
 
@@ -339,8 +327,18 @@
   }
 
   const paramSubj = new URLSearchParams(location.search).get("subject");
-  const initial = LESSONS.find(function (l) { return l.subjectId === paramSubj; }) || LESSONS[0];
-  renderLesson(initial);
+  const initial = LESSONS.find(function (l) { return l.subjectId === paramSubj; });
+  if (initial) {
+    renderLesson(initial);
+  } else if (paramSubj) {
+    titleEl.textContent = "Lesson coming soon";
+    summaryEl.textContent = "This subject is listed in the wider Senior School curriculum, but its guided lesson has not been added to this TUSOME pilot yet.";
+    subjectTag.textContent = "GRADE 10 • CONTENT IN DEVELOPMENT";
+    if (blocksEl) blocksEl.textContent = "Please choose one of the available lessons from the subject selector, or return to the subject directory.";
+    if (selectEl) selectEl.disabled = true;
+  } else {
+    renderLesson(LESSONS[0]);
+  }
 
   selectEl.addEventListener("change", function () {
     const chosen = LESSONS[Number(selectEl.value)] || LESSONS[0];

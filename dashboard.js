@@ -11,7 +11,7 @@
   const welcomeEl = document.getElementById("dash-welcome");
   if (welcomeEl) {
     const label = profile.name ? profile.name : "learner";
-    welcomeEl.textContent = "Habari, " + label + "! Ready to discover something new today?";
+    welcomeEl.textContent = "Welcome, " + label + "! Ready to discover something new today?";
   }
 
   const lessonsCount = state.completedLessons.length;
