@@ -2,7 +2,7 @@
 // Caches the learner-facing pages and local assets for repeat visits.
 // First visit still needs an internet connection so the cache can be installed.
 
-const CACHE_NAME = "tusome-static-v5";
+const CACHE_NAME = "tusome-static-v6";
 const CORE_FILES = [
   "./",
   "./index.html",
