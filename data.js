@@ -13,10 +13,10 @@ window.TUSOME_DATA = {
   },
   subjects: [
     { id: "english", name: "English", icon: "📖", pathway: "core", track: "core", link: "english.html", availability: "Grade 10 learning topics and practice" },
-    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "curriculum.html?subject=maths", availability: "Generated practice across selected Grade 10 topics" },
-    { id: "biology", name: "Biology", icon: "🧬", pathway: "stem", track: "pure", link: "curriculum.html?subject=biology", availability: "Grade 10 learning topics and practice" },
-    { id: "chemistry", name: "Chemistry", icon: "⚗️", pathway: "stem", track: "pure", link: "curriculum.html?subject=chemistry", availability: "Grade 10 learning topics and practice" },
-    { id: "physics", name: "Physics", icon: "⚡", pathway: "stem", track: "pure", link: "curriculum.html?subject=physics", availability: "Grade 10 learning topics and practice" }
+    { id: "maths", name: "Core Mathematics", icon: "📐", pathway: "stem", track: "pure", noteKey: "note.maths", link: "mathematics.html", availability: "Grade 10 lessons and interactive mathematics practice" },
+    { id: "biology", name: "Biology", icon: "🧬", pathway: "stem", track: "pure", link: "biology.html", availability: "Detailed explanations, biological applications and topic checks" },
+    { id: "chemistry", name: "Chemistry", icon: "⚗️", pathway: "stem", track: "pure", link: "chemistry.html", availability: "Detailed explanations, chemical models and topic checks" },
+    { id: "physics", name: "Physics", icon: "⚡", pathway: "stem", track: "pure", link: "physics.html", availability: "Detailed explanations, equations and worked applications" }
   ],
   curriculum: {
     english: {
