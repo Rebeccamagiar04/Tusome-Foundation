@@ -54,19 +54,10 @@
       card.appendChild(el("h3", theme.title));
       card.appendChild(el("p", item.strand + " • " + item.name));
       card.appendChild(el("p", item.focus));
-      if (item.lesson) {
-        const lesson = D.lessons.find(x => x.id === item.lesson);
-        if (lesson) {
-          const b = el("button", "Open guided lesson →", "btn btn-primary");
-          b.type = "button";
-          b.addEventListener("click", () => openLesson(buildTopicLesson(theme, item)));
-          card.appendChild(b);
-        } else {
-          card.appendChild(el("p", "Lesson content is being prepared.", "curriculum-source"));
-        }
-      } else {
-        card.appendChild(el("p", "Course-map topic • guided lesson coming soon", "curriculum-source"));
-      }
+      const b = el("button", "Open this topic's lesson →", "btn btn-primary");
+      b.type = "button";
+      b.addEventListener("click", () => openLesson(buildTopicLesson(theme, item)));
+      card.appendChild(b);
       grid.appendChild(card);
     });
   }
