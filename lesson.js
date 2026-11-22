@@ -253,6 +253,8 @@
   const completeBtn = document.getElementById("complete-lesson-btn");
   const statusEl = document.getElementById("lesson-status");
   const practiceLink = document.getElementById("lesson-practice-link");
+  const curriculumNoteEl = document.getElementById("lesson-curriculum-note");
+  const topicNoteEl = document.getElementById("lesson-topic-note");
 
   if (!titleEl || !selectEl) return;
 
@@ -271,6 +273,8 @@
     const subjLabel = subjObj ? subjObj.name : lesson.subjectName;
     const curriculumInfo = D && D.curriculum ? D.curriculum[lesson.subjectId] : null;
     if (curriculumSourceEl) curriculumSourceEl.textContent = curriculumInfo && curriculumInfo.source ? curriculumInfo.source : "Grade 10 subject design";
+    if (curriculumNoteEl) curriculumNoteEl.hidden = false;
+    if (topicNoteEl) topicNoteEl.hidden = false;
     const curriculumTopicEl = document.getElementById("lesson-curriculum-topic");
     if (curriculumTopicEl) curriculumTopicEl.textContent = lesson.curriculumTopic || "Selected Grade 10 topic";
 
@@ -363,7 +367,8 @@
     summaryEl.textContent = "This subject is listed in the wider Senior School curriculum, but its guided lesson has not been added to this TUSOME pilot yet.";
     subjectTag.textContent = "GRADE 10 • CONTENT IN DEVELOPMENT";
     if (blocksEl) blocksEl.textContent = "Please choose one of the available lessons from the subject selector, or return to the subject directory.";
-    if (selectEl) selectEl.disabled = true;
+    if (curriculumNoteEl) curriculumNoteEl.hidden = true;
+    if (topicNoteEl) topicNoteEl.hidden = true;
   } else {
     renderLesson(LESSONS[0]);
   }
