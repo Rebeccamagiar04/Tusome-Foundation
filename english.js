@@ -129,7 +129,8 @@
     altList.textContent = "";
     lesson.alt.forEach(x => altList.appendChild(el("li", x)));
     document.getElementById("english-status").textContent = "";
-    window.scrollTo(0, 0);
+    // Bring the selected guided lesson into view instead of sending learners to the page top.
+    lessonPanel.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   document.getElementById("english-back-btn").addEventListener("click", () => {
     lessonPanel.hidden = true; mapPanel.hidden = false;
