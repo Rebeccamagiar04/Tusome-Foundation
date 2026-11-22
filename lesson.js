@@ -531,6 +531,27 @@
       checkFeedbackWrong:"Think about what happens to many solids when their temperature rises.",
       altExplanation:"A bridge behaves a little like a long metal ruler: it becomes slightly longer when heated. Joints provide space for that movement."
     }
+,
+    {
+      key:"physics-materials-radioactivity",subjectId:"physics",subjectName:"Physics",
+      curriculumTopic:"Mechanics and Thermal Physics; Waves and Optics → Mechanical Properties and Radioactivity",
+      title:"Mechanical Properties of Materials and Radioactivity",
+      summary:"Explore how materials respond to forces and why some atomic nuclei emit radiation as they become more stable.",
+      outcomes:["Distinguish elastic and plastic deformation.","Relate force, extension, stress and strain in simple material tests.","Describe alpha, beta and gamma radiation and basic nuclear stability."],
+      sections:[
+        {heading:"1. How materials respond to forces",body:"A force can change an object's shape or length. Elastic deformation is reversed when the force is removed, provided the elastic limit has not been exceeded. Plastic deformation remains after the force is removed. A force-extension graph helps show how a material responds as the load increases."},
+        {heading:"2. Stress and strain",body:"Stress is force per unit cross-sectional area, measured in pascals. Strain is extension divided by original length and has no unit. For a material obeying Hooke's law within its proportional limit, extension is proportional to force. Young's modulus relates tensile stress to tensile strain."},
+        {heading:"3. Radioactivity and isotopes",body:"An isotope has the same proton number as other atoms of the element but a different number of neutrons. An unstable nucleus may emit alpha particles, beta particles or gamma radiation. These emissions differ in charge, mass and penetrating ability. Radiation is studied with strict safety controls and must never be handled without authorised supervision."}
+      ],
+      exampleTitle:"Worked Example: Calculate strain",
+      exampleSteps:["A wire is originally 2.0 m long and extends by 0.004 m.","Strain = extension ÷ original length.","Strain = 0.004 ÷ 2.0 = 0.002.","Strain is dimensionless, so no unit is written."],
+      pitfall:"Do not attach a unit to strain. It is a ratio of two lengths and therefore has no unit.",
+      checkQuestion:"A material returns to its original shape after a small force is removed. What type of deformation has occurred?",
+      checkOptions:["Elastic deformation","Plastic deformation","Fracture","Radioactive decay"],checkCorrect:0,
+      checkFeedbackRight:"Correct. Elastic deformation is reversible when the force is removed.",
+      checkFeedbackWrong:"Look for the word reversible: the material returns to its original shape.",
+      altExplanation:"A spring that returns to its original length after you release it shows elastic behaviour, as long as you have not stretched it beyond its elastic limit."
+    }
   ];
 
   window.TUSOME_LESSONS = LESSONS;
