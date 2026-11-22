@@ -2,12 +2,15 @@
 // Caches the learner-facing pages and local assets for repeat visits.
 // First visit still needs an internet connection so the cache can be installed.
 
-const CACHE_NAME = "tusome-static-v3";
+const CACHE_NAME = "tusome-static-v4";
 const CORE_FILES = [
   "./",
   "./index.html",
   "./subjects.html",
   "./english.html",
+  "./biology.html",
+  "./chemistry.html",
+  "./physics.html",
   "./curriculum.html",
   "./mathematics.html",
   "./lesson.html",
@@ -24,6 +27,10 @@ const CORE_FILES = [
   "./home.js",
   "./subjects.js",
   "./english.js",
+  "./biology.js",
+  "./chemistry.js",
+  "./physics.js",
+  "./subject-engine.js",
   "./curriculum.js",
   "./lesson.js",
   "./practice.js",
