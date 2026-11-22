@@ -33,7 +33,7 @@
       "Probability 1":"maths-statistics-probability"
     },
     biology: {
-      "Introduction to Biology":"biology-cells",
+      "Introduction to Biology":"biology-investigations",
       "Cell Structure and Specialisation":"biology-cells",
       "Specimen Collection and Preservation":"biology-investigations",
       "Specimen collection and preservation":"biology-investigations",
@@ -54,6 +54,8 @@
     },
     physics: {
       "Introduction to Physics":"physics-pressure",
+      "Mechanical Properties of Materials":"physics-materials-radioactivity",
+      "Radioactivity and Stability of Isotopes":"physics-materials-radioactivity",
       "Pressure":"physics-pressure",
       "Moments and equilibrium":"physics-moments-energy",
       "Moments and Equilibrium":"physics-moments-energy",
