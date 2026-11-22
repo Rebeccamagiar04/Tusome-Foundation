@@ -252,6 +252,7 @@
   const altText = document.getElementById("alt-explanation-text");
   const completeBtn = document.getElementById("complete-lesson-btn");
   const statusEl = document.getElementById("lesson-status");
+  const practiceLink = document.getElementById("lesson-practice-link");
 
   if (!titleEl || !selectEl) return;
 
@@ -275,6 +276,7 @@
 
     subjectTag.textContent = "GRADE 10 • " + subjLabel.toUpperCase();
     titleEl.textContent = lesson.title;
+    if (practiceLink) practiceLink.href = "practice.html?subject=" + encodeURIComponent(lesson.subjectId);
     summaryEl.textContent = lesson.summary;
 
     outcomesEl.textContent = "";
