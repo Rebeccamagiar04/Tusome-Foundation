@@ -1,0 +1,40 @@
+name: Validate TUSOME subject pages
+
+on:
+  push:
+    branches:
+      - deep-subject-learning
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check JavaScript syntax
+        run: |
+          set -e
+          for file in *.js; do
+            echo "Checking $file"
+            node --check "$file"
+          done
+      - name: Check cached local files
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const sw = fs.readFileSync('sw.js', 'utf8');
+          const files = [...sw.matchAll(/"\.\/([^"]+)"/g)].map(match => match[1]);
+          const missing = files.filter(file => !fs.existsSync(file));
+          if (missing.length) {
+            console.error('Missing service-worker cache files:', missing);
+            process.exit(1);
+          }
+          console.log(`Verified ${files.length} service-worker cache entries.`);
+          NODE
