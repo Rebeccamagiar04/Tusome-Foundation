@@ -1,0 +1,101 @@
+// Curriculum explorer for the four STEM subjects in the Grade 10 pilot.
+(function () {
+  "use strict";
+  const D = window.TUSOME_DATA;
+  const lessons = window.TUSOME_LESSONS || [];
+  const params = new URLSearchParams(location.search);
+  const allowed = ["maths","biology","chemistry","physics"];
+  let subjectId = allowed.includes(params.get("subject")) ? params.get("subject") : "biology";
+  const title = document.getElementById("course-title");
+  const intro = document.getElementById("course-intro");
+  const grid = document.getElementById("curriculum-topics");
+  const search = document.getElementById("topic-search");
+  const count = document.getElementById("topic-count");
+  const switcher = document.getElementById("subject-switch");
+  const practice = document.getElementById("practice-link");
+  const lessonMap = {
+    maths: {
+      "Real Numbers":"maths-real-numbers-quadratics",
+      "Indices and Logarithms":"maths-indices-logarithms",
+      "Quadratic Expressions and Equations":"maths-real-numbers-quadratics",
+      "Similarity and Enlargement":"maths-geometry-trigonometry",
+      "Reflection and Congruence":"maths-geometry-trigonometry",
+      "Rotation":"maths-geometry-trigonometry",
+      "Trigonometry 1":"maths-geometry-trigonometry"
+    },
+    biology: {
+      "Introduction to Biology":"biology-cells",
+      "Cell Structure and Specialisation":"biology-cells",
+      "Chemicals of Life":"biology-chemicals-of-life",
+      "Nutrition":"biology-plant-nutrition-transport",
+      "Transport":"biology-plant-nutrition-transport",
+      "Gaseous Exchange and Respiration":"biology-plant-nutrition-transport"
+    },
+    chemistry: {
+      "Introduction to Chemistry":"chemistry-atomic-structure-bonding",
+      "The Atom":"chemistry-atomic-structure-bonding",
+      "The Periodic Table":"chemistry-periodic-table-salts",
+      "Chemical Bonding":"chemistry-atomic-structure-bonding",
+      "Periodicity":"chemistry-periodic-table-salts",
+      "Acids and Bases":"chemistry-periodic-table-salts",
+      "Introduction to Salts":"chemistry-periodic-table-salts"
+    },
+    physics: {
+      "Introduction to Physics":"physics-pressure",
+      "Pressure":"physics-pressure",
+      "Moments and equilibrium":"physics-moments-energy",
+      "Moments and Equilibrium":"physics-moments-energy",
+      "Energy, Work, Power and Machines":"physics-moments-energy",
+      "Properties of Waves":"physics-waves-electricity",
+      "Electrostatics":"physics-waves-electricity",
+      "Current Electricity":"physics-waves-electricity",
+      "Introduction to electronics":"physics-waves-electricity"
+    }
+  };
+  const names = {maths:"Core Mathematics",biology:"Biology",chemistry:"Chemistry",physics:"Physics"};
+  const descriptions = {
+    maths:"Build mathematical reasoning through number, algebra, geometry, measurement, statistics and probability.",
+    biology:"Study living organisms through cell biology, plant systems and animal systems, linking structure to function.",
+    chemistry:"Explore matter, atomic structure, periodic patterns, bonding, acids, bases, salts and introductory organic chemistry.",
+    physics:"Explain physical phenomena through mechanics, thermal physics, waves, electricity, environmental physics and space."
+  };
+  function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+  function renderSwitch(){
+    switcher.textContent="";
+    allowed.forEach(id=>{
+      const b=node("button",names[id],"chip"+(id===subjectId?" is-active":""));
+      b.type="button";b.addEventListener("click",()=>{location.href="curriculum.html?subject="+id;});
+      switcher.appendChild(b);
+    });
+  }
+  function render(){
+    const course=D.curriculum[subjectId];
+    title.textContent=names[subjectId]+" • Grade 10";
+    intro.textContent=descriptions[subjectId];
+    practice.href=subjectId==="maths"?"mathematics.html":"practice.html?subject="+subjectId;
+    const q=search.value.trim().toLowerCase();
+    const rows=[];
+    course.strands.forEach(strand=>strand.topics.forEach(topic=>rows.push({strand:strand.name,topic})));
+    const filtered=rows.filter(x=>(x.strand+" "+x.topic).toLowerCase().includes(q));
+    count.textContent="Showing "+filtered.length+" of "+rows.length+" curriculum topics. Guided lessons are available for selected topics and are being expanded progressively.";
+    grid.textContent="";
+    filtered.forEach(row=>{
+      const card=node("article",null,"experience");
+      card.appendChild(node("span",row.strand.toUpperCase(),"tag"));
+      card.appendChild(node("h3",row.topic));
+      card.appendChild(node("p",descriptions[subjectId]));
+      const key=lessonMap[subjectId][row.topic];
+      const lesson=key&&lessons.find(x=>x.key===key);
+      if(lesson){
+        const a=node("a","Open guided lesson →","btn btn-primary");
+        a.href="lesson.html?subject="+subjectId+"&lesson="+encodeURIComponent(key);
+        card.appendChild(a);
+      } else {
+        card.appendChild(node("p","Course-map topic • full guided lesson not yet published","curriculum-source"));
+      }
+      grid.appendChild(card);
+    });
+  }
+  search.addEventListener("input",render);
+  renderSwitch();render();
+})();
