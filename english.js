@@ -54,7 +54,6 @@
       card.appendChild(el("h3", theme.title));
       card.appendChild(el("p", item.strand + " • " + item.name));
       card.appendChild(el("p", item.focus));
-      card.appendChild(el("p", "Suggested time: " + item.lessons + " lessons", "curriculum-source"));
       if (item.lesson) {
         const lesson = D.lessons.find(x => x.id === item.lesson);
         if (lesson) {
