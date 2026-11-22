@@ -79,7 +79,7 @@
 
       const a = document.createElement("a");
       a.href = s.link || ("lesson.html?subject=" + encodeURIComponent(s.id));
-      a.textContent = "Open learning →";
+      a.textContent = s.id === "maths" ? "Explore course and practice →" : "Open course map →";
       card.appendChild(a);
       grid.appendChild(card);
     });
