@@ -137,49 +137,6 @@
       altExplanation: "A simple memory hook: Acid turns Blue litmus Red (A → B → R). If you test a sample and blue becomes red, you are looking at an acid."
     },
     {
-      key: "business-needs-wants",
-      subjectId: "business-studies",
-      subjectName: "Business Studies",
-      title: "Needs, Wants, and Scarcity",
-      summary: "See why scarcity forces choices for individuals, households, and businesses every day.",
-      outcomes: [
-        "Distinguish clearly between basic human needs and wants.",
-        "Explain why scarcity exists even when people work hard.",
-        "Identify opportunity cost when choosing between alternatives."
-      ],
-      sections: [
-        {
-          heading: "1. Needs vs. wants",
-          body: "Needs are essentials required for survival—food, water, shelter, and basic clothing. Wants are desires that make life more comfortable or enjoyable, which can expand endlessly."
-        },
-        {
-          heading: "2. Scarcity and choice",
-          body: "Resources like money, time, and raw materials are limited (scarce), while human wants are unlimited. Because we cannot have everything at once, we must make choices."
-        },
-        {
-          heading: "3. Opportunity cost",
-          body: "Every choice has a trade-off. The opportunity cost of a decision is the value of the next-best alternative you had to give up."
-        }
-      ],
-      exampleTitle: "Worked Example: Deciding How to Use Limited Study & Work Time",
-      exampleSteps: [
-        "Suppose you have 2 hours this evening: you can either revise Mathematics or help restock a family kiosk.",
-        "Because time is scarce, choosing one means giving up the other for tonight.",
-        "If your next-best option was revising Mathematics, missing that revision is the opportunity cost."
-      ],
-      pitfall: "Common mistake: Treating 'wants' as useless or confusing scarcity (limited resources relative to wants) with temporary shortages.",
-      checkQuestion: "What is opportunity cost?",
-      checkOptions: [
-        "The next-best alternative given up when a choice is made",
-        "The total price of all items in a shop",
-        "A resource that never runs out"
-      ],
-      checkCorrect: 0,
-      checkFeedbackRight: "Exactly! Opportunity cost is what you give up by choosing your preferred option over the next-best alternative.",
-      checkFeedbackWrong: "Not quite—opportunity cost specifically refers to the next-best alternative you sacrifice when making a choice.",
-      altExplanation: "If you have KES 100 and must choose between buying a notebook for revision or a snack, picking the notebook means your opportunity cost is the snack you passed up."
-    },
-    {
       key: "english-paragraph-structure",
       subjectId: "english",
       subjectName: "English",
