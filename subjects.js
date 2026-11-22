@@ -68,6 +68,12 @@
         source.className = "curriculum-source";
         source.textContent = curriculum.source + ". Topic labels are based on the KICD design; learning activities are being developed progressively.";
         details.appendChild(source);
+        const officialLink = document.createElement("a");
+        officialLink.href = D.curriculumSource;
+        officialLink.target = "_blank";
+        officialLink.rel = "noopener noreferrer";
+        officialLink.textContent = "View official KICD curriculum designs";
+        details.appendChild(officialLink);
         card.appendChild(details);
       }
 
