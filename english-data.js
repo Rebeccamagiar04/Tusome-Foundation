@@ -557,5 +557,54 @@ window.ENGLISH = {
         {q:"Which technique is especially useful in descriptive writing?",options:["Sensory details","Unexplained abbreviations","Random facts","Repeated conclusions"],answer:0,why:"Sensory details help readers imagine what is being described."}
       ]
     }
+,
+    {
+      id:"speaking-etiquette",title:"Speaking Etiquette and Respectful Conversation",
+      where:"Themes 1–9. Listening and Speaking, Speaking Fluency and Conversational Skills",
+      outcomes:["Choose polite expressions for formal and informal situations.","Take turns and respond without interrupting.","Use tone, volume and non-verbal cues to communicate clearly."],
+      blocks:[
+        {title:"Match language to the situation",text:"The words we choose depend on who we are speaking to, why we are speaking and where the conversation takes place. Formal settings usually call for respectful, complete expressions; friendly conversations may allow more relaxed language.",list:["Formal: 'Could you please explain that point?'","Informal: 'Can you explain that again?'","Avoid insults, mocking accents or language that excludes others."]},
+        {title:"Listen and take turns",text:"Good speaking etiquette includes listening while another person speaks, waiting for a suitable pause, acknowledging contributions and disagreeing with an idea rather than attacking the person.",list:["Use phrases such as 'I understand your point, but…'","Ask for clarification when meaning is unclear.","Keep your voice audible without shouting."]},
+        {title:"Voice and non-verbal cues",text:"Pronunciation, pace, stress and intonation affect meaning. Facial expression, gesture, posture and eye contact can reinforce a message. Use these cues respectfully and consider cultural and personal differences.",list:[]}
+      ],
+      example:{title:"Disagree politely in a group discussion",steps:["A classmate gives an opinion you do not share.","Show that you listened: 'I see why you think that.'","State your view: 'I have a different interpretation because…'","Give a reason and invite a response."],pitfall:"Politeness does not mean pretending to agree. You can disagree firmly while respecting the speaker."},
+      alt:["Think of a conversation as a shared ball game: each person needs a fair turn, and listening helps you respond usefully.","Before speaking, ask whether your words are respectful, relevant and clear."],
+      questions:[
+        {q:"Which expression is most suitable when asking a teacher to repeat an instruction?",options:["Say that again!","Could you please repeat the instruction?","You were not clear.","Whatever."],answer:1,why:"It is respectful, clear and appropriate for a formal school interaction."},
+        {q:"What is the best way to disagree in a group discussion?",options:["Interrupt and raise your voice","Mock the speaker","Explain your different view with a reason","Refuse to listen"],answer:2,why:"Respectful disagreement focuses on reasons and ideas, not personal attacks."}
+      ]
+    },
+    {
+      id:"verbs-adverbs",title:"Verbs, Tense, Aspect and Adverbs",
+      where:"Themes 2–5. Grammar in Use, Word Classes",
+      outcomes:["Distinguish main and auxiliary verbs.","Recognise regular, irregular and phrasal verbs.","Use adverbs of time, place and manner accurately."],
+      blocks:[
+        {title:"Main and auxiliary verbs",text:"A main verb carries the central meaning: 'They planted trees.' An auxiliary verb helps the main verb express tense, aspect, emphasis or voice: 'They are planting trees'; 'They have planted trees'. Common auxiliaries include be, have and do, as well as modal verbs such as can, may and should.",list:["Main: She writes.","Auxiliary + main: She is writing.","Modal + main: She can write."]},
+        {title:"Tense and aspect",text:"Tense locates an action in time, while aspect shows how the action is viewed (for example, ongoing or completed). Compare 'She writes', 'She is writing' and 'She has written'. The auxiliary and verb form work together to express these meanings.",list:[]},
+        {title:"Phrasal verbs and adverbs",text:"A phrasal verb combines a verb with a particle or preposition, often creating a meaning different from the verb alone (look after, give up, turn off). Adverbs can tell when, where or how an action happens: yesterday, outside, carefully.",list:[]}
+      ],
+      example:{title:"Improve: 'The learners worked.'",steps:["Add an adverb of time: 'The learners worked yesterday.'","Add an adverb of place: 'The learners worked outside yesterday.'","Add an adverb of manner: 'The learners worked carefully outside yesterday.'","Each adverb answers a different question: when, where or how."],pitfall:"Not every word ending in -ly is an adverb. Identify the job the word performs in the sentence."},
+      alt:["A verb tells what happens; an auxiliary helps the verb; an adverb adds a detail about the action.","Use the questions when, where and how to identify many common adverbs."],
+      questions:[
+        {q:"In 'The class has completed the task', which word is the auxiliary verb?",options:["class","has","completed","task"],answer:1,why:"'Has' helps the main verb 'completed' form the present perfect."},
+        {q:"Which word is an adverb of manner?",options:["tomorrow","outside","carefully","school"],answer:2,why:"'Carefully' explains how the action is done."}
+      ]
+    },
+    {
+      id:"paragraph-cohesion",title:"Cohesion and Paragraph Development",
+      where:"Themes 3–5. Writing, Paragraphing and Effective Writing",
+      outcomes:["Develop a paragraph around one controlling idea.","Use linking words and reference words to connect sentences.","Maintain logical order and avoid unnecessary repetition."],
+      blocks:[
+        {title:"Unity: one main idea",text:"A unified paragraph develops one controlling idea. Begin with a topic sentence, add relevant explanation or evidence, and finish with a sentence that rounds off the point or links to the next paragraph.",list:["Topic sentence: states the main point.","Supporting sentences: explain, illustrate or provide evidence.","Closing sentence: reinforces the point or creates a transition."]},
+        {title:"Cohesion: connect the ideas",text:"Cohesion is the way words and sentences fit together. Linking words show relationships: addition (also, furthermore), contrast (however, although), cause (because, therefore) and sequence (first, next, finally). Pronouns and repeated key terms can also help readers follow the subject.",list:[]},
+        {title:"Choose links for meaning",text:"Do not add a linking word merely to sound formal. The link must express the real relationship between ideas. Use 'however' for contrast, 'therefore' for a result and 'for example' to introduce an illustration.",list:[]}
+      ],
+      example:{title:"Connect two ideas about communication",steps:["Idea 1: Digital tools help learners share information quickly.","Idea 2: Learners need to protect personal information.","Use a contrast link: 'However, learners need to protect their personal information.'","The second sentence now clearly contrasts a benefit with a responsibility."],pitfall:"A paragraph can contain linking words and still lack cohesion if its ideas are unrelated or poorly ordered."},
+      alt:["Think of cohesion as bridges between houses. Each sentence is a house; linking words help the reader cross from one idea to the next.","Read the first sentence of each paragraph. If the sequence makes sense, the overall structure is probably clear."],
+      questions:[
+        {q:"Which linking word best shows contrast?",options:["Furthermore","However","First","Because"],answer:1,why:"'However' signals that the next idea contrasts with the previous one."},
+        {q:"What should supporting sentences do?",options:["Develop the paragraph's main idea","Introduce unrelated topics","Repeat the topic sentence exactly","Replace punctuation"],answer:0,why:"Supporting sentences explain, illustrate or provide evidence for the controlling idea."}
+      ]
+    }
   ]
 };
