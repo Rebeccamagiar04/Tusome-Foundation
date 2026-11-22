@@ -9,7 +9,7 @@ window.TUSOME_DATA = {
   tracks: { core: "Core Subjects", pure: "STEM" },
   curriculumSource: "https://kicd.ac.ke/cbc-materials/curriculum-designs/senior-school-designs/",
   notes: {
-    "note.maths": "Core Mathematics practice with generated questions, worked steps, and feedback."
+    "note.maths": "Core Mathematics teaching lessons followed by interactive question practice."
   },
   subjects: [
     { id: "english", name: "English", icon: "📖", pathway: "core", track: "core", link: "english.html", availability: "Grade 10 learning topics and practice" },
