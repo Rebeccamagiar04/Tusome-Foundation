@@ -1037,7 +1037,10 @@ button, input, select, textarea {
 }
 
 .lesson-picker select {
-  flex: 1 1 16rem;
+  flex: 0 1 20rem;
+  width: min(100%, 20rem);
+  max-width: 100%;
+  min-width: 0;
   min-height: 2.85rem;
   padding: 0.5rem 0.85rem;
   border: 2px solid var(--navy);
