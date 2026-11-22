@@ -231,7 +231,188 @@
       checkFeedbackWrong: "Use pressure = force ÷ area. Divide 100 by 2, then write the unit as pascals (Pa).",
       altExplanation: "Imagine pressing your palm and then one fingertip against soft dough with the same force. Your fingertip touches a smaller area, so the force is concentrated and makes a deeper mark. That is greater pressure."
     }
+
+    ,
+    {
+      key: "maths-real-numbers-quadratics",
+      curriculumTopic: "Numbers and Algebra → Real Numbers; Quadratic Expressions and Equations",
+      subjectId: "maths", subjectName: "Core Mathematics",
+      title: "Real Numbers and Quadratic Expressions",
+      summary: "Classify number types, work with factors and reciprocals, and recognise and solve simple quadratic equations.",
+      outcomes: ["Classify integers and real numbers using their properties.", "Find common factors and reciprocals where defined.", "Expand and factorise simple quadratic expressions and solve simple quadratic equations."],
+      sections: [
+        {heading:"1. Number families",body:"Natural numbers are counting numbers. Whole numbers include zero. Integers include negative whole numbers. Rational numbers can be written as a fraction of integers with a non-zero denominator; irrational numbers cannot. Every rational and irrational number belongs to the real number system."},
+        {heading:"2. Factors and reciprocals",body:"A factor divides a number exactly. The highest common factor (HCF) is the greatest factor shared by two or more numbers. The reciprocal of a non-zero number x is 1/x; zero has no reciprocal."},
+        {heading:"3. Quadratic expressions",body:"A quadratic expression has a highest power of 2, for example x² + 5x + 6. To factorise, find two numbers whose product is 6 and whose sum is 5: 2 and 3. Thus x² + 5x + 6 = (x + 2)(x + 3)."}
+      ],
+      exampleTitle:"Worked Example: Solve x² + 5x + 6 = 0",
+      exampleSteps:["Find two numbers that multiply to 6 and add to 5: 2 and 3.","Write the factorisation: (x + 2)(x + 3) = 0.","Set each factor to zero: x + 2 = 0 or x + 3 = 0.","Therefore x = −2 or x = −3."],
+      pitfall:"Do not confuse factorising an expression with solving an equation. The equation must be set equal to zero before using the zero-product rule.",
+      checkQuestion:"Which pair factorises x² + 7x + 12?",
+      checkOptions:["(x + 3)(x + 4)","(x + 2)(x + 6)","(x − 3)(x − 4)","(x + 1)(x + 12)"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. 3 × 4 = 12 and 3 + 4 = 7.",
+      checkFeedbackWrong:"Look for two numbers whose product is 12 and whose sum is 7.",
+      altExplanation:"Think of factorising as reversing expansion: find the two brackets that would multiply to give the original expression."
+    },
+    {
+      key: "maths-geometry-trigonometry",
+      curriculumTopic: "Measurements and Geometry → Similarity, Transformations and Trigonometry",
+      subjectId: "maths", subjectName: "Core Mathematics",
+      title: "Similarity, Transformations and Trigonometry",
+      summary: "Use scale factors, coordinate transformations and right-angled triangle ratios to describe shape and space.",
+      outcomes: ["Identify corresponding sides in similar shapes.", "Describe reflection and rotation using a line or centre.", "Apply sine, cosine and tangent to right-angled triangles."],
+      sections: [
+        {heading:"1. Similarity and enlargement",body:"Similar shapes have equal corresponding angles and proportional corresponding sides. An enlargement multiplies every distance from a centre by the same scale factor. A scale factor greater than 1 enlarges; a positive scale factor between 0 and 1 reduces."},
+        {heading:"2. Reflection and rotation",body:"A reflection flips a shape across a mirror line. Each point and its image lie on opposite sides of the mirror line at equal perpendicular distances. A rotation turns a shape about a fixed centre through a stated angle and direction."},
+        {heading:"3. Trigonometric ratios",body:"In a right-angled triangle, sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, and tan θ = opposite/adjacent. Label the sides relative to the chosen angle before selecting a ratio."}
+      ],
+      exampleTitle:"Worked Example: Find a missing side",
+      exampleSteps:["A right-angled triangle has an angle of 30° and hypotenuse 10 cm.","The required side is opposite the 30° angle, so use sine.","sin 30° = opposite ÷ 10.","0.5 = opposite ÷ 10, so the opposite side is 5 cm."],
+      pitfall:"The opposite and adjacent sides depend on which acute angle you are using. The hypotenuse is always opposite the right angle.",
+      checkQuestion:"Which ratio relates the opposite side to the hypotenuse?",
+      checkOptions:["Sine","Cosine","Tangent","Reciprocal"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. Sine is opposite divided by hypotenuse.",
+      checkFeedbackWrong:"Remember SOH: sine = opposite over hypotenuse.",
+      altExplanation:"Use SOH–CAH–TOA as a memory aid: Sine Opposite/Hypotenuse, Cosine Adjacent/Hypotenuse, Tangent Opposite/Adjacent."
+    },
+    {
+      key: "biology-chemicals-of-life",
+      curriculumTopic: "Cell Biology and Biodiversity → Chemicals of Life",
+      subjectId: "biology", subjectName: "Biology",
+      title: "Chemicals of Life",
+      summary: "Explore the main organic molecules in living things and how simple food tests provide evidence of their presence.",
+      outcomes: ["Describe the roles of carbohydrates, proteins and lipids.", "Relate water and mineral salts to cell functions.", "Explain the purpose and interpretation of common food tests."],
+      sections: [
+        {heading:"1. Carbohydrates and lipids",body:"Carbohydrates provide an important energy source. Simple sugars are small and soluble; starch is a storage carbohydrate made from many glucose units. Lipids store energy, form cell membranes and provide insulation."},
+        {heading:"2. Proteins, water and minerals",body:"Proteins are made from amino acids and are needed for growth, repair, enzymes and some hormones. Water is a solvent and medium for reactions. Mineral ions support processes such as nerve function, healthy blood and plant growth."},
+        {heading:"3. Food tests",body:"Iodine solution tests for starch: a positive result changes from brown to blue-black. Benedict's solution with heating tests for reducing sugars: a positive result may change from blue through green/yellow to orange or brick-red. Biuret reagent tests for protein: a positive result is lilac or purple. Follow laboratory safety instructions."}
+      ],
+      exampleTitle:"Worked Example: Interpreting a food test",
+      exampleSteps:["A food sample is mixed with iodine solution.","The mixture changes from brown to blue-black.","This is a positive test for starch.","The result shows starch is present; it does not by itself identify every nutrient in the sample."],
+      pitfall:"Do not report a food test result without naming the reagent, the observed colour change and the nutrient indicated.",
+      checkQuestion:"A sample turns blue-black after iodine is added. Which substance is indicated?",
+      checkOptions:["Starch","Protein","Reducing sugar","Lipid"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. Iodine turns blue-black when starch is present.",
+      checkFeedbackWrong:"Iodine is the standard qualitative test for starch.",
+      altExplanation:"Treat each reagent like a specific detector: iodine detects starch, Benedict's detects reducing sugars after heating, and Biuret detects protein."
+    },
+    {
+      key: "biology-plant-nutrition-transport",
+      curriculumTopic: "Anatomy and Physiology of Plants → Nutrition and Transport",
+      subjectId: "biology", subjectName: "Biology",
+      title: "Plant Nutrition and Transport",
+      summary: "Connect photosynthesis with the movement of water, minerals and manufactured food through a plant.",
+      outcomes: ["State the requirements and products of photosynthesis.", "Explain the roles of xylem and phloem.", "Relate leaf structure to photosynthesis and gaseous exchange."],
+      sections: [
+        {heading:"1. Photosynthesis",body:"Photosynthesis uses light energy absorbed by chlorophyll to convert carbon dioxide and water into glucose, releasing oxygen. A word equation is: carbon dioxide + water → glucose + oxygen (in light and chlorophyll). Glucose can be used in respiration, stored as starch or converted into other substances."},
+        {heading:"2. Leaf adaptations",body:"A broad, thin leaf provides a large surface area and a short diffusion distance. Many stomata allow gas exchange; guard cells regulate their opening. Palisade cells contain many chloroplasts to absorb light."},
+        {heading:"3. Transport tissues",body:"Xylem transports water and dissolved mineral ions mainly from roots towards leaves and also provides support. Phloem transports dissolved products of photosynthesis between sources and sinks; this movement is called translocation."}
+      ],
+      exampleTitle:"Worked Example: Predicting a photosynthesis change",
+      exampleSteps:["A plant is placed in darkness for several hours.","Light is unavailable, so the rate of photosynthesis falls greatly.","The plant continues to respire, using stored food and oxygen.","This shows why photosynthesis and respiration are different processes."],
+      pitfall:"Plants respire both day and night. Photosynthesis requires light, but respiration does not.",
+      checkQuestion:"Which tissue transports water from roots towards leaves?",
+      checkOptions:["Xylem","Phloem","Epidermis","Palisade mesophyll"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. Xylem carries water and mineral ions through the plant.",
+      checkFeedbackWrong:"Phloem transports manufactured food; xylem transports water and mineral ions.",
+      altExplanation:"Think of xylem as the water supply pipes and phloem as the distribution network for sugars made by the leaves."
+    },
+    {
+      key: "chemistry-atomic-structure-bonding",
+      curriculumTopic: "Inorganic Chemistry → The Atom, Periodic Table and Chemical Bonding",
+      subjectId: "chemistry", subjectName: "Chemistry",
+      title: "Atomic Structure and Chemical Bonding",
+      summary: "Use atomic number, mass number and electron arrangement to explain how atoms form chemical bonds.",
+      outcomes: ["Identify protons, neutrons and electrons and their relative charges.", "Determine proton, neutron and electron numbers for neutral atoms and simple ions.", "Explain ionic and covalent bonding using electron transfer or sharing."],
+      sections: [
+        {heading:"1. Inside an atom",body:"The nucleus contains positively charged protons and neutral neutrons. Negatively charged electrons occupy energy levels and orbitals around the nucleus. Atomic number equals the number of protons; mass number equals protons plus neutrons."},
+        {heading:"2. Isotopes and electron arrangement",body:"Isotopes are atoms of the same element with the same proton number but different neutron numbers. For the first 20 elements, electron arrangements can be described using shells and s/p orbital notation. A neutral atom has equal numbers of protons and electrons."},
+        {heading:"3. Why atoms bond",body:"Ionic bonding involves electron transfer and electrostatic attraction between oppositely charged ions. Covalent bonding involves sharing pairs of electrons between atoms. The type of bonding helps explain properties such as melting point and electrical conductivity."}
+      ],
+      exampleTitle:"Worked Example: Find the particles in sodium-23",
+      exampleSteps:["Sodium has atomic number 11, so it has 11 protons.","Mass number is 23, so neutrons = 23 − 11 = 12.","A neutral sodium atom has 11 electrons.","Therefore sodium-23 has 11 protons, 12 neutrons and 11 electrons."],
+      pitfall:"Do not use the mass number as the number of neutrons. Subtract the atomic number from the mass number.",
+      checkQuestion:"An atom has atomic number 8 and mass number 16. How many neutrons does it have?",
+      checkOptions:["8","16","24","4"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. Neutrons = 16 − 8 = 8.",
+      checkFeedbackWrong:"Subtract the atomic number from the mass number.",
+      altExplanation:"Imagine the mass number as the total number of particles in the nucleus. The atomic number tells you how many are protons; the remainder are neutrons."
+    },
+    {
+      key: "chemistry-periodic-table-salts",
+      curriculumTopic: "Inorganic and Physical Chemistry → Periodicity, Acids, Bases and Salts",
+      subjectId: "chemistry", subjectName: "Chemistry",
+      title: "Periodic Patterns, Acids and Salts",
+      summary: "Relate element position to electron arrangement, and connect acid-base reactions to salt preparation.",
+      outcomes: ["Explain how elements are arranged by atomic number in the periodic table.", "Describe broad trends in groups and periods.", "Explain neutralisation and distinguish methods of preparing soluble and insoluble salts."],
+      sections: [
+        {heading:"1. The periodic table",body:"Elements are arranged in order of increasing atomic number. Elements in the same group have related outer-electron arrangements and often similar chemical properties. Across a period, proton number increases and properties change progressively."},
+        {heading:"2. Acids and bases",body:"Acids produce hydrogen ions in aqueous solution; alkalis are soluble bases that produce hydroxide ions. Indicators help identify acidic, neutral and alkaline solutions. A neutralisation reaction between an acid and a base forms a salt and water."},
+        {heading:"3. Preparing salts",body:"A soluble salt can often be prepared by reacting an acid with an excess insoluble base or carbonate, filtering off the excess solid, then crystallising the salt solution. An insoluble salt may be prepared by precipitation: mix suitable soluble solutions so the desired solid forms."}
+      ],
+      exampleTitle:"Worked Example: Neutralising hydrochloric acid with sodium hydroxide",
+      exampleSteps:["Write the reactants: hydrochloric acid and sodium hydroxide.","The acid supplies hydrogen ions and the alkali supplies hydroxide ions.","Hydrogen ions combine with hydroxide ions to form water.","The remaining sodium and chloride ions form sodium chloride: HCl + NaOH → NaCl + H₂O."],
+      pitfall:"A salt is not necessarily table salt. In chemistry, salts are ionic compounds formed when the replaceable hydrogen of an acid is replaced by a metal or ammonium ion.",
+      checkQuestion:"Which products form when hydrochloric acid reacts completely with sodium hydroxide?",
+      checkOptions:["Sodium chloride and water","Sodium oxide and hydrogen","Chlorine and sodium","Carbon dioxide and water"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. This is a neutralisation reaction.",
+      checkFeedbackWrong:"An acid reacting with an alkali forms a salt and water.",
+      altExplanation:"Neutralisation pairs the acid's hydrogen ions with the alkali's hydroxide ions to make water; the other ions remain as the salt."
+    },
+    {
+      key: "physics-moments-energy",
+      curriculumTopic: "Mechanics and Thermal Physics → Moments, Equilibrium, Energy, Work and Power",
+      subjectId: "physics", subjectName: "Physics",
+      title: "Moments, Equilibrium, Work and Power",
+      summary: "Understand turning effects of forces and calculate work done and power in everyday mechanical systems.",
+      outcomes: ["Calculate a moment using force and perpendicular distance.", "State conditions for rotational equilibrium in simple cases.", "Calculate work done and power using appropriate units."],
+      sections: [
+        {heading:"1. Turning effect of a force",body:"The moment of a force about a pivot is the force multiplied by the perpendicular distance from the pivot to the force's line of action. Its SI unit is the newton metre (N m). A larger force or lever arm produces a larger turning effect."},
+        {heading:"2. Equilibrium",body:"For an object in translational equilibrium, the resultant force is zero. For rotational equilibrium, the sum of clockwise moments equals the sum of anticlockwise moments about a pivot. A balanced seesaw is a familiar example."},
+        {heading:"3. Work and power",body:"Work is done when a force causes displacement in its direction: W = F × d. The SI unit is the joule (J). Power is the rate of doing work: P = W/t, measured in watts (W)."}
+      ],
+      exampleTitle:"Worked Example: Moment of a force",
+      exampleSteps:["A 20 N force acts perpendicular to a spanner 0.25 m from the pivot.","Moment = force × perpendicular distance.","Moment = 20 × 0.25 = 5 N m.","The turning effect is 5 newton metres."],
+      pitfall:"Use the perpendicular distance from the pivot to the force's line of action, not just any distance along the object.",
+      checkQuestion:"A 10 N force acts 0.4 m from a pivot at right angles. What is the moment?",
+      checkOptions:["4 N m","10.4 N m","25 N m","0.04 N m"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. Moment = 10 × 0.4 = 4 N m.",
+      checkFeedbackWrong:"Multiply the force by the perpendicular distance.",
+      altExplanation:"A door is easier to turn when you push far from the hinges. That distance is the lever arm that increases the moment."
+    },
+    {
+      key: "physics-waves-electricity",
+      curriculumTopic: "Waves and Optics; Electricity and Magnetism",
+      subjectId: "physics", subjectName: "Physics",
+      title: "Waves, Electricity and Electronics",
+      summary: "Connect wave properties with energy transfer and describe the basic behaviour of electric charges and circuits.",
+      outcomes: ["Define amplitude, wavelength, frequency and wave speed.", "Distinguish transverse and longitudinal waves.", "Apply current, potential difference and resistance relationships in simple circuits."],
+      sections: [
+        {heading:"1. Wave quantities",body:"A wave transfers energy without requiring the overall transfer of matter. Amplitude is the maximum displacement from equilibrium; wavelength is the distance between matching points on successive waves; frequency is the number of complete cycles per second. Wave speed = frequency × wavelength."},
+        {heading:"2. Wave behaviour and radiation",body:"Transverse waves vibrate perpendicular to the direction of travel; longitudinal waves vibrate parallel to it. Radioactive decay is a nuclear process involving unstable nuclei. Handle radiation topics through safe, theoretical study and follow all laboratory rules."},
+        {heading:"3. Electric circuits",body:"Electric current is the rate of flow of charge, measured in amperes. Potential difference is energy transferred per unit charge, measured in volts. For an ohmic conductor at constant temperature, V = IR. Simple electronic components such as diodes and transistors control current in useful ways."}
+      ],
+      exampleTitle:"Worked Example: Calculate wave speed",
+      exampleSteps:["A wave has frequency 5 Hz and wavelength 2 m.","Use wave speed = frequency × wavelength.","v = 5 × 2 = 10 m/s.","The wave travels at 10 metres per second."],
+      pitfall:"Frequency is measured in hertz (Hz), wavelength in metres (m), and wave speed in metres per second (m/s). Do not confuse frequency with period.",
+      checkQuestion:"A wave has frequency 4 Hz and wavelength 3 m. What is its speed?",
+      checkOptions:["12 m/s","7 m/s","1.33 m/s","0.75 m/s"],
+      checkCorrect:0,
+      checkFeedbackRight:"Correct. v = fλ = 4 × 3 = 12 m/s.",
+      checkFeedbackWrong:"Multiply frequency by wavelength.",
+      altExplanation:"Imagine wave crests passing a point. Frequency tells you how many pass each second; wavelength tells you how far apart they are. Multiply them to find distance travelled each second."
+    }
+
   ];
+
+  window.TUSOME_LESSONS = LESSONS;
 
   const selectEl = document.getElementById("lesson-select");
   const subjectTag = document.getElementById("lesson-subject-tag");
@@ -358,8 +539,12 @@
     }
   }
 
-  const paramSubj = new URLSearchParams(location.search).get("subject");
-  const initial = LESSONS.find(function (l) { return l.subjectId === paramSubj; });
+  const params = new URLSearchParams(location.search);
+  const paramSubj = params.get("subject");
+  const paramLesson = params.get("lesson");
+  const initial = LESSONS.find(function (l) {
+    return paramLesson ? l.key === paramLesson : l.subjectId === paramSubj;
+  });
   if (initial) {
     renderLesson(initial);
   } else if (paramSubj) {
