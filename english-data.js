@@ -11,7 +11,7 @@ window.ENGLISH = {
 
   source: {
     title: "KICD Senior School Curriculum Design: Grade 10 English (July 2025)",
-    url: "https://kicd.ac.ke/wp-content/uploads/2024/07/English-Grade-10-June-2024.pdf"
+    url: "https://drive.google.com/file/d/1OFcHiuBagmwsfkqWe2aaDCaf_4JR4tt7/preview"
   },
 
   // The four strands and their suggested number of lessons
